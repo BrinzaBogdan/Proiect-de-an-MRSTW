@@ -1,0 +1,110 @@
+﻿@page "/carne/antricotdeporc"
+
+
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #ffcc00;
+            color: black;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .category {
+            font-weight: bold;
+            background-color: #ffeb99;
+        }
+    </style>
+</head>
+<body>
+
+
+<h2 style="text-align: center;">Informații Nutriționale</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per porție</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>850 kcal</td>
+            <td>42%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>35g</td>
+            <td>70%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>45g</td>
+            <td>69%</td>
+        </tr>
+        <tr>
+            <td>- din care saturate</td>
+            <td>12g</td>
+            <td>60%</td>
+        </tr>
+        <tr class="category">
+            <td>Carbohidrați</td>
+            <td>90g</td>
+            <td>30%</td>
+        </tr>
+        <tr>
+            <td>- din care zaharuri</td>
+            <td>15g</td>
+            <td>17%</td>
+        </tr>
+        <tr class="category">
+            <td>Sodiu</td>
+            <td>1.5g</td>
+            <td>63%</td>
+        </tr>
+        <tr class="category">
+            <td>Alergeni</td>
+            <td>Gluten, lactate, ouă</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="text-align: center;">*DZR = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+
+<div class="card">
+    <strong> Pret doar acum 100lei</strong>
+</div>
+
+
+
+</body>
+</html>
+
+
+@code {
+
+}

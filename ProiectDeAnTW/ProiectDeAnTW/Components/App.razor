@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="ProiectDeAnTW.styles.css" />
+    <link rel="icon" href="images/BlueGlassHomeImg.jpg" /> @* Iconita tabului de sus*@
+    <HeadOutlet />
+</head>
+
+<body>
+    <Routes />
+    <script src="_framework/blazor.web.js"></script>
+    <script src="~js\site.js"></script>
+</body>
+
+</html>
+
+@* 
+    Ce face App.razor în Blazor?
+    App.razor este punctul de intrare principal al unei aplicații Blazor. El definește 
+    structura de bază a aplicației și gestionează navigația între pagini. 
+*@
+
+@* 
+    <!DOCTYPE html> → Specifică că este un document HTML5.
+    <html lang="en"> → Setează limba documentului la engleză. 
+*@
+
+@*
+    <meta charset="utf-8" /> → Permite afișarea corectă a caracterelor speciale.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> → Face pagina responsive pe telefoane.
+    <base href="/" /> → Setează calea de bază a aplicației pentru navigare corectă.
+    <link rel="stylesheet" href="..."> → Încarcă fișiere CSS pentru stilizare (Bootstrap, app.css, ProiectDeAnTW.styles.css).
+    <link rel="icon" type="image/png" href="favicon.png" /> → Setează iconița paginii.
+    <HeadOutlet /> → Permite adăugarea dinamică de conținut în <head> prin Blazor.
+*@
+
+@*
+    <Routes /> → Componentă Blazor care gestionează navigația între pagini în aplicație.
+    script src="_framework/blazor.web.js"></script> → Încarcă motorul Blazor pentru rularea aplicației în browser.
+*@
+
+@*
+Explicație pentru <link rel="icon" type="image/png" href="BlueGlassHomeImg.jpg" />
+
+    rel="icon"
+rel (relation) definește relația dintre documentul HTML și resursa externă.
+rel="icon" indică faptul că fișierul specificat în href este favicon-ul site-ului (imaginea mică care apare în tab-ul browserului).
+
+
+    type="image/png"
+type specifică tipul MIME al resursei.
+type="image/png" spune browserului că imaginea este în format PNG.
+ 
+
+    href="BlueGlassHomeImg.jpg"
+href specifică calea către imaginea favicon.
+În acest caz, ai pus un fișier JPG (.jpg), dar ai setat type="image/png", ceea ce este o inconsecvență.
+Dacă imaginea este .jpg, folosește type="image/jpeg" sau elimină atributul type.
+
+*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+

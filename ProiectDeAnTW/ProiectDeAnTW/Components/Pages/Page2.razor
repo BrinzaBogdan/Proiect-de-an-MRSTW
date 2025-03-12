@@ -1,0 +1,38 @@
+﻿@page "/page2"
+@using ProiectDeAnTW.Data.Services
+@inject LoadDataToPage3 LoadDataService;
+@using ProiectDeAnTW.Models
+
+    <div class="col-3" style="text-align:center;">
+        <a href="page3">Page3</a>
+    </div>
+
+    <div class="dropdown">
+    <button class="dropdown-button">Lista de produse</button>
+        @if (CategoriiDeAlimente == null)
+        {
+            <p>Se încarcă datele...</p>
+        }
+        else
+        {
+            <div class="dropdown-menu">
+                @foreach (var categorie in CategoriiDeAlimente)
+                {
+                    <a href="@categorie.PageLink">@categorie.Category</a>
+                }
+            </div>
+        }
+    </div>
+
+
+@code {
+    public List<CategorieAliment> CategoriiDeAlimente { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        CategoriiDeAlimente = await LoadDataService.GetAllCategories();
+    }
+}
+
+
