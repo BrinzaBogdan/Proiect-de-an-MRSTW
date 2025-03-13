@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\images\\Carne\\JambonVita.jpg"
     },
     {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
+      "PackagePath": "staticwebassets\\images\\Cascada.jpg"
+    },
+    {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\DiscountImage.jpg",
       "PackagePath": "staticwebassets\\images\\DiscountImage.jpg"
     },

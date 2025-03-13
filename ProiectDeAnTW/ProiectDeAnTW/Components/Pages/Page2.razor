@@ -28,11 +28,11 @@
 @code {
     public List<CategorieAliment> CategoriiDeAlimente { get; set; }
 
-
     protected override async Task OnInitializedAsync()
     {
         CategoriiDeAlimente = await LoadDataService.GetAllCategories();
     }
+
 }
 
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XgLAi+HbxQjifUvUE+f7OvJ9ZzdiVY4EfM+5nb5gLuw=",
+  "Hash": "FkyJD18vjruU0Gh6lXMiITtdrLqc6SifNWhW48asRKI=",
   "Source": "ProiectDeAnTW",
   "BasePath": "_content/ProiectDeAnTW",
   "Mode": "Default",
@@ -262,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Carne\\JambonVita.jpg"
+    },
+    {
+      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
+      "SourceId": "ProiectDeAnTW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
+      "BasePath": "_content/ProiectDeAnTW",
+      "RelativePath": "images/Cascada.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Cascada.jpg"
     },
     {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\DiscountImage.jpg",
