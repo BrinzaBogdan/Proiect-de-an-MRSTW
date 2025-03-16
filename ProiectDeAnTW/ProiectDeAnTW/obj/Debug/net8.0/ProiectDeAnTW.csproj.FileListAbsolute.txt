@@ -9,6 +9,8 @@ C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnT
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\Azure.Core.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\Azure.Identity.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\Humanizer.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\MediatR.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\MediatR.Contracts.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -123,6 +125,12 @@ C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\runtimes\win
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnMRSTW.Application.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnMRSTW.Domain.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnMRSTW.Infrastructure.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnMRSTW.Application.pdb
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnMRSTW.Domain.pdb
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnMRSTW.Infrastructure.pdb
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\ProiectDeAnTW.csproj.AssemblyReference.cache
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\ProiectDeAnTW.GeneratedMSBuildEditorConfig.editorconfig
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\ProiectDeAnTW.AssemblyInfoInputs.cache

@@ -33,13 +33,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+
+
 builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddSignInManager()
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-builder.Services.AddTransient<LoadDataToPage3>();//am adaugat eu
+builder.Services.AddTransient<LoadDataToPage3>();   //am adaugat eu
+builder.Services.AddTransient<ProductService>();    //am adaugat eu
 
 var app = builder.Build();
 

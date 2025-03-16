@@ -9,6 +9,7 @@
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
+@* @inject UserManager<ApplicationUser> userManager *@
 
 <PageTitle>Log in</PageTitle>
 
@@ -87,8 +88,20 @@
 
     public async Task LoginUser()
     {
-        // This doesn't count login failures towards account lockout
-        // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+
+        // var user = await userManager.FindByEmailAsync(Input.Email);
+        // Console.WriteLine($"Emailul de logare este {Input.Email}");
+
+        // if (user != null && await userManager.CheckPasswordAsync(user, Input.Password))
+        // {
+        //     var roles = await userManager.GetRolesAsync(user);
+
+
+        // }
+
+
+
+
         var result = await SignInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
         if (result.Succeeded)
         {
@@ -114,6 +127,7 @@
 
     private sealed class InputModel
     {
+        // public string[] Roles { get; set; } = {"Admin","Client","African","Users18+","UserUnder18" };
         [Required]
         [EmailAddress]
         public string Email { get; set; } = "";

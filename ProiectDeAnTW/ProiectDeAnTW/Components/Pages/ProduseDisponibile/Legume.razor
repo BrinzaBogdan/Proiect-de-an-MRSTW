@@ -1,6 +1,37 @@
 ﻿@page "/legume"
-<h3>Legume</h3>
+@using ProiectDeAnTW.Data.Services
+@using ProiectDeAnTW.Models
+@inject ProductService ProductService;
+
+    @if (ToateLegumele == null)
+    {
+        <p>Se încarcă datele...</p>
+    }
+    else
+    {
+        <div class="container mt-4">
+            <div class="row">
+                @foreach (var aliment in ToateLegumele)
+                {
+                    <div class="col-md-3 col-sm-6 col-12 mb-4">
+                        <div class="product-category">
+                            <a href="@aliment.ProductPageLink">
+                                <img src="@aliment.ImageUrl" alt="@aliment.Name" class="category-image">
+                                <h5 class="category-title">@aliment.Name</h5>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
 
 @code {
+    public List<Aliment> ToateLegumele { get; set; } = new List<Aliment>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        ToateLegumele = await ProductService.GetLegume();
+    }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FkyJD18vjruU0Gh6lXMiITtdrLqc6SifNWhW48asRKI=",
+  "Hash": "Xv3Rs3UuoQJ837NTCJHp5ybVKSwAQSPtl1LmNbc7euY=",
   "Source": "ProiectDeAnTW",
   "BasePath": "_content/ProiectDeAnTW",
   "Mode": "Default",
@@ -490,6 +490,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Fructe\\Mere.jpg"
+    },
+    {
+      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\PastaPenne.jpg",
+      "SourceId": "ProiectDeAnTW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
+      "BasePath": "_content/ProiectDeAnTW",
+      "RelativePath": "images/Fructe/PastaPenne.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Fructe\\PastaPenne.jpg"
     },
     {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\PepeneRosu.jpg",

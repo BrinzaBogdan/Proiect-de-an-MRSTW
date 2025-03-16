@@ -1,6 +1,82 @@
 ﻿@page "/paste"
-<h3>Paste</h3>
+@using ProiectDeAnTW.Data.Services
+@using ProiectDeAnTW.Models
+@inject ProductService ProductService;
+
+
+@* 
+	@if (ToatePastele == null)
+	{
+		<p>Se încarcă datele...</p>
+	}
+	else
+	{
+		<div class="container mt-4">
+			<div class="row">
+				@foreach (var aliment in ToatePastele)
+				{
+					<div class="col-md-3 col-sm-6 col-12 mb-4">
+						<div class="product-category">
+							<a href="@aliment.ProductPageLink">
+								<img src="@aliment.ImageUrl" alt="@aliment.Name" class="category-image">
+								<h5 class="category-title">@aliment.Name</h5>
+							</a>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	}
+
 
 @code {
+	public List<Aliment> ToatePastele { get; set; } = new List<Aliment>();
 
+	protected override async Task OnInitializedAsync()
+	{
+		ToatePastele = await ProductService.GetPaste();
+	}
+} *@
+
+<div class="dropdown">
+    <button class="btn btn-primary" @onclick="ToggleDropdown">
+        Meniu
+    </button>
+
+    @if (isDropdownOpen)
+    {
+            <ul class="dropdown-menu show">
+            @if (ToatePastele == null)
+            {
+                <li class="dropdown-item">Se încarcă datele...</li>
+            }
+            else
+            {
+                @foreach (var aliment in ToatePastele)
+                {
+                    <li>
+                        <a class="dropdown-item" href="@aliment.ProductPageLink">
+                            <img src="@aliment.ImageUrl" alt="@aliment.Name" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            @aliment.Name
+                        </a>
+                    </li>
+                }
+            }
+            </ul>
+    }
+</div>
+
+@code {
+    private bool isDropdownOpen = false;
+    private List<Aliment>ToatePastele = null!;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        ToatePastele = await ProductService.GetPaste();
+    }
+    private void ToggleDropdown()
+    {
+        isDropdownOpen = !isDropdownOpen;
+    }
 }

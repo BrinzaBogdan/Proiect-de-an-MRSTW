@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "y+WgO1DSdoY=",
+  "dgSpecHash": "1QY5px1AVyU=",
   "success": true,
   "projectFilePath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\ProiectDeAnTW.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chicu\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\chicu\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\chicu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\chicu\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\chicu\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\chicu\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.13\\microsoft.aspnetcore.cryptography.internal.8.0.13.nupkg.sha512",
     "C:\\Users\\chicu\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.13\\microsoft.aspnetcore.cryptography.keyderivation.8.0.13.nupkg.sha512",
     "C:\\Users\\chicu\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\8.0.13\\microsoft.aspnetcore.diagnostics.entityframeworkcore.8.0.13.nupkg.sha512",

@@ -1,8 +1,11 @@
 ﻿@page "/page3"
 @layout MenuProduseLayout;
+@using Microsoft.AspNetCore.Authorization
 @using ProiectDeAnTW.Data.Services
 @using ProiectDeAnTW.Models;
-@inject LoadDataToPage3 LoadDataService;
+@inject LoadDataToPage3 LoadDataService
+@attribute [Authorize(Roles = "Admin")] 
+
  <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -13,40 +16,6 @@
     </style>
 </head>
 <body>
-    <style>
-        .product-category {
-            text-align: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .product-category:hover {
-            transform: scale(1.05);
-        }
-
-        .category-image {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .category-title {
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
-
     <div class="dropdown">
         <!-- Butonul care deschide meniul -->
         <button class="dropdown-button">Categorie</button>
@@ -94,7 +63,6 @@
 </body>
 </html>
 
-
 @code {
     public List<CategorieAliment>? CategoriiDeAlimente { get; set;}
 
@@ -105,15 +73,3 @@
     }
    
 }
-
-
-
-
-
- @*
-     
- // public IEnumerable<string> CategoriiAlimente { get; set; } = new string[] { "Bacanie",
-    // "Produse lactete", "Cascaval", "Dulciuri", "Peste", "Oua", "Cafea", "Alcool", 
-    // "Cereale", "Fructe", "Legume", "Priduse congelate", "Rechizite", "Cadouri", "Carti", 
-    // "Bauturi dulci", "Bauturi sarate" };
- *@
