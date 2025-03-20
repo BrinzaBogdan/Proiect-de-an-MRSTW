@@ -1,25 +1,8 @@
 ﻿@page "/MainPage"
 @* 
-@* <!DOCTYPE html> 
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @* <link href="css/styles.css" rel="stylesheet" />  
-</head>
-</html>
-<body>
-
-
-
-
-
-
-
-
+    
 
 <br <br /><br />
-
     <div class="row_header__row">
         <div class="header_catalog_supermarket_online">
             <div class="catalog_body_top">
@@ -49,6 +32,8 @@
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             padding-top: 50px;
+            margin: 0;
+            padding: 0;
         }
 
         header {
@@ -118,40 +103,38 @@
 </head>
 
 <body>
+<div class="antet">
+    <header style="background-color: #ffc107; ">
+        <h1 >Magazin Online - Produse și Oferte Speciale</h1>
+    </header>
 
-<header>
-    <h1>Magazin Online - Produse și Oferte Speciale</h1>
-</header>
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">BogSanLu SRL</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#products">Produse</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#news">Noutăți</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#offers">Oferte Speciale</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ffc107;">
+        <div class="container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#products">Produse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">Noutăți</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#offers">Oferte Speciale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
+</div>
 <!-- Container for Content -->
-<div class="container">
+<div class="container ">
 
     <!-- Produse -->
     <section id="products">
@@ -163,7 +146,7 @@
                     <div class="p-3">
                         <h5 class="product-name">Șampon pentru păr</h5>
                         <p class="product-description">Șampon hidratant pentru păr uscat, cu extract de aloe vera.</p>
-                        <p><strong>15.99 RON</strong></p>
+                        <p><strong>15.99 LEI</strong></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
                 </div>
@@ -175,7 +158,7 @@
                     <div class="p-3">
                         <h5 class="product-name">Crema de față</h5>
                         <p class="product-description">Crema de față anti-aging cu vitamine și acid hialuronic.</p>
-                        <p><strong>29.99 RON</strong></p>
+                        <p><strong>29.99 LEI</strong></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
                 </div>
@@ -187,7 +170,7 @@
                     <div class="p-3">
                         <h5 class="product-name">Parfum Floral</h5>
                         <p class="product-description">Parfum elegant cu note florale și fructate, perfect pentru orice ocazie.</p>
-                        <p><strong>89.99 RON</strong></p>
+                        <p><strong>89.99 LEI</strong></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
                 </div>
@@ -196,17 +179,20 @@
     </section>
 
     <!-- Noutăți -->
-    <section id="news">
-        <h2 class="text-center mb-4" >Noutăți în Magazin</h2>
-        <div class="row">
-            <div class="col-md-6" style="display:flex;">
-                <img src="images/OpenForBussiness.jpg" alt="Noutăți" class="img-fluid rounded mb-3">
-            </div>
-            <div class="col-md-6">
-                <p>Am adăugat o gamă variată de produse noi pentru toți clienții noștri. Vizitează magazinul nostru pentru a descoperi cele mai noi oferte și produse!</p>
+    <section id="news" class="news-container">
+    <h2 class="text-center mb-4">Noutăți în Magazin</h2>
+    <div class="row">
+    <div class="row">
+    <div class="col-md-4 d-flex justify-content-end">
+        <img src="images/OpenForBussiness.jpg" alt="Noutăți" style="max-width: 100%; max-height: 100%;" class="img-fluid rounded mb-3">
+        </div>
+            <div class="col-md d-flex align-items-center">
+                <p style="padding: 20px; max-width: 500px;">Am adăugat o gamă variată de produse noi pentru toți clienții noștri. Vizitează magazinul nostru pentru a descoperi cele mai noi oferte și produse!</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+    <br />    <br />    <br />
 
     <!-- Oferte Speciale -->
     <section id="offers">
@@ -217,7 +203,7 @@
                     <img src="images/OpenForBussiness.jpg" alt="Oferte 1" class="product-img mx-auto d-block">
                     <div class="p-3">
                         <h5 class="product-name">Set de bijuterii</h5>
-                        <p><strong>120 RON</strong> <span class="text-danger">99.99 RON</span></p>
+                        <p><strong>120 LEI</strong> <span class="text-danger">99.99 LEI</span></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
                 </div>
@@ -228,7 +214,7 @@
                     <img src="images/OpenForBussiness.jpg" alt="Oferte 2" class="product-img mx-auto d-block">
                     <div class="p-3">
                         <h5 class="product-name">Tabletă Smart</h5>
-                        <p><strong>899.99 RON</strong> <span class="text-danger">799.99 RON</span></p>
+                        <p><strong>899.99 LEI</strong> <span class="text-danger">799.99 LEI</span></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
                 </div>
@@ -239,7 +225,7 @@
                     <img src="images/OpenForBussiness.jpg" alt="Oferte 3" class="product-img mx-auto d-block">
                     <div class="p-3">
                         <h5 class="product-name">Geantă de mână</h5>
-                        <p><strong>150 RON</strong> <span class="text-danger">119.99 RON</span></p>
+                        <p><strong>150 LEI</strong> <span class="text-danger">119.99 LEI</span></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
                 </div>
@@ -248,11 +234,6 @@
     </section>
 
 </div>
-
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; 2025 Magazin Online. Toate drepturile rezervate.</p>
-</footer>
 
 <!-- Bootstrap JS and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

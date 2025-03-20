@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProiectDeAnTW")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35b43769c8ea598d19fdfb11db3ba8f6d9f90ec4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c75d259d27b12dc97dcae4c3fe089b216bb9cc60")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProiectDeAnTW")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProiectDeAnTW")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -289,3 +289,11 @@ a {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.news-container {
+    border: 2px solid #ffc107; /* Linie de chenar aurie */
+    padding: 20px; /* Spațiu interior */
+    border-radius: 10px; /* Colțuri rotunjite */
+    background-color: #f8f9fa; /* Fundal deschis */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Umbră ușoară */
+}

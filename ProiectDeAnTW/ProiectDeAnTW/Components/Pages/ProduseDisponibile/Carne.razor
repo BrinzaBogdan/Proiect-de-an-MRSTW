@@ -1,10 +1,12 @@
 ﻿@page "/carne"
 @using ProiectDeAnTW.Components.Layout
+@layout MainLayout
 @using ProiectDeAnTW.Data.Services
 @using ProiectDeAnTW.Models
-@layout MainLayout
 @inject ProductService ProductService;
-
+<head>
+    <link href="css/site.css" rel="stylesheet">
+</head>
     @if (ToataCarnea == null)
     {
                     <p>Se încarcă datele...</p>

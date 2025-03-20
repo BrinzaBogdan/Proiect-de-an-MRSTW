@@ -74,12 +74,17 @@
 
 
 @code {
-    public List<CategorieAliment> CategoriiDeAlimente { get; set; }
+    public List<CategorieAliment> CategoriiDeAlimente { get; set; } = new();
     protected override async Task OnInitializedAsync()
     {
-        CategoriiDeAlimente = await LoadDataService.GetAllCategories();
+        CategoriiDeAlimente.Add(new CategorieAliment{Category = "Carne",ImageUrl = "images/Carne/CarneSiMezeluri.jpg",PageLink = "/carne"});
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Dulciuri", ImageUrl = "images/Dulciuri/Dulciuri.jpg", PageLink = "/dulciuri" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Fructe", ImageUrl = "images/Fructe/Fructe.jpg", PageLink = "/fructe" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Legume", ImageUrl = "images/Legume/Legume.jpg", PageLink = "/legume" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Paste", ImageUrl = "images/Paste/CategoriiPaste.jpg", PageLink = "/paste" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Peste", ImageUrl = "images/Peste/Dalmors.jpg", PageLink = "/peste" });
+        // CategoriiDeAlimente = await LoadDataService.GetAllCategories();
     }
-
     private string? currentUrl;
 
     protected override void OnInitialized()

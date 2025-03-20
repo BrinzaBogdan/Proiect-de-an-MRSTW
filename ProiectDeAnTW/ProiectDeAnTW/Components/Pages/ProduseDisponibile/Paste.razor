@@ -2,7 +2,9 @@
 @using ProiectDeAnTW.Data.Services
 @using ProiectDeAnTW.Models
 @inject ProductService ProductService;
-
+<head>
+    <link href="css/site.css" rel="stylesheet">
+</head>
 
 @* 
 	@if (ToatePastele == null)
@@ -38,7 +40,7 @@
 	}
 } *@
 
-<div class="dropdown">
+@* <div class="dropdown">
     <button class="btn btn-primary" @onclick="ToggleDropdown">
         Meniu
     </button>
@@ -65,7 +67,7 @@
             </ul>
     }
 </div>
-
+ *@
 @code {
     private bool isDropdownOpen = false;
     private List<Aliment>ToatePastele = null!;
