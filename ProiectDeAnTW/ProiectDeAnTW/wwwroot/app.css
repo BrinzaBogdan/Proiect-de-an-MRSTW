@@ -42,9 +42,9 @@ h1:focus {
     color: white;
 }
 
-    .blazor-error-boundary::after {
-        content: "An error has occurred."
-    }
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
 
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
@@ -55,10 +55,10 @@ h1:focus {
     |     |     |
     V     V     V
 */
-    
-.nav-menu-din-mainlayout {
+
+/*.top-nav-menu {
     background-color: #74992e;
-}
+}*/
 
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
@@ -127,22 +127,19 @@ body {
 
 /* Stilizare pentru butonul dropdown */
 .dropdown-button {
-    background-color: #009640;
+    background-color: #212529;
     color: white;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     margin-left: 20px;
-/*    margin-right: 20px;*/
-    /*    margin-bottom : 20px;*/
-/*    margin-block: 10px;*/
-        margin-top: 50px;
+    margin-top: 50px;
 }
 
-    .dropdown-button:hover {
-        background-color: #007c33;
-    }
+.dropdown-button:hover {
+    background-color: #007c33;
+}
 
 /* Stilizarea meniului dropdown care va fi ascuns de default */
 .dropdown-menu {
@@ -157,24 +154,25 @@ body {
     z-index: 1000;
 }
 
-    /* Stilizare pentru fiecare item din dropdown */
-    .dropdown-menu a {
-        display: block;
-        padding: 10px;
-        color: #333;
-        text-decoration: none;
-        border-bottom: 1px solid #ddd;
-    }
+/* Stilizare pentru fiecare item din dropdown */
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+}
 
-        /* Stilizare pentru hover pe fiecare item */
-        .dropdown-menu a:hover {
-            background-color: #f5f5f5;
-        }
+/* Stilizare pentru hover pe fiecare item */
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
 
 /* Clasa pentru a face meniul vizibil */
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
 #card_foto {
     width: 30%;
     height: 100px;
@@ -214,4 +212,80 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+
+/* Container principal al meniului */
+.nav-container {
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Meniu orizontal */
+.nav-menu {
+    display: flex;
+    justify-content: center; /* Centrează meniul */
+    gap: 20px;
+    padding: 10px;
+    background-color: #222;
+}
+
+/* Stil pentru link-uri */
+.nav-menu .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Hover pe link-uri */
+.nav-menu .nav-link:hover {
+    background-color: #555;
+}
+
+/* Formularul de logout */
+.logout-form {
+    display: inline;
+}
+
+
+.main-layout {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh; /* Asigură că pagina ocupă cel puțin întreaga înălțime a ferestrei */
+}
+
+.navbar-brand {
+    flex-grow: 0;
+    background-color: navbar-brand;
+    background-color: #343a40;
+}
+/*.top-row navbar navbar dark {
+    background-color: #343a40;
+    float: left; border-radius:5%; 
+    display: flex;
+    justify-content: flex-start;"
+}*/
+
+.img_home_page {
+    display: flex;
+    gap: 10px;
+}
+
+.material-symbols-outlined {
+
+}
+
+.gift-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url("images/gift.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }

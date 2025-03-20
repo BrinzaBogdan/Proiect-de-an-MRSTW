@@ -1,0 +1,340 @@
+﻿@page "/MainPage"
+@* 
+@* <!DOCTYPE html> 
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @* <link href="css/styles.css" rel="stylesheet" />  
+</head>
+</html>
+<body>
+
+
+
+
+
+
+
+
+
+<br <br /><br />
+
+    <div class="row_header__row">
+        <div class="header_catalog_supermarket_online">
+            <div class="catalog_body_top">
+                <li class="continut_supermarket">
+                    <a href="page2">
+                        <img src="images\photo-gift.jpg" style="width: 100px; height: auto;">
+                        <span> Seturi cadou</span>
+                    </a>
+                </li>
+            </div>   
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+ *@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin Online - Produse și Oferte</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link la fișierul CSS personalizat -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding-top: 50px;
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #007bff;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .product-img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Magazin Online - Produse și Oferte Speciale</h1>
+</header>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">BogSanLu SRL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#products">Produse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#news">Noutăți</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#offers">Oferte Speciale</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Container for Content -->
+<div class="container">
+
+    <!-- Produse -->
+    <section id="products">
+        <h2 class="text-center mb-4">Produse Disponibile</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/OpenForBussiness.jpg" alt="Șampon pentru păr" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Șampon pentru păr</h5>
+                        <p class="product-description">Șampon hidratant pentru păr uscat, cu extract de aloe vera.</p>
+                        <p><strong>15.99 RON</strong></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/OpenForBussiness.jpg" alt="Crema de față" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Crema de față</h5>
+                        <p class="product-description">Crema de față anti-aging cu vitamine și acid hialuronic.</p>
+                        <p><strong>29.99 RON</strong></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/OpenForBussiness.jpg" alt="Parfum Floral" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Parfum Floral</h5>
+                        <p class="product-description">Parfum elegant cu note florale și fructate, perfect pentru orice ocazie.</p>
+                        <p><strong>89.99 RON</strong></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Noutăți -->
+    <section id="news">
+        <h2 class="text-center mb-4" >Noutăți în Magazin</h2>
+        <div class="row">
+            <div class="col-md-6" style="display:flex;">
+                <img src="images/OpenForBussiness.jpg" alt="Noutăți" class="img-fluid rounded mb-3">
+            </div>
+            <div class="col-md-6">
+                <p>Am adăugat o gamă variată de produse noi pentru toți clienții noștri. Vizitează magazinul nostru pentru a descoperi cele mai noi oferte și produse!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferte Speciale -->
+    <section id="offers">
+        <h2 class="text-center mb-4">Oferte Speciale</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/OpenForBussiness.jpg" alt="Oferte 1" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Set de bijuterii</h5>
+                        <p><strong>120 RON</strong> <span class="text-danger">99.99 RON</span></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/OpenForBussiness.jpg" alt="Oferte 2" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Tabletă Smart</h5>
+                        <p><strong>899.99 RON</strong> <span class="text-danger">799.99 RON</span></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/OpenForBussiness.jpg" alt="Oferte 3" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Geantă de mână</h5>
+                        <p><strong>150 RON</strong> <span class="text-danger">119.99 RON</span></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Magazin Online. Toate drepturile rezervate.</p>
+</footer>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+@code {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 3 ceva 
+ <div class="rand">
+        <div class="coloana">
+            <div class="card" id="card_foto">
+                <div class="element1">
+                    <img src="images/BlueGlassHomeImg.jpg" style="width : 30%; height: auto;">
+                    <div class="text_imagine_glass_home">
+                        <strong class="text_imagini_homepage" >Doar 2 magazine in Moldova</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card_foto">
+                <div class="element2">
+                    <img src="images\NewPrioduct1.jpg" style="width : 30%; height: auto;">
+                    <div class="text_imagine_glass_home">
+                        <strong  class="text_imagini_homepage" >Produse noi</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card_foto">
+                <div class="element3">
+                    <img src="images/DiscountImage.jpg" style="width : 30%; height: auto;">
+                    <div class="text_imagine_glass_home">
+                        <strong  class="text_imagini_homepage" >Produse ieftine</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+*@
+
+
+
+@*
+    1. <meta charset="UTF-8">
+Această etichetă specifică setul de caractere folosit pe pagină. În acest caz, UTF-8 
+este unul dintre cele mai utilizate seturi de caractere, care include aproape toate 
+caracterele din toate limbile și simbolurile speciale.
+
+UTF-8 este folosit pentru a asigura că textul paginii este corect afişat, indiferent 
+de limba sau simbolurile utilizate (de exemplu, caractere speciale precum „ă”, „ș”, „€” etc.).
+Fără această etichetă, ar putea apărea erori de codificare în pagină, în special dacă 
+sunt folosite caractere care nu fac parte din setul de caractere implicit al browser-ului.
+*@
+@*
+    2. <meta name="viewport" content="width=device-width, initial-scale=1.0">
+Această etichetă controlează comportamentul paginii web pe dispozitive mobile, astfel încât 
+să fie responsive (adică să se adapteze corect la diferite dimensiuni de ecran).
+
+width=device-width: Setează lățimea paginii pentru a se potrivi lățimii ecranului dispozitivului 
+pe care este vizualizată pagina (indiferent că este un desktop, tabletă sau telefon).
+initial-scale=1.0: Aceasta setează scara inițială a paginii. Cu valoarea 1.0, pagina va fi
+la scală normală, fără zoom la încărcare.
+*@

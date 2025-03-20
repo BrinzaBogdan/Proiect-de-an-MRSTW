@@ -5,11 +5,11 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProiectDeAnTW", "ProiectDeAnTW\ProiectDeAnTW.csproj", "{33AA3831-5E01-4EDE-928E-06F03A414B1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProiectDeAnMRSTW.Domain", "ProiectDeAnMRSTW.Domain\ProiectDeAnMRSTW.Domain.csproj", "{01E509B2-F75D-41CE-A584-23B67312EB8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProiectDeAnMRSTW.Domain", "ProiectDeAnMRSTW.Domain\ProiectDeAnMRSTW.Domain.csproj", "{01E509B2-F75D-41CE-A584-23B67312EB8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProiectDeAnMRSTW.Infrastructure", "ProiectDeAnMRSTW.Infrastructure\ProiectDeAnMRSTW.Infrastructure.csproj", "{B09745D1-8254-4C03-99BA-3F9C67B01BD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProiectDeAnMRSTW.Infrastructure", "ProiectDeAnMRSTW.Infrastructure\ProiectDeAnMRSTW.Infrastructure.csproj", "{B09745D1-8254-4C03-99BA-3F9C67B01BD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProiectDeAnMRSTW.Application", "ProiectDeAnMRSTW.Application\ProiectDeAnMRSTW.Application.csproj", "{45C13C70-DF74-4A5B-95CF-45F61BA927CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProiectDeAnMRSTW.Application", "ProiectDeAnMRSTW.Application\ProiectDeAnMRSTW.Application.csproj", "{45C13C70-DF74-4A5B-95CF-45F61BA927CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
