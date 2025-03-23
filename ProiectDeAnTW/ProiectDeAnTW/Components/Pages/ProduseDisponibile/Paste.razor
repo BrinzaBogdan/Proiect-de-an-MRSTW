@@ -4,9 +4,27 @@
 @inject ProductService ProductService;
 <head>
     <link href="css/site.css" rel="stylesheet">
+    <style>
+         .back-to-menu {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #343a40; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease; 
+        }
+
+        .back-to-menu:hover {
+            background-color: #344a46;
+        }
+    </style>
 </head>
 
-@* 
+    <a href="/Produse" class="back-to-menu">Înapoi la meniu</a> 
+
 	@if (ToatePastele == null)
 	{
 		<p>Se încarcă datele...</p>
@@ -38,7 +56,7 @@
 	{
 		ToatePastele = await ProductService.GetPaste();
 	}
-} *@
+} 
 
 @* <div class="dropdown">
     <button class="btn btn-primary" @onclick="ToggleDropdown">
@@ -68,6 +86,9 @@
     }
 </div>
  *@
+
+
+@*
 @code {
     private bool isDropdownOpen = false;
     private List<Aliment>ToatePastele = null!;
@@ -81,4 +102,4 @@
     {
         isDropdownOpen = !isDropdownOpen;
     }
-}
+}*@

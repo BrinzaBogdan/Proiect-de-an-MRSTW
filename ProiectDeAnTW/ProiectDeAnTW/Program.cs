@@ -41,7 +41,7 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-builder.Services.AddScoped<LoadDataToPage3>();   //am adaugat eu
+builder.Services.AddScoped<LoadDataToPage>();   //am adaugat eu
 builder.Services.AddScoped<ProductService>();    //am adaugat eu
 
 var app = builder.Build();

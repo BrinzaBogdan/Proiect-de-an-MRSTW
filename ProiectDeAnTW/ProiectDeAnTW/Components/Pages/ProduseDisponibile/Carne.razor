@@ -7,6 +7,26 @@
 <head>
     <link href="css/site.css" rel="stylesheet">
 </head>
+    <style>
+         .back-to-menu {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #343a40; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease; 
+        }
+
+        .back-to-menu:hover {
+            background-color: #344a46;
+        }
+    </style>
+<body>
+    
+    <a href="/Produse" class="back-to-menu">Înapoi la meniu</a> 
     @if (ToataCarnea == null)
     {
                     <p>Se încarcă datele...</p>
@@ -24,13 +44,27 @@
                                 <h5 class="category-title">@aliment.Name</h5>
                             </a>
                         </div>
-                    </div>
+                   </div>
                 }
             </div>
         </div>
 }
 
-
+@* <div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/dulciuri" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Dulciuri
+        </a>
+    </div>
+    <div class="navigation-container">
+        <a href="/dulciuri/BiscuitiOvaz"  class="navigation-button">Biscuiti ovaz</a>
+        <a href="/dulciuri/TurteDulci"  class="navigation-button">Turte dulci</a>
+        <a href="/dulciuri/Fursecuri"  class="navigation-button">Fursecuri</a>
+        <a href="/dulciuri/FerreroRocher"  class="navigation-button">Ferrero rocher</a>
+    </div>
+</div>   *@
+</body> 
 @code {
     public List<Aliment> ToataCarnea { get; set; } = new List<Aliment>();
 

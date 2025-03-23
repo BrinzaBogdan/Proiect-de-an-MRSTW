@@ -1,7 +1,160 @@
 ﻿@page "/legume/SfeclaRosie"
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție - Sfeclă Roșie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Un roz foarte deschis */
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #f48fb1; /* Un roz deschis pentru borduri */
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        th {
+            background-color: #e57373; /* Un roșu mai închis pentru antet */
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f8bbd0; /* Un roz deschis pentru rândurile pare */
+        }
+        .category {
+            font-weight: bold;
+            background-color: #f06292; /* Un roz mai intens pentru categorii */
+        }
+        h2 {
+            color: #d32f2f; /* Un roșu închis pentru titlu */
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .card {
+            display: inline-block;
+            background-color: #e91e63; /* Un roz mediu pentru card */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #e57373;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
 
-<h3>SfeclaRosie</h3>
+<h2>Informații Nutriționale - Sfeclă Roșie</h2>
 
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>43 kcal</td>
+            <td>2%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>1.6g</td>
+            <td>3%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>0.2g</td>
+            <td> 1%</td>
+        </tr>
+        <tr>
+            <td>Carbohidrați</td>
+            <td>9.6g</td>
+            <td>3%</td>
+        </tr>
+        <tr class="category">
+            <td>Fibre</td>
+            <td>2.8g</td>
+            <td>11%</td>
+        </tr>
+        <tr>
+            <td>Vitamina C</td>
+            <td>4.9mg</td>
+            <td>8%</td>
+        </tr>
+        <tr class="category">
+            <td>Folat</td>
+            <td>109µg</td>
+            <td>27%</td>
+        </tr>
+        <tr class="category">
+            <td>Potasiu</td>
+            <td>325mg</td>
+            <td>7%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size: 16px; color: #555;">*DZR = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="card">
+    Rădăcină dulce și sănătoasă!
+</div>
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/legume" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Legume
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/legume/Ridichie" class="navigation-button">Ridichie</a>
+    <a href="/legume/Rosii" class="navigation-button">Rosii</a>
+    <a href="/legume/Marar" class="navigation-button">Marar</a>
+    <a href="/legume/Leustean" class="navigation-button">Leustean</a>
+</div>
+    </div>
+</body>
+</html>
 @code {
 
 }

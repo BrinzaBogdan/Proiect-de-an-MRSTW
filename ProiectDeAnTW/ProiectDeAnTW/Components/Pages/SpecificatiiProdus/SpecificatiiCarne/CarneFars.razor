@@ -1,6 +1,153 @@
 ﻿@page "/carne/CarneFars"
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție Carne Tocată</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8e1;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #ffcc00;
+            color: black;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .category {
+            font-weight: bold;
+            background-color: #ffeb99;
+        }
+        .offer {
+            display: inline-block;
+            background-color: #d48806;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #FF8000;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
 
-<h3>CarneFars</h3>
+<h2 style="text-align: center;">Informații Nutriționale Carne Tocată</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>250 kcal</td>
+            <td>12%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>26g</td>
+            <td>52%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>20g</td>
+            <td>30%</td>
+        </tr>
+        <tr>
+            <td>- din care saturate</td>
+            <td>8g</td>
+            <td>40%</td>
+        </tr>
+        <tr class="category">
+            <td>Carbohidrați</td>
+            <td>0g</td>
+            <td>0%</td>
+        </tr>
+        <tr>
+            <td>- din care zaharuri</td>
+            <td>0g</td>
+            <td>0%</td>
+        </tr>
+        <tr class="category">
+            <td>Sodiu</td>
+            <td>75mg</td>
+            <td>3%</td>
+        </tr>
+        <tr class="category">
+            <td>Alergeni</td>
+            <td>Fără alergeni principali</td>
+            <td>-</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="text-align: center;">*DZR = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="offer">
+    <strong> Pret doar acum 50 lei/kg</strong>
+</div>
+
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/carne" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Carne
+        </a>
+    </div>
+    <div class="navigation-container">
+        <a href="/carne/antricotdeporc"  class="navigation-button">Antricot de porc</a>
+        <a href="/carne/CarneJambonDeVita" class="navigation-button">Jambon de vita</a>
+        <a href="/carne/CarneDeVita" class="navigation-button">Carne de vita</a>
+        <a href="/carne/CarneDePorc" class="navigation-button">Carne de porc</a>
+    </div>
+    </div>
+
+</body>
+</html>
 
 @code {
 

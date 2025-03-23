@@ -3,6 +3,30 @@
 @using ProiectDeAnTW.Models
 @inject ProductService ProductService;
 
+
+<head>
+    <style>
+         .back-to-menu {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #343a40; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease; 
+        }
+        .back-to-menu:hover {
+            background-color: #344a46;
+        }
+    </style>
+</head>
+
+<body>
+
+
+     <a href="/Produse" class="back-to-menu">Înapoi la meniu</a> 
     @if (ToateDulciurile == null)
     {
         <p>Se încarcă datele...</p>
@@ -26,6 +50,7 @@
         </div>
     }
 
+</body>
 
 @code {
     public List<Aliment> ToateDulciurile { get; set; } = new List<Aliment>();

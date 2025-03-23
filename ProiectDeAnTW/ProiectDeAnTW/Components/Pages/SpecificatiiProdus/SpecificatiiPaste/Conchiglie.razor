@@ -8,7 +8,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             text-align: center;
         }
 
@@ -39,6 +38,28 @@
             background-color: #f0f0f0;
             font-weight: bold;
             text-transform: uppercase;
+        }
+        .navigation-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #8fbc8f;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
         }
     </style>
 </head>
@@ -101,9 +122,26 @@
             </tr>
         </tbody>
     </table>
+        
 
+    <div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/paste" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Paste
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/paste/SedaniRigati" class="navigation-button">Sedani rigati</a>
+    <a href="/paste/Scialatielli" class="navigation-button">Scialatielli</a>
+    <a href="/paste/PastaPenne" class="navigation-button">Pasta penne</a>
+    <a href="/paste/Farfalle" class="navigation-button">Farfalle</a>
+</div>
+</div>
 </body>
 </html>
+
+
 @code {
 
 }

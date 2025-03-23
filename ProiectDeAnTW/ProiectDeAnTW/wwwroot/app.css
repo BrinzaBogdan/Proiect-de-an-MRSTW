@@ -283,9 +283,9 @@ a {
 }
 
 .gift-icon {
-    width: 50px;
-    height: 50px;
-    background-image: url("images/gift.svg");
+    width: 30px;
+    height: 30px;
+    background-image: url("images/SvgImages/gift.svg");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -296,4 +296,11 @@ a {
     border-radius: 10px; /* Colțuri rotunjite */
     background-color: #f8f9fa; /* Fundal deschis */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Umbră ușoară */
+}
+.back-arrow {
+    width: 30px;
+    height: 30px;
+    background-image: url("images\SvgImages\arrow-return-left.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }

@@ -1,39 +1,23 @@
-﻿@page "/MainPage"
-@* 
-    
+﻿@page "/Promotii"
+@layout MainLayout;
+@using ProiectDeAnTW.Components.Layout
 
-<br <br /><br />
-    <div class="row_header__row">
-        <div class="header_catalog_supermarket_online">
-            <div class="catalog_body_top">
-                <li class="continut_supermarket">
-                    <a href="page2">
-                        <img src="images\photo-gift.jpg" style="width: 100px; height: auto;">
-                        <span> Seturi cadou</span>
-                    </a>
-                </li>
-            </div>   
-        </div>
-    </div>
-    <script src="js/scripts.js"></script>
-</body>
- *@
-<!DOCTYPE html>
+
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazin Online - Produse și Oferte</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link la fișierul CSS personalizat -->
+    @* <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> *@
+    @* <link rel="stylesheet" href="styles.css"> <!-- Link la fișierul CSS personalizat --> *@
+     @* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> *@
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
-            padding-top: 50px;
+            /*padding-top: 5 0px;
             margin: 0;
-            padding: 0;
+            padding: 0; */
         }
 
         header {
@@ -114,11 +98,9 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
+            @* <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#products">Produse</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Produse</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#news">Noutăți</a>
                     </li>
@@ -128,8 +110,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
-                </ul>
-            </div>
+                </ul> 
+            </div>*@
         </div>
     </nav>
 </div>

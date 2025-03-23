@@ -1,7 +1,161 @@
 ﻿@page "/legume/leustean"
 
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție - Leuștean</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0fff0; /* Un verde foarte deschis */
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #c2e6c2; /* Un verde deschis pentru borduri */
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        th {
+            background-color: #8fbc8f; /* Un verde mai închis pentru antet */
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #e0f8e0; /* Un verde foarte deschis pentru rândurile pare */
+        }
+        .category {
+            font-weight: bold;
+            background-color: #98fb98; /* Un verde mai intens pentru categorii */
+        }
+        h2 {
+            color: #2e8b57; /* Un verde închis pentru titlu */
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .card {
+            display: inline-block;
+            background-color: #3cb371; /* Un verde mediu pentru card */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #8fbc8f;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
 
-<h3>Leustean</h3>
+<h2>Informații Nutriționale - Leuștean</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>18 kcal</td>
+            <td>1%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>1.5g</td>
+            <td>3%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>0.3g</td>
+            <td> 1%</td>
+        </tr>
+        <tr>
+            <td>Carbohidrați</td>
+            <td>2.5g</td>
+            <td>1%</td>
+        </tr>
+        <tr class="category">
+            <td>Fibre</td>
+            <td>1.0g</td>
+            <td>4%</td>
+        </tr>
+        <tr>
+            <td>Vitamina C</td>
+            <td>85mg</td>
+            <td>94%</td>
+        </tr>
+        <tr class="category">
+            <td>Vitamina K</td>
+            <td>170µg</td>
+            <td>142%</td>
+        </tr>
+        <tr class="category">
+            <td>Potasiu</td>
+            <td>400mg</td>
+            <td>9%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size: 16px; color: #555;">*DZR = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="card">
+    Adaugă savoare naturală!
+</div>
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/legume" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Legume
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/legume/SfeclaRosie" class="navigation-button">SfeclaRosie</a>
+    <a href="/legume/Rosii" class="navigation-button">Rosii</a>
+    <a href="/legume/Ridichie" class="navigation-button">Ridichie</a>
+    <a href="/legume/Marar" class="navigation-button">Marar</a>
+</div>
+</div>
+</body>
+</html>
 
 @code {
 

@@ -2,16 +2,13 @@
 @using ProiectDeAnTW.Models
 @implements IDisposable
 @inject NavigationManager NavigationManager
-@inject LoadDataToPage3 LoadDataService;
+@inject LoadDataToPage LoadDataService;
 <head> 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 
 
 <div class="nav-container">
-    
-
-    
     <nav class="nav-menu" style="display: flex; align-items: center; ">
         <div class="navbar navbar-dark" style="justify-content: flex-start; background-color: #343a40; border-radius: 5%; display: flex;">
             <div class="container-fluid">
@@ -21,28 +18,47 @@
         <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
             <span class="bi bi-house-door-fill-nav-menu"></span> Home
         </NavLink>
-        <NavLink class="nav-link" href="mainpage" Match="NavLinkMatch.All">
-                <span style="justify-content: center    ;">Recenzii</span>
             <div class="dropdown">
-             <div style="display: flex;justify-content: center; gap:10px; align-items: center;">
-                <div class="gift-icon"></div>
-                <span class="menu_text" ></span> Promotii
-            </div>
+                <NavLink class="nav-link" href="Produse" Match="NavLinkMatch.All"> Produse
+                        @* <div style="display: flex;justify-content: center; gap:10px; align-items: center;">
 
-            @if (CategoriiDeAlimente == null)
-            {
-                <p>Se încarcă datele...</p>
-            }
-            else
-            {
-                <div class="dropdown-menu">
-                    @foreach (var categorie in CategoriiDeAlimente)
+                        </div> *@
+
+                        @if (CategoriiDeAlimente == null)
+                        {
+                            <p>Se încarcă datele...</p>
+                        }
+                        else
+                        {
+                            <div class="dropdown-menu">
+                            @foreach (var categorie in CategoriiDeAlimente)
+                            {
+                                        <a href="@categorie.PageLink">@categorie.Category</a>
+                            }
+                            </div>
+                        }
+                </NavLink>
+            </div>
+             <div class="dropdown">
+                <NavLink class="nav-link" href="promotii" Match="NavLinkMatch.All">
+                    <div style="display:flex; margin-right:0; align-items:center; gap:10px;">
+                        <div class="gift-icon" ></div> Promotii
+                    </div>
+                    @if (CategoriiDeAlimente == null)
                     {
-                        <a href="@categorie.PageLink">@categorie.Category</a>
+                        <p>Se încarcă datele...</p>
                     }
-                </div>
-                }</div>
-        </NavLink>
+                    else
+                    {
+                        <div class="dropdown-menu">
+                              <a href="/Oferte">Oferte</a>
+                        </div>
+                    }
+                </NavLink>
+            </div>
+            <NavLink class="nav-link" href="RecenziiUser">
+                Recenzii
+            </NavLink>
         <NavLink class="nav-link" href="auth">
             <span class="bi bi-lock-nav-menu"></span> Auth Required
         </NavLink>

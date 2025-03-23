@@ -3,11 +3,11 @@ using ProiectDeAnTW.Models;
 
 namespace ProiectDeAnTW.Data.Services
 {
-	public class LoadDataToPage3
+	public class LoadDataToPage
 	{
 		private readonly ApplicationDbContext _context;
 
-		public LoadDataToPage3(ApplicationDbContext context)
+		public LoadDataToPage(ApplicationDbContext context)
 		{
 			_context = context;
 		}
