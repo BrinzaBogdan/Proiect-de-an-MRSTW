@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProiectDeAnMRSTW.Application\ProiectDeAnMRSTW.Application.csproj" />
-    <ProjectReference Include="..\ProiectDeAnMRSTW.Domain\ProiectDeAnMRSTW.Domain.csproj" />
     <ProjectReference Include="..\ProiectDeAnMRSTW.Infrastructure\ProiectDeAnMRSTW.Infrastructure.csproj" />
   </ItemGroup>
 

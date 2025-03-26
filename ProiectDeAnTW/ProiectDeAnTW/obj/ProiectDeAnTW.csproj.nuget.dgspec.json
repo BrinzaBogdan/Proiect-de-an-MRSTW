@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj": {
-                "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj"
+              "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Domain\\ProiectDeAnMRSTW.Domain.csproj": {
+                "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Domain\\ProiectDeAnMRSTW.Domain.csproj"
               }
             }
           }
@@ -50,9 +50,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -167,8 +175,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Domain\\ProiectDeAnMRSTW.Domain.csproj": {
-                "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Domain\\ProiectDeAnMRSTW.Domain.csproj"
+              "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj": {
+                "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj"
               }
             }
           }
@@ -205,6 +213,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.13, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
@@ -254,9 +266,6 @@
             "projectReferences": {
               "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj": {
                 "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj"
-              },
-              "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Domain\\ProiectDeAnMRSTW.Domain.csproj": {
-                "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Domain\\ProiectDeAnMRSTW.Domain.csproj"
               },
               "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj": {
                 "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj"

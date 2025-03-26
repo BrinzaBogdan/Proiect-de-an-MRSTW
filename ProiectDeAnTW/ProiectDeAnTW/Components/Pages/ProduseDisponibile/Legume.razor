@@ -1,7 +1,7 @@
 ﻿@page "/legume"
-@using ProiectDeAnTW.Data.Services
-@using ProiectDeAnTW.Models
-@inject ProductService ProductService;
+@using ProiectDeAnMRSTW.Application.Services
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@* @inject ProductService ProductService; *@
 <head>
     <style>
          .back-to-menu {
@@ -54,6 +54,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        ToateLegumele = await ProductService.GetLegume();
+        // ToateLegumele = await ProductService.GetLegume();
     }
 }

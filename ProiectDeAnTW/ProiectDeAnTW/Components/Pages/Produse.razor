@@ -1,10 +1,10 @@
 ﻿@page "/Produse"
 @layout MainLayout;
 @using Microsoft.AspNetCore.Authorization
+@using ProiectDeAnMRSTW.Application.Services
 @using ProiectDeAnTW.Components.Layout
-@using ProiectDeAnTW.Data.Services
-@using ProiectDeAnTW.Models;
-@inject LoadDataToPage LoadDataService
+@using ProiectDeAnMRSTW.Domain.Products;
+@* @inject LoadDataToPage LoadDataService *@
 @*
      @attribute [Authorize(Roles = "Admin")] 
 *@
@@ -87,6 +87,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        CategoriiDeAlimente = await LoadDataService.GetAllCategories();
+        // CategoriiDeAlimente = await LoadDataService.GetAllCategories();
     }
 }

@@ -1,7 +1,7 @@
 ﻿@page "/dulciuri"
-@using ProiectDeAnTW.Data.Services
-@using ProiectDeAnTW.Models
-@inject ProductService ProductService;
+@using ProiectDeAnMRSTW.Application.Services
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@* @inject ProductService ProductService; *@
 
 
 <head>
@@ -58,6 +58,6 @@
     protected override async Task OnInitializedAsync()
     {
         // ToateAlimentele = await ProductService.GetLegume();
-        ToateDulciurile = await ProductService.GetDulciuri();
+        // ToateDulciurile = await ProductService.GetDulciuri();
     }
 }

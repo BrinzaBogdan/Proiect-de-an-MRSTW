@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ProiectDeAnMRSTW.Application;
+using ProiectDeAnMRSTW.Application.Services;
+using ProiectDeAnMRSTW.Infrastructure;
+using ProiectDeAnMRSTW.Infrastructure.Data;
 using ProiectDeAnTW.Components;
 using ProiectDeAnTW.Components.Account;
 using ProiectDeAnTW.Data;
-using ProiectDeAnTW.Data.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,7 +15,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 
-
+builder.Services.AddControllers();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
@@ -41,8 +44,11 @@ builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-builder.Services.AddScoped<LoadDataToPage>();   //am adaugat eu
-builder.Services.AddScoped<ProductService>();    //am adaugat eu
+//builder.Services.AddScoped<LoadDataToPage>();   //am adaugat eu
+//builder.Services.AddScoped<ProductService>();    //am adaugat eu
+
+builder.Services.AddApplication();
+builder.Services.AddInfrastructure(builder.Configuration,connectionString);
 
 var app = builder.Build();
 
@@ -69,7 +75,7 @@ app.MapRazorComponents<App>()
 // Add additional endpoints required by the Identity /Account Razor components.
 app.MapAdditionalIdentityEndpoints();
 
-
+app.MapControllers();
 app.Run();
 /*
  d15bb9a8-a89b-4e7a-bd91-08cd9c9f1065	SedaniRigati	Paste	images/Paste/SedaniRigati.jpg	Aliment	/Paste/SedaniRigati

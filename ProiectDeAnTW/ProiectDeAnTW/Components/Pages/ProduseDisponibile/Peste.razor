@@ -1,7 +1,7 @@
 ﻿@page "/peste"
-@using ProiectDeAnTW.Data.Services
-@using ProiectDeAnTW.Models
-@inject ProductService ProductService;
+@using ProiectDeAnMRSTW.Application.Services
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@* @inject ProductService ProductService; *@
 
 
 <head>
@@ -55,7 +55,7 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		TotPestele = await ProductService.GetPeste();
+		// TotPestele = await ProductService.GetPeste();
 	}
 } 
 

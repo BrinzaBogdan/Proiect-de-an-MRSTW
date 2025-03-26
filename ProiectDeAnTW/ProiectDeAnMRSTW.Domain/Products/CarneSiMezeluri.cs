@@ -1,16 +1,22 @@
-﻿using ProiectDeAnMRSTW.Domain.Products.Events;
+﻿using ProiectDeAnMRSTW.Domain.Abstractions;
+using ProiectDeAnMRSTW.Domain.Products.Events;
+using System.Xml.Linq;
 
-namespace ProiectDeAnTW.Models
+namespace ProiectDeAnMRSTW.Domain.Products
 {
-	public class CarneSiMezeluri : Aliment
-	{
-        private CarneSiMezeluri(Guid id) 
-            : base(id)
+    public class CarneSiMezeluri : Aliment
+    {
+        private CarneSiMezeluri(Guid id, string category, string name, string pageLink)
+            : base(id, category, name, pageLink)
         { }
-
-        public static CarneSiMezeluri Create()
+        public CarneSiMezeluri() :base()
         {
-            var Carne = new CarneSiMezeluri(Guid.NewGuid());
+            
+        }
+
+        public static CarneSiMezeluri Create(string category, string name, string pageLink)
+        {
+            var Carne = new CarneSiMezeluri(Guid.NewGuid(), category, name, pageLink);
 
             Carne.RaiseDomainEvent(new AlimentCretedDomainEvent(Carne.Id));
 

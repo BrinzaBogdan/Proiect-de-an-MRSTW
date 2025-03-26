@@ -1,9 +1,9 @@
 ﻿@page "/carne"
+@using ProiectDeAnMRSTW.Application.Services
+@using ProiectDeAnMRSTW.Domain.Abstractions
 @using ProiectDeAnTW.Components.Layout
 @layout MainLayout
-@using ProiectDeAnTW.Data.Services
-@using ProiectDeAnTW.Models
-@inject ProductService ProductService;
+@* @inject ProductService ProductService; *@
 <head>
     <link href="css/site.css" rel="stylesheet">
 </head>
@@ -71,6 +71,6 @@
     protected override async Task OnInitializedAsync()
     {
         // ToateAlimentele = await ProductService.GetLegume();
-        ToataCarnea = await ProductService.GetCarne();
+        // ToataCarnea = await ProductService.GetCarne();
     }
 }

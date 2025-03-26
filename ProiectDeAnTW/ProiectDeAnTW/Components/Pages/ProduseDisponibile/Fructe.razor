@@ -1,7 +1,7 @@
 ﻿@page "/fructe"
-@using ProiectDeAnTW.Data.Services
-@using ProiectDeAnTW.Models
-@inject ProductService ProductService;
+@using ProiectDeAnMRSTW.Application.Services
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@* @inject ProductService ProductService; *@
 
 <head>
     <style>
@@ -55,6 +55,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        ToateFructele = await ProductService.GetFructe();
+        // ToateFructele = await ProductService.GetFructe();
     }
 }

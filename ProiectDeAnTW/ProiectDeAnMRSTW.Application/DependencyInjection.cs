@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
+using ProiectDeAnMRSTW.Application.Abstractions.Behaviours;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,16 +17,15 @@ namespace ProiectDeAnMRSTW.Application
             {
                 configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
 
-                //configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
+                configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
 
-                //configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
 
                 //configuration.AddOpenBehavior(typeof(QueryCachingBehavior<,>));
             });
 
-            //services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly, includeInternalTypes: true);
+            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly, includeInternalTypes: true);
 
-            //services.AddTransient<PricingService>();
 
             return services;
         }
