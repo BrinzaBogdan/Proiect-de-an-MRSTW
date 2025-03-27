@@ -1,0 +1,261 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\ProiectDeAnTW.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ProiectDeAnTW.n20gsexpz3.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\BlueGlassHomeImg.jpg",
+      "PackagePath": "staticwebassets\\images\\BlueGlassHomeImg.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\BodyBuilding.jpg",
+      "PackagePath": "staticwebassets\\images\\BodyBuilding.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\BrasilPresident.jpg",
+      "PackagePath": "staticwebassets\\images\\BrasilPresident.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\BuchetFructe.jpg",
+      "PackagePath": "staticwebassets\\images\\BuchetFructe.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Carne\\AntricotDePorc.jpg",
+      "PackagePath": "staticwebassets\\images\\Carne\\AntricotDePorc.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Carne\\CarneDePorc.jpg",
+      "PackagePath": "staticwebassets\\images\\Carne\\CarneDePorc.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Carne\\CarneDeVita.jpg",
+      "PackagePath": "staticwebassets\\images\\Carne\\CarneDeVita.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Carne\\CarneSiMezeluri.jpg",
+      "PackagePath": "staticwebassets\\images\\Carne\\CarneSiMezeluri.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Carne\\Fars.jpg",
+      "PackagePath": "staticwebassets\\images\\Carne\\Fars.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Carne\\JambonVita.jpg",
+      "PackagePath": "staticwebassets\\images\\Carne\\JambonVita.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
+      "PackagePath": "staticwebassets\\images\\Cascada.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\DiscountImage.jpg",
+      "PackagePath": "staticwebassets\\images\\DiscountImage.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\DonaldTrump.jpg",
+      "PackagePath": "staticwebassets\\images\\DonaldTrump.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Dulciuri\\Acadele.jpg",
+      "PackagePath": "staticwebassets\\images\\Dulciuri\\Acadele.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Dulciuri\\BiscuitiOvaz.jpg",
+      "PackagePath": "staticwebassets\\images\\Dulciuri\\BiscuitiOvaz.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Dulciuri\\Dulciuri.jpg",
+      "PackagePath": "staticwebassets\\images\\Dulciuri\\Dulciuri.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Dulciuri\\FerreroRocher.jpg",
+      "PackagePath": "staticwebassets\\images\\Dulciuri\\FerreroRocher.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Dulciuri\\Fursecuri.jpg",
+      "PackagePath": "staticwebassets\\images\\Dulciuri\\Fursecuri.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Dulciuri\\TurteDulce.jpg",
+      "PackagePath": "staticwebassets\\images\\Dulciuri\\TurteDulce.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\Capsuni.jpg",
+      "PackagePath": "staticwebassets\\images\\Fructe\\Capsuni.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\Cirese.jpg",
+      "PackagePath": "staticwebassets\\images\\Fructe\\Cirese.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\Fructe.jpg",
+      "PackagePath": "staticwebassets\\images\\Fructe\\Fructe.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\Mere.jpg",
+      "PackagePath": "staticwebassets\\images\\Fructe\\Mere.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\PepeneRosu.jpg",
+      "PackagePath": "staticwebassets\\images\\Fructe\\PepeneRosu.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Fructe\\Pere.jpg",
+      "PackagePath": "staticwebassets\\images\\Fructe\\Pere.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Himalaya.jpg",
+      "PackagePath": "staticwebassets\\images\\Himalaya.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\Legume.jpg",
+      "PackagePath": "staticwebassets\\images\\Legume\\Legume.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\Leustean.jpg",
+      "PackagePath": "staticwebassets\\images\\Legume\\Leustean.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\Marar.jpg",
+      "PackagePath": "staticwebassets\\images\\Legume\\Marar.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\Ridichie.jpg",
+      "PackagePath": "staticwebassets\\images\\Legume\\Ridichie.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\Rosii.jpg",
+      "PackagePath": "staticwebassets\\images\\Legume\\Rosii.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\SfeclaRosie.jpg",
+      "PackagePath": "staticwebassets\\images\\Legume\\SfeclaRosie.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MiereInBanca.jpg",
+      "PackagePath": "staticwebassets\\images\\MiereInBanca.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\NewPrioduct1.jpg",
+      "PackagePath": "staticwebassets\\images\\NewPrioduct1.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\OpenForBussiness.jpg",
+      "PackagePath": "staticwebassets\\images\\OpenForBussiness.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Paste\\CategoriiPaste.jpg",
+      "PackagePath": "staticwebassets\\images\\Paste\\CategoriiPaste.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Paste\\Conchiglie.jpg",
+      "PackagePath": "staticwebassets\\images\\Paste\\Conchiglie.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Paste\\Farfalle.jpg",
+      "PackagePath": "staticwebassets\\images\\Paste\\Farfalle.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Paste\\PastaPenne.jpg",
+      "PackagePath": "staticwebassets\\images\\Paste\\PastaPenne.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Paste\\Scialatielli.jpg",
+      "PackagePath": "staticwebassets\\images\\Paste\\Scialatielli.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Paste\\SedaniRigati.jpg",
+      "PackagePath": "staticwebassets\\images\\Paste\\SedaniRigati.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Peste\\Biban.jpg",
+      "PackagePath": "staticwebassets\\images\\Peste\\Biban.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Peste\\Caras.jpg",
+      "PackagePath": "staticwebassets\\images\\Peste\\Caras.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Peste\\Carp.jpg",
+      "PackagePath": "staticwebassets\\images\\Peste\\Carp.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Peste\\Dalmors.jpg",
+      "PackagePath": "staticwebassets\\images\\Peste\\Dalmors.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Peste\\Somon.jpg",
+      "PackagePath": "staticwebassets\\images\\Peste\\Somon.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\SvgImages\\arrow-return-left.svg",
+      "PackagePath": "staticwebassets\\images\\SvgImages\\arrow-return-left.svg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\SvgImages\\gift.svg",
+      "PackagePath": "staticwebassets\\images\\SvgImages\\gift.svg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\VladimirPutin.jpg",
+      "PackagePath": "staticwebassets\\images\\VladimirPutin.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\WeakPerson.jpg",
+      "PackagePath": "staticwebassets\\images\\WeakPerson.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\partener1.jpg",
+      "PackagePath": "staticwebassets\\images\\partener1.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\photo-gift.jpg",
+      "PackagePath": "staticwebassets\\images\\photo-gift.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\js\\scripts.js",
+      "PackagePath": "staticwebassets\\js\\scripts.js"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ProiectDeAnTW.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ProiectDeAnTW.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.ProiectDeAnTW.props",
+      "PackagePath": "build\\ProiectDeAnTW.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.ProiectDeAnTW.props",
+      "PackagePath": "buildMultiTargeting\\ProiectDeAnTW.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.ProiectDeAnTW.props",
+      "PackagePath": "buildTransitive\\ProiectDeAnTW.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

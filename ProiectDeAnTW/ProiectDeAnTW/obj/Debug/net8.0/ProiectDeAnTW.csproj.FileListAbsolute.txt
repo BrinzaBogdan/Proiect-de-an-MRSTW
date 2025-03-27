@@ -160,3 +160,6 @@ C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\refint\Proie
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\ProiectDeAnTW.pdb
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\ProiectDeAnTW.genruntimeconfig.cache
 C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\ref\ProiectDeAnTW.dll
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\bin\Debug\net8.0\ProiectDeAnTW.staticwebassets.endpoints.json
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW\obj\Debug\net8.0\staticwebassets\msbuild.ProiectDeAnTW.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

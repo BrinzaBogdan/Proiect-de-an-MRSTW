@@ -35,6 +35,8 @@ namespace ProiectDeAnMRSTW.Infrastructure
 
             services.AddScoped<IReviewRepository, ReviewRepository>();
 
+            services.AddScoped<ICategory, CategoryRepository>();
+
             services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
             return services;

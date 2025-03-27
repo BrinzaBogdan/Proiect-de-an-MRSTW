@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProiectDeAnTW.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ProiectDeAnTW.bundle.scp.css"
+      "PackagePath": "staticwebassets\\ProiectDeAnTW.n20gsexpz3.bundle.scp.css"
     },
     {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\app.css",
@@ -235,6 +235,10 @@
     {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\js\\scripts.js",
       "PackagePath": "staticwebassets\\js\\scripts.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProiectDeAnTW.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProiectDeAnTW.Microsoft.AspNetCore.StaticWebAssets.props",

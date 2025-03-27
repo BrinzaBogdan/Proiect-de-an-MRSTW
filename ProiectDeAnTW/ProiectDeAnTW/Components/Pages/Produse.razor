@@ -4,6 +4,7 @@
 @using ProiectDeAnMRSTW.Application.Services
 @using ProiectDeAnTW.Components.Layout
 @using ProiectDeAnMRSTW.Domain.Products;
+@inject HttpClient Http
 @* @inject LoadDataToPage LoadDataService *@
 @*
      @attribute [Authorize(Roles = "Admin")] 
@@ -87,6 +88,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        // CategoriiDeAlimente = await LoadDataService.GetAllCategories();
+        //ruleaza doar pe portul din watch run
+        CategoriiDeAlimente = await Http.GetFromJsonAsync<List<CategorieAliment>>("http://localhost:5257/api/categories/categories");
     }
 }

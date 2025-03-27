@@ -85,5 +85,53 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ProiectDeAnTW.Controllers.Products.ProductCategories.ProductCategoryController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/ProductCategory/{categories}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categories",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProiectDeAnTW.Controllers.Products.ProductsController",
+    "Method": "GetAllProductsByCategory",
+    "RelativePath": "api/products/by-category",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product_category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ProiectDeAnTW.Controllers.Products.ProductsController",
+    "Method": "GetProductById",
+    "RelativePath": "api/products/by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

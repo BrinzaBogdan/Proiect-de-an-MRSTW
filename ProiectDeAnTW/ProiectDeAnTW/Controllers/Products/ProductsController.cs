@@ -15,7 +15,7 @@ namespace ProiectDeAnTW.Controllers.Products
             _sender = sender;
         }
         [HttpGet("by-id")]//[HttpGet("{id}")]
-        public async Task<IActionResult> GetProducts(
+        public async Task<IActionResult> GetProductById(
             [FromQuery] Guid id,
             CancellationToken cancellationToken = default)
         {
@@ -47,7 +47,7 @@ namespace ProiectDeAnTW.Controllers.Products
 
         }
         [HttpGet("by-category")]//[HttpGet("{product_category}")]
-        public async Task<IActionResult> GetCarne(
+        public async Task<IActionResult> GetAllProductsByCategory(
             [FromQuery] string product_category,
             CancellationToken cancellationToken = default)
         {
