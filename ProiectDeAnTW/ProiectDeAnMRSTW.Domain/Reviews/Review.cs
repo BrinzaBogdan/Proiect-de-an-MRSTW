@@ -29,7 +29,7 @@ public sealed class Review
     public Rating Rating { get; set; }
 
     public Comment Comment { get; set; } = new Comment("");
-
+     
     public DateTime CreatedOnUtc { get; set; }
 
     public static Result<Review> Create(Aliment aliment, Rating rating, Comment comment, DateTime createdOnUtc)

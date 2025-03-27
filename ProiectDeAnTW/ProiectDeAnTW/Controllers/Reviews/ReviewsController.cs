@@ -12,7 +12,7 @@ namespace ProiectDeAnTW.Controllers.Reviews
     [Route("api/reviews")]
     public class ReviewsController : ControllerBase
     {
-        private readonly ISender _sender;
+        private readonly ISender _sender;   
 
         //[HttpGet]
         //public async Task<IActionResult> SearchReview(
