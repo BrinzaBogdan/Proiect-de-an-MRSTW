@@ -1,5 +1,6 @@
 ﻿@page "/RecenziiUser"
 @using ProiectDeAnMRSTW.Application.Services
+@using ProiectDeAnMRSTW.Domain.Reviews
 @using ProiectDeAnTW.Components.Layout
 @layout MainLayout
 @* @inject ProductService ProductService; *@
@@ -46,71 +47,102 @@
     </style>
 </head>
 <body>
-    <div class="container">
+     <div class="container">
         <div class="review-form">
             <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@RecenzieNoua" OnValidSubmit="SalveazaRecenzia">
+            <EditForm Model="@reviewModel" OnValidSubmit="PrintComment" FormName="123">
                 <DataAnnotationsValidator />
+                <ValidationSummary />
                 <div class="form-group">
-                    <label>Nume</label>
-                    <InputText class="form-control" @bind-Value="RecenzieNoua.Nume" required />
-                </div>
-                <div class="form-group">
-                    <label>Prenume</label>
-                    <InputText class="form-control" @bind-Value="RecenzieNoua.Prenume" required />
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <InputText type="email" class="form-control" @bind-Value="RecenzieNoua.Email" required />
-                </div>
-                <div class="form-group">
-                    <label>Rating</label>
-                    <div class="rating">
-                        @for (int i = 5; i >= 1; i--)
-                        {
-                            @* <input type="radio" id="star-@i" name="rating" value="@i" @bind-Value="RecenzieNoua.Rating" /> *@
-                            <label for="star-@i">★</label>
-                        }
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Mesaj</label>
-                    <InputTextArea class="form-control" @bind-Value="RecenzieNoua.Mesaj" required />
-                </div>
-                <div class="form-check">
-                    <InputCheckbox class="form-check-input" @bind-Value="RecenzieNoua.Notificari" />
-                    <label class="form-check-label">Doresc să primesc notificări prin email</label>
-                </div>
+                    <label>Comentariu</label>
+                    <InputText class="form-control" @bind-Value="@reviewModel.Comment" required />
+                </div> 
+
                 <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
             </EditForm>
         </div>
     </div>
+ 
 </body>
 </html>
 
 @code {
-    private Recenzie RecenzieNoua { get; set; } = new Recenzie();
-
-    private async Task SalveazaRecenzia()
+    // private Review NewReview { get; set; }
+    // public string comm { get; set; } = string.Empty;
+    [Inject]
+    private ILogger<RecenziiUser> Logger { get; set; }
+    private ReviewModel reviewModel = new ReviewModel();
+    public class ReviewModel
     {
-        // using (var context = new ApplicationDbContext()) Înlocuiește cu contextul tău
-        // {
-        //     context.Recenzii.Add(RecenzieNoua);
-        //     await context.SaveChangesAsync();
-        // }
+        public string Comment { get; set; } = string.Empty;
     }
-
-    public class Recenzie
+    // protected override Task OnInitializedAsync()
+    // {
+    //     NewReview = new Review();
+    //     return base.OnInitializedAsync();
+    // }
+    public void PrintComment()
     {
-        public int Id { get; set; }
-        public string Nume { get; set; } = string.Empty;
-        public string Prenume { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public int Rating { get; set; }
-        public string Mesaj { get; set; } = string.Empty;
-        public bool Notificari { get; set; }
+        Logger.LogInformation($"Comentariu: {reviewModel.Comment}");
+        // Console.WriteLine($"comm = {reviewModel.Comment}");
     }
 }
+
+
+ @*   <div class="container">
+        <div class="review-form">
+            <h2 class="text-center">Lasă o recenzie</h2>
+            <EditForm Model="@NewReview" OnValidSubmit="SalveazaRecenzia">
+                <DataAnnotationsValidator />
+                 <div class="form-group">
+                    <label>Nume</label>
+                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                </div> 
+                 <div class="form-group">
+                    <label>Prenume</label>
+                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                </div> 
+                  <div class="form-group">
+                    <label>Email</label>
+                    <InputText class="form-control" @bind-Value="NewReview.Comment.value" required />
+                </div>  
+                 <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating">
+                        @for (int i = 5; i >= 1; i--)
+                        {
+                            <input type="radio" id="star-@i" name="rating" value="@i" @bind-Value="NewReview.Rating" />
+                            <label for="star-@i">★</label>
+                        }
+                    </div>
+                </div> 
+                 <div class="form-group">
+                    <label>Mesaj</label>
+                    <InputTextArea class="form-control" @bind-Value="NewReview.Mesaj" required />
+                </div> 
+                    <div class="form-check">
+                    <InputCheckbox class="form-check-input" @bind-Value="NewReview.Notificari" />
+                    <label class="form-check-label">Doresc să primesc notificări prin email</label>
+                </div> 
+                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+            </EditForm>
+        </div>
+    </div> *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

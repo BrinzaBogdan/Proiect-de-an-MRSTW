@@ -2,8 +2,8 @@
 @using ProiectDeAnMRSTW.Application.Services
 @using ProiectDeAnMRSTW.Domain.Abstractions
 @using ProiectDeAnTW.Components.Layout
+@inject HttpClient Http
 @layout MainLayout
-@* @inject ProductService ProductService; *@
 <head>
     <link href="css/site.css" rel="stylesheet">
 </head>
@@ -50,27 +50,12 @@
         </div>
 }
 
-@* <div style="position: relative; width: 100%;">
-    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
-        <a href="/dulciuri" class="navigation-button" style="display: flex; align-items: center; ">
-            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
-            Dulciuri
-        </a>
-    </div>
-    <div class="navigation-container">
-        <a href="/dulciuri/BiscuitiOvaz"  class="navigation-button">Biscuiti ovaz</a>
-        <a href="/dulciuri/TurteDulci"  class="navigation-button">Turte dulci</a>
-        <a href="/dulciuri/Fursecuri"  class="navigation-button">Fursecuri</a>
-        <a href="/dulciuri/FerreroRocher"  class="navigation-button">Ferrero rocher</a>
-    </div>
-</div>   *@
 </body> 
 @code {
     public List<Aliment> ToataCarnea { get; set; } = new List<Aliment>();
 
     protected override async Task OnInitializedAsync()
     {
-        // ToateAlimentele = await ProductService.GetLegume();
-        // ToataCarnea = await ProductService.GetCarne();
+        ToataCarnea = await Http.GetFromJsonAsync<List<Aliment>>("http://localhost:5257/api/products/by-category?product_category=Carne");
     }
 }

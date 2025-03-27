@@ -23,6 +23,13 @@ internal abstract class Repository<T>
             .Set<T>()
             .FirstOrDefaultAsync(user => user.Id == id, cancellationToken);
     }
+    public async Task<List<T>?> GetAllProductsByCategoryName(string name, CancellationToken cancellationToken = default)
+    {
+        return await DbContext
+            .Set<T>()
+            .Where(product => product.Category == name)
+            .ToListAsync(cancellationToken);;
+    }
 
     public virtual void Add(T entity)
     {

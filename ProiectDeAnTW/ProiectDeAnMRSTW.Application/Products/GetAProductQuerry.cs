@@ -9,7 +9,5 @@ using System.Threading.Tasks;
 
 namespace ProiectDeAnMRSTW.Application.Products
 {
-    public sealed record GetAProductQuerry(Guid ProducID) : IQuerry<Aliment>
-    {
-    }
+    public sealed record GetAProductQuerry(Guid ProducID) : IQuerry<Aliment>;
 }

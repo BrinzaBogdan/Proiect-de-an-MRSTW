@@ -1,7 +1,7 @@
 ﻿@page "/paste"
 @using ProiectDeAnMRSTW.Application.Services
 @using ProiectDeAnMRSTW.Domain.Abstractions
-@* @inject ProductService ProductService; *@
+@inject HttpClient Http
 <head>
     <link href="css/site.css" rel="stylesheet">
     <style>
@@ -54,7 +54,7 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		// ToatePastele = await ProductService.GetPaste();
+        ToatePastele = await Http.GetFromJsonAsync<List<Aliment>>("http://localhost:5257/api/products/by-category?product_category=Paste");
 	}
 } 
 

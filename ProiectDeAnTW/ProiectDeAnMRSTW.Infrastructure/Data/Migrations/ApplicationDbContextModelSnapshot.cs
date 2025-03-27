@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProiectDeAnMRSTW.Infrastructure.Data;
 
-
 #nullable disable
 
 namespace ProiectDeAnTW.Migrations
@@ -156,6 +155,75 @@ namespace ProiectDeAnTW.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Abstractions.Aliment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(21)
+                        .HasColumnType("nvarchar(21)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductPageLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Aliment");
+
+                    b.HasDiscriminator().HasValue("Aliment");
+
+                    b.UseTphMappingStrategy();
+                });
+
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.CategorieAliment", b =>
+                {
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PageLink")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Category");
+
+                    b.ToTable("CategorieAliment");
+                });
+
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Reviews.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedOnUtc")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETUTCDATE()");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("reviews", (string)null);
+                });
+
             modelBuilder.Entity("ProiectDeAnTW.Data.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -221,92 +289,44 @@ namespace ProiectDeAnTW.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("ProiectDeAnTW.Models.Aliment", b =>
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.CarneSiMezeluri", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Category")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("nvarchar(21)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductPageLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Aliment");
-
-                    b.HasDiscriminator().HasValue("Aliment");
-
-                    b.UseTphMappingStrategy();
-                });
-
-            modelBuilder.Entity("ProiectDeAnTW.Models.CategorieAliment", b =>
-                {
-                    b.Property<string>("Category")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PageLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Category");
-
-                    b.ToTable("CategorieAliment");
-                });
-
-            modelBuilder.Entity("ProiectDeAnTW.Models.CarneSiMezeluri", b =>
-                {
-                    b.HasBaseType("ProiectDeAnTW.Models.Aliment");
+                    b.HasBaseType("ProiectDeAnMRSTW.Domain.Abstractions.Aliment");
 
                     b.HasDiscriminator().HasValue("CarneSiMezeluri");
                 });
 
-            modelBuilder.Entity("ProiectDeAnTW.Models.Dulciuri", b =>
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.Dulciuri", b =>
                 {
-                    b.HasBaseType("ProiectDeAnTW.Models.Aliment");
+                    b.HasBaseType("ProiectDeAnMRSTW.Domain.Abstractions.Aliment");
 
                     b.HasDiscriminator().HasValue("Dulciuri");
                 });
 
-            modelBuilder.Entity("ProiectDeAnTW.Models.Fructe", b =>
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.Fructe", b =>
                 {
-                    b.HasBaseType("ProiectDeAnTW.Models.Aliment");
+                    b.HasBaseType("ProiectDeAnMRSTW.Domain.Abstractions.Aliment");
 
                     b.HasDiscriminator().HasValue("Fructe");
                 });
 
-            modelBuilder.Entity("ProiectDeAnTW.Models.Legume", b =>
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.Legume", b =>
                 {
-                    b.HasBaseType("ProiectDeAnTW.Models.Aliment");
+                    b.HasBaseType("ProiectDeAnMRSTW.Domain.Abstractions.Aliment");
 
                     b.HasDiscriminator().HasValue("Legume");
                 });
 
-            modelBuilder.Entity("ProiectDeAnTW.Models.Paste", b =>
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.Paste", b =>
                 {
-                    b.HasBaseType("ProiectDeAnTW.Models.Aliment");
+                    b.HasBaseType("ProiectDeAnMRSTW.Domain.Abstractions.Aliment");
 
                     b.HasDiscriminator().HasValue("Paste");
                 });
 
-            modelBuilder.Entity("ProiectDeAnTW.Models.Peste", b =>
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Products.Peste", b =>
                 {
-                    b.HasBaseType("ProiectDeAnTW.Models.Aliment");
+                    b.HasBaseType("ProiectDeAnMRSTW.Domain.Abstractions.Aliment");
 
                     b.HasDiscriminator().HasValue("Peste");
                 });
@@ -359,6 +379,50 @@ namespace ProiectDeAnTW.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Reviews.Review", b =>
+                {
+                    b.OwnsOne("ProiectDeAnMRSTW.Domain.Reviews.Comment", "Comment", b1 =>
+                        {
+                            b1.Property<int>("ReviewId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Comment");
+
+                            b1.HasKey("ReviewId");
+
+                            b1.ToTable("reviews");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ReviewId");
+                        });
+
+                    b.OwnsOne("ProiectDeAnMRSTW.Domain.Reviews.Rating", "Rating", b1 =>
+                        {
+                            b1.Property<int>("ReviewId")
+                                .HasColumnType("int");
+
+                            b1.Property<int>("Value")
+                                .HasColumnType("int")
+                                .HasColumnName("Rating");
+
+                            b1.HasKey("ReviewId");
+
+                            b1.ToTable("reviews");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ReviewId");
+                        });
+
+                    b.Navigation("Comment")
+                        .IsRequired();
+
+                    b.Navigation("Rating")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

@@ -5,7 +5,7 @@ using ProiectDeAnMRSTW.Application.Abstractions.Clock;
 using ProiectDeAnMRSTW.Application.Abstractions.Email;
 using ProiectDeAnMRSTW.Domain.Abstractions;
 using ProiectDeAnMRSTW.Domain.Products;
-//using ProiectDeAnMRSTW.Domain.Reviews;
+using ProiectDeAnMRSTW.Domain.Reviews;
 using ProiectDeAnMRSTW.Infrastructure.Clock;
 using ProiectDeAnMRSTW.Infrastructure.Data;
 using ProiectDeAnMRSTW.Infrastructure.Email;
@@ -25,7 +25,6 @@ namespace ProiectDeAnMRSTW.Infrastructure
             services.AddTransient<IDateTimeProvider, DateTimeProvider>();
 
             services.AddTransient<IEmailService, EmailService>();
-            Console.WriteLine($"String connection = {connectionString}");
             //string connectionString = configuration.GetConnectionString("DefaultConnection") ??
             //                      throw new ArgumentNullException(nameof(configuration));
 
@@ -34,7 +33,7 @@ namespace ProiectDeAnMRSTW.Infrastructure
 
             services.AddScoped<IProductRepository, ProductRepository>();
 
-            //services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();
 
             services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
