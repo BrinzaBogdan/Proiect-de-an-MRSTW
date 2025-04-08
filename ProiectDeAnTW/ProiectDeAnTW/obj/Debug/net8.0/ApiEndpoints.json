@@ -89,17 +89,11 @@
   {
     "ContainingType": "ProiectDeAnTW.Controllers.Products.ProductCategories.ProductCategoryController",
     "Method": "GetAllCategories",
-    "RelativePath": "api/ProductCategory/{categories}",
+    "RelativePath": "api/categories/categories",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "categories",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

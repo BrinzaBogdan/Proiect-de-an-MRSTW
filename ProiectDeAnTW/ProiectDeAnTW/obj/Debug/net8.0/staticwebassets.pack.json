@@ -65,10 +65,6 @@
       "PackagePath": "staticwebassets\\images\\Carne\\JambonVita.jpg"
     },
     {
-      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
-      "PackagePath": "staticwebassets\\images\\Cascada.jpg"
-    },
-    {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\DiscountImage.jpg",
       "PackagePath": "staticwebassets\\images\\DiscountImage.jpg"
     },
@@ -153,12 +149,12 @@
       "PackagePath": "staticwebassets\\images\\Legume\\SfeclaRosie.jpg"
     },
     {
-      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MiereInBanca.jpg",
-      "PackagePath": "staticwebassets\\images\\MiereInBanca.jpg"
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MarketPlace.jpg",
+      "PackagePath": "staticwebassets\\images\\MarketPlace.jpg"
     },
     {
-      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\NewPrioduct1.jpg",
-      "PackagePath": "staticwebassets\\images\\NewPrioduct1.jpg"
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MiereInBanca.jpg",
+      "PackagePath": "staticwebassets\\images\\MiereInBanca.jpg"
     },
     {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\OpenForBussiness.jpg",
@@ -207,6 +203,14 @@
     {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Peste\\Somon.jpg",
       "PackagePath": "staticwebassets\\images\\Peste\\Somon.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePeste.jpg",
+      "PackagePath": "staticwebassets\\images\\PromotiePeste.jpg"
+    },
+    {
+      "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotieRosii.webp",
+      "PackagePath": "staticwebassets\\images\\PromotieRosii.webp"
     },
     {
       "Id": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\SvgImages\\arrow-return-left.svg",

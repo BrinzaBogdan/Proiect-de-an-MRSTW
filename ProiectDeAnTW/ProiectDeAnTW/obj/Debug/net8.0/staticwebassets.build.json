@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SXTyLNYidjqhyNvC1lNBHNckpC4mExWvFXrrQcr4/U4=",
+  "Hash": "2N9sK84kQ/nmMNS2vDY4yFYr49GCwHJjXLQAn5Gy8pc=",
   "Source": "ProiectDeAnTW",
   "BasePath": "_content/ProiectDeAnTW",
   "Mode": "Default",
@@ -372,27 +372,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Carne\\JambonVita.jpg"
-    },
-    {
-      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
-      "SourceId": "ProiectDeAnTW",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
-      "BasePath": "_content/ProiectDeAnTW",
-      "RelativePath": "images/Cascada#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "h35968t7il",
-      "Integrity": "DfhzDCmhNaB+sv2dgqkhdUtaAuHMpFszjRhD9pJOqCw=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\Cascada.jpg"
     },
     {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\DiscountImage.jpg",
@@ -836,6 +815,27 @@
       "OriginalItemSpec": "wwwroot\\images\\Legume\\SfeclaRosie.jpg"
     },
     {
+      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MarketPlace.jpg",
+      "SourceId": "ProiectDeAnTW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
+      "BasePath": "_content/ProiectDeAnTW",
+      "RelativePath": "images/MarketPlace#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ayltp9ougm",
+      "Integrity": "YpFy+RJje2FOFKDyKqKnvZmLrF6TwvTeBBRx51Q6ZAc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\MarketPlace.jpg"
+    },
+    {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MiereInBanca.jpg",
       "SourceId": "ProiectDeAnTW",
       "SourceType": "Discovered",
@@ -855,27 +855,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\MiereInBanca.jpg"
-    },
-    {
-      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\NewPrioduct1.jpg",
-      "SourceId": "ProiectDeAnTW",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
-      "BasePath": "_content/ProiectDeAnTW",
-      "RelativePath": "images/NewPrioduct1#[.{fingerprint}]?.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "98ta4m1d2c",
-      "Integrity": "eZ7StZj9BsU5GltMPwNiflnhrZiSvGZUcW9Lnic7p+g=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\NewPrioduct1.jpg"
     },
     {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\OpenForBussiness.jpg",
@@ -1170,6 +1149,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\photo-gift.jpg"
+    },
+    {
+      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePeste.jpg",
+      "SourceId": "ProiectDeAnTW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
+      "BasePath": "_content/ProiectDeAnTW",
+      "RelativePath": "images/PromotiePeste#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6zmwfmr2jc",
+      "Integrity": "rgwoRVFzH6PMxj+r8vkvyM1pvipisVOjLzG2WouA9rM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\PromotiePeste.jpg"
+    },
+    {
+      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotieRosii.webp",
+      "SourceId": "ProiectDeAnTW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
+      "BasePath": "_content/ProiectDeAnTW",
+      "RelativePath": "images/PromotieRosii#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "r9qflvlnvx",
+      "Integrity": "QayJawnMCjaPp9oOOo9zxuGF6x8B6PZFEm2utCTDiBc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\PromotieRosii.webp"
     },
     {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\SvgImages\\arrow-return-left.svg",
@@ -2505,88 +2526,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-h4q6lDGsAjwpInjl4ZxPVeG5X5MEUcWLKaYI9Rs2baA="
-        }
-      ]
-    },
-    {
-      "Route": "images/Cascada.h35968t7il.jpg",
-      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13099"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DfhzDCmhNaB+sv2dgqkhdUtaAuHMpFszjRhD9pJOqCw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 20:47:06 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "h35968t7il"
-        },
-        {
-          "Name": "label",
-          "Value": "images/Cascada.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-DfhzDCmhNaB+sv2dgqkhdUtaAuHMpFszjRhD9pJOqCw="
-        }
-      ]
-    },
-    {
-      "Route": "images/Cascada.jpg",
-      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Cascada.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "13099"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"DfhzDCmhNaB+sv2dgqkhdUtaAuHMpFszjRhD9pJOqCw=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 12 Mar 2025 20:47:06 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-DfhzDCmhNaB+sv2dgqkhdUtaAuHMpFszjRhD9pJOqCw="
         }
       ]
     },
@@ -4313,6 +4252,88 @@
       ]
     },
     {
+      "Route": "images/MarketPlace.ayltp9ougm.jpg",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MarketPlace.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1468619"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YpFy+RJje2FOFKDyKqKnvZmLrF6TwvTeBBRx51Q6ZAc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 14:59:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ayltp9ougm"
+        },
+        {
+          "Name": "label",
+          "Value": "images/MarketPlace.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YpFy+RJje2FOFKDyKqKnvZmLrF6TwvTeBBRx51Q6ZAc="
+        }
+      ]
+    },
+    {
+      "Route": "images/MarketPlace.jpg",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MarketPlace.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1468619"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YpFy+RJje2FOFKDyKqKnvZmLrF6TwvTeBBRx51Q6ZAc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 14:59:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YpFy+RJje2FOFKDyKqKnvZmLrF6TwvTeBBRx51Q6ZAc="
+        }
+      ]
+    },
+    {
       "Route": "images/MiereInBanca.jpg",
       "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\MiereInBanca.jpg",
       "Selectors": [],
@@ -4391,88 +4412,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-c8Fa+r+I2PADN4EA9/Nbw/v/QXU4EolaSTht3CjjYU4="
-        }
-      ]
-    },
-    {
-      "Route": "images/NewPrioduct1.98ta4m1d2c.jpg",
-      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\NewPrioduct1.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28628"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eZ7StZj9BsU5GltMPwNiflnhrZiSvGZUcW9Lnic7p+g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 08 Mar 2025 11:09:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "98ta4m1d2c"
-        },
-        {
-          "Name": "label",
-          "Value": "images/NewPrioduct1.jpg"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-eZ7StZj9BsU5GltMPwNiflnhrZiSvGZUcW9Lnic7p+g="
-        }
-      ]
-    },
-    {
-      "Route": "images/NewPrioduct1.jpg",
-      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\NewPrioduct1.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "28628"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eZ7StZj9BsU5GltMPwNiflnhrZiSvGZUcW9Lnic7p+g=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 08 Mar 2025 11:09:52 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eZ7StZj9BsU5GltMPwNiflnhrZiSvGZUcW9Lnic7p+g="
         }
       ]
     },
@@ -5621,6 +5560,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-QgLnKP6cTvdpwST0JJ31hjHmH3nv9dmAUOoelVIrJxo="
+        }
+      ]
+    },
+    {
+      "Route": "images/PromotiePeste.6zmwfmr2jc.jpg",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePeste.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "371825"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rgwoRVFzH6PMxj+r8vkvyM1pvipisVOjLzG2WouA9rM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 15:12:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6zmwfmr2jc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/PromotiePeste.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rgwoRVFzH6PMxj+r8vkvyM1pvipisVOjLzG2WouA9rM="
+        }
+      ]
+    },
+    {
+      "Route": "images/PromotiePeste.jpg",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePeste.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "371825"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rgwoRVFzH6PMxj+r8vkvyM1pvipisVOjLzG2WouA9rM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 15:12:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rgwoRVFzH6PMxj+r8vkvyM1pvipisVOjLzG2WouA9rM="
+        }
+      ]
+    },
+    {
+      "Route": "images/PromotieRosii.r9qflvlnvx.webp",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotieRosii.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "63774"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QayJawnMCjaPp9oOOo9zxuGF6x8B6PZFEm2utCTDiBc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 15:04:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "r9qflvlnvx"
+        },
+        {
+          "Name": "label",
+          "Value": "images/PromotieRosii.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QayJawnMCjaPp9oOOo9zxuGF6x8B6PZFEm2utCTDiBc="
+        }
+      ]
+    },
+    {
+      "Route": "images/PromotieRosii.webp",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotieRosii.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "63774"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QayJawnMCjaPp9oOOo9zxuGF6x8B6PZFEm2utCTDiBc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 15:04:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QayJawnMCjaPp9oOOo9zxuGF6x8B6PZFEm2utCTDiBc="
         }
       ]
     },

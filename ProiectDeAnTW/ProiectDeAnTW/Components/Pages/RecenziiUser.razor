@@ -1,13 +1,16 @@
 ﻿@page "/RecenziiUser"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
 @using ProiectDeAnMRSTW.Application.Services
 @using ProiectDeAnMRSTW.Domain.Reviews
 @using ProiectDeAnTW.Components.Layout
 @layout MainLayout
-@* @inject ProductService ProductService; *@
-
+@inject UserManager<ApplicationUser> UserManager
+@* @attribute [Authorize(Roles = "Client")] *@
 
 
 @using Microsoft.AspNetCore.Components.Forms
+@using ProiectDeAnTW.Data
 
 <html lang="ro">
 <head>
@@ -50,12 +53,12 @@
      <div class="container">
         <div class="review-form">
             <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@reviewModel" OnValidSubmit="PrintComment" FormName="123">
+            <EditForm Model="@reviewModel" OnValidSubmit="SaveRole" FormName="123">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <div class="form-group">
-                    <label>Comentariu</label>
-                    <InputText class="form-control" @bind-Value="@reviewModel.Comment" required />
+                    <InputText id="comment" class="form-control" @bind-Value="@reviewModel.Comment" required />
+                    <label for="comment">Comentariu</label>
                 </div> 
 
                 <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
@@ -83,8 +86,16 @@
     // }
     public void PrintComment()
     {
-        Logger.LogInformation($"Comentariu: {reviewModel.Comment}");
-        // Console.WriteLine($"comm = {reviewModel.Comment}");
+        // Logger.LogInformation($"Comentariu: {reviewModel.Comment}");
+        Console.WriteLine($"comm = {reviewModel.Comment}");
+    }
+    public async Task SaveRole()
+    {
+        // var user = await UserManager.FindByEmailAsync("client@client.com");
+        // if (user != null)
+        // {
+        //     await UserManager.AddToRoleAsync(user, "Client");
+        // }
     }
 }
 

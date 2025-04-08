@@ -20,12 +20,17 @@ builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 builder.Services.AddHttpClient();
-builder.Services.AddAuthentication(options =>
+//builder.Services.AddAuthentication(options =>
+//    {
+//        options.DefaultScheme = IdentityConstants.ApplicationScheme;
+//        options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
+//    })
+//    .AddIdentityCookies();
+    builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     {
-        options.DefaultScheme = IdentityConstants.ApplicationScheme;
-        options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-    })
-    .AddIdentityCookies();
+        options.SignIn.RequireConfirmedAccount = true; // Confirmarea contului este necesara
+    })  .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? 
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -37,10 +42,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
 
-builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddSignInManager()
-    .AddDefaultTokenProviders();
+//builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ApplicationDbContext>()
+//    .AddSignInManager()
+//    .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 //builder.Services.AddScoped<LoadDataToPage>();   //am adaugat eu

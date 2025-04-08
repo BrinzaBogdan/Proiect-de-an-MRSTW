@@ -68,12 +68,19 @@
                 <NavLink class="nav-link" href="Account/Manage">
                     <span class="bi bi-person-fill-nav-menu"></span> @context.User.Identity?.Name
                 </NavLink>
-                <form action="Account/Logout" method="post" class="logout-form">
+                @* <form action="Account/Logout" method="post" class="logout-form">
                     <AntiforgeryToken />
                     <input type="hidden" name="ReturnUrl" value="@currentUrl" />
                     <button type="submit" class="nav-link">
                         <span class="bi bi-arrow-bar-left-nav-menu"></span> Logout
                     </button>
+                </form> *@
+                <form action="Account/Logout" method="post" class="d-inline"  >
+                    <AntiforgeryToken />
+                    <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+                    <a href="#" class="nav-link" onclick="this.closest('form').submit();" style="display: flex; align-items: center;">
+                        <span class="bi bi-arrow-bar-left-nav-menu"></span> Logout
+                    </a>
                 </form>
             </Authorized>
             <NotAuthorized>
