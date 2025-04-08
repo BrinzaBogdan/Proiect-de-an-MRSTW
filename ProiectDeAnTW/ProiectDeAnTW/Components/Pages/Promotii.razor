@@ -1,16 +1,15 @@
 ﻿@page "/Promotii"
+@* 
 @layout MainLayout;
-@using ProiectDeAnTW.Components.Layout
+@using ProiectDeAnTW.Components.Layout *@
 
-
+<!DOCTYPE html>
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazin Online - Produse și Oferte</title>
-    @* <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> *@
-    @* <link rel="stylesheet" href="styles.css"> <!-- Link la fișierul CSS personalizat --> *@
-     @* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> *@
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,9 +42,10 @@
         }
 
         .product-img {
-            max-width: 200px;
-            height: auto;
+            /* width : 200px; */
+            height: 200px;
             border-radius: 8px;
+            margin: 20px;
         }
 
         .product-card {
@@ -72,7 +72,12 @@
         .product-description {
             font-size: 0.9rem;
             color: #777;
+            text-align : center;
         }
+        .product-name{
+            text-align : center;
+        }
+
 
         .btn-primary {
             background-color: #007bff;
@@ -98,36 +103,21 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @* <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#products">Produse</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#news">Noutăți</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#offers">Oferte Speciale</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul> 
-            </div>*@
         </div>
     </nav>
 </div>
-<!-- Container for Content -->
+
 <div class="container ">
 
-    <!-- Produse -->
     <section id="products">
         <h2 class="text-center mb-4">Produse Disponibile</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="images/OpenForBussiness.jpg" alt="Șampon pentru păr" class="product-img mx-auto d-block">
+                    <img src="images/Dulciuri/Acadele.jpg" alt="Șampon pentru păr" class="product-img mx-auto d-block">
                     <div class="p-3">
-                        <h5 class="product-name">Șampon pentru păr</h5>
-                        <p class="product-description">Șampon hidratant pentru păr uscat, cu extract de aloe vera.</p>
+                        <h5 class="product-name">Acadele</h5>
+                        <p class="product-description">Cele mai bune <br />acadele pentru dinti.</p>
                         <p><strong>15.99 LEI</strong></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
@@ -136,10 +126,10 @@
 
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="images/OpenForBussiness.jpg" alt="Crema de față" class="product-img mx-auto d-block">
+                    <img src="images/Dulciuri/BiscuitiOvaz.jpg" alt="BBiscuiti cu ovaz" class="product-img mx-auto d-block">
                     <div class="p-3">
-                        <h5 class="product-name">Crema de față</h5>
-                        <p class="product-description">Crema de față anti-aging cu vitamine și acid hialuronic.</p>
+                        <h5 class="product-name">Biscuiti cu ovaz</h5>
+                        <p class="product-description">Biscuiti ca la<br /> bunica acasa.</p>
                         <p><strong>29.99 LEI</strong></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
@@ -148,10 +138,10 @@
 
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="images/OpenForBussiness.jpg" alt="Parfum Floral" class="product-img mx-auto d-block">
+                    <img src="images/Carne/Carnedeporc.jpg" alt="Carne de porc" class="product-img mx-auto d-block">
                     <div class="p-3">
-                        <h5 class="product-name">Parfum Floral</h5>
-                        <p class="product-description">Parfum elegant cu note florale și fructate, perfect pentru orice ocazie.</p>
+                        <h5 class="product-name">Carne de porc</h5>
+                        <p class="product-description">Carne proaspata <br />la gratar.</p>
                         <p><strong>89.99 LEI</strong></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
@@ -182,9 +172,9 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="images/OpenForBussiness.jpg" alt="Oferte 1" class="product-img mx-auto d-block">
+                    <img src="images/Legume/Ridichie.jpg" alt="Oferte 1" class="product-img mx-auto d-block">
                     <div class="p-3">
-                        <h5 class="product-name">Set de bijuterii</h5>
+                        <h5 class="product-name">Ridichie proaspata</h5>
                         <p><strong>120 LEI</strong> <span class="text-danger">99.99 LEI</span></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
@@ -193,9 +183,9 @@
 
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="images/OpenForBussiness.jpg" alt="Oferte 2" class="product-img mx-auto d-block">
+                    <img src="images/Paste/Scialatielli.jpg" alt="Oferte 2" class="product-img mx-auto d-block">
                     <div class="p-3">
-                        <h5 class="product-name">Tabletă Smart</h5>
+                        <h5 class="product-name">Paste Scialatielli</h5>
                         <p><strong>899.99 LEI</strong> <span class="text-danger">799.99 LEI</span></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
@@ -204,9 +194,9 @@
 
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="images/OpenForBussiness.jpg" alt="Oferte 3" class="product-img mx-auto d-block">
+                    <img src="images/Peste/Dalmors.jpg" alt="Oferte 3" class="product-img mx-auto d-block">
                     <div class="p-3">
-                        <h5 class="product-name">Geantă de mână</h5>
+                        <h5 class="product-name">Peste Dalmors</h5>
                         <p><strong>150 LEI</strong> <span class="text-danger">119.99 LEI</span></p>
                         <button class="btn btn-primary btn-block">Adaugă în coș</button>
                     </div>
@@ -236,47 +226,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-@* 3 ceva 
- <div class="rand">
-        <div class="coloana">
-            <div class="card" id="card_foto">
-                <div class="element1">
-                    <img src="images/BlueGlassHomeImg.jpg" style="width : 30%; height: auto;">
-                    <div class="text_imagine_glass_home">
-                        <strong class="text_imagini_homepage" >Doar 2 magazine in Moldova</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="card" id="card_foto">
-                <div class="element2">
-                    <img src="images\NewPrioduct1.jpg" style="width : 30%; height: auto;">
-                    <div class="text_imagine_glass_home">
-                        <strong  class="text_imagini_homepage" >Produse noi</strong>
-                    </div>
-                </div>
-            </div>
-            <div class="card" id="card_foto">
-                <div class="element3">
-                    <img src="images/DiscountImage.jpg" style="width : 30%; height: auto;">
-                    <div class="text_imagine_glass_home">
-                        <strong  class="text_imagini_homepage" >Produse ieftine</strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-*@
 
 
 

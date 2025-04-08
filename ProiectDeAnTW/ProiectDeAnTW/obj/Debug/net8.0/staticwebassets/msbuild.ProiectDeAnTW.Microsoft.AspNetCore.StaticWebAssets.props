@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>ya0pwsuk4q</Fingerprint>
-      <Integrity>yr3skyg9JV5vxNWPlacFKtGoQQ/VDhvvh55NpD+OyVc=</Integrity>
+      <Fingerprint>j27pzfaj41</Fingerprint>
+      <Integrity>C+8fLnrIFkJWpk0OYv7ur14daCwPpcGLEkv0RTajhu4=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</OriginalItemSpec>
@@ -606,8 +606,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f2dbwmryca</Fingerprint>
-      <Integrity>GYHKxY6K7smmj3MOeCYmrYxPh7USIikRrHZRngFoKs0=</Integrity>
+      <Fingerprint>hugddp7e3h</Fingerprint>
+      <Integrity>d0jHe5fNUZ/JrgE+duPvdETF+RiR8X5TjTYNBcx4kc0=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\Legume\Ridichie.jpg'))</OriginalItemSpec>
@@ -935,6 +935,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\photo-gift.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\PromotiePaste.webp'))">
+      <SourceType>Package</SourceType>
+      <SourceId>ProiectDeAnTW</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/ProiectDeAnTW</BasePath>
+      <RelativePath>images/PromotiePaste.webp</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>d9r3d90w96</Fingerprint>
+      <Integrity>wZ041Qn9NAsdwAKi6drL4TNHoyAZiIUV0RbuplYVdk0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\PromotiePaste.webp'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\PromotiePeste.jpg'))">
       <SourceType>Package</SourceType>

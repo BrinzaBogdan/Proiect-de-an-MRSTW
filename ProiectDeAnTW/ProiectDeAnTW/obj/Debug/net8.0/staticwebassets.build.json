@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2N9sK84kQ/nmMNS2vDY4yFYr49GCwHJjXLQAn5Gy8pc=",
+  "Hash": "cuHJNFQ+swvYIRdChorskx4CZb2TrsbmVZptGXIzN00=",
   "Source": "ProiectDeAnTW",
   "BasePath": "_content/ProiectDeAnTW",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ya0pwsuk4q",
-      "Integrity": "yr3skyg9JV5vxNWPlacFKtGoQQ/VDhvvh55NpD+OyVc=",
+      "Fingerprint": "j27pzfaj41",
+      "Integrity": "C+8fLnrIFkJWpk0OYv7ur14daCwPpcGLEkv0RTajhu4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
@@ -766,8 +766,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "f2dbwmryca",
-      "Integrity": "GYHKxY6K7smmj3MOeCYmrYxPh7USIikRrHZRngFoKs0=",
+      "Fingerprint": "hugddp7e3h",
+      "Integrity": "d0jHe5fNUZ/JrgE+duPvdETF+RiR8X5TjTYNBcx4kc0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Legume\\Ridichie.jpg"
@@ -1151,6 +1151,27 @@
       "OriginalItemSpec": "wwwroot\\images\\photo-gift.jpg"
     },
     {
+      "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePaste.webp",
+      "SourceId": "ProiectDeAnTW",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\",
+      "BasePath": "_content/ProiectDeAnTW",
+      "RelativePath": "images/PromotiePaste#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "d9r3d90w96",
+      "Integrity": "wZ041Qn9NAsdwAKi6drL4TNHoyAZiIUV0RbuplYVdk0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\PromotiePaste.webp"
+    },
+    {
       "Identity": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePeste.jpg",
       "SourceId": "ProiectDeAnTW",
       "SourceType": "Discovered",
@@ -1310,7 +1331,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8086"
+          "Value": "8090"
         },
         {
           "Name": "Content-Type",
@@ -1318,11 +1339,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"yr3skyg9JV5vxNWPlacFKtGoQQ/VDhvvh55NpD+OyVc=\""
+          "Value": "\"C+8fLnrIFkJWpk0OYv7ur14daCwPpcGLEkv0RTajhu4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 07:41:47 GMT"
+          "Value": "Tue, 08 Apr 2025 16:29:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1332,12 +1353,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-yr3skyg9JV5vxNWPlacFKtGoQQ/VDhvvh55NpD+OyVc="
+          "Value": "sha256-C+8fLnrIFkJWpk0OYv7ur14daCwPpcGLEkv0RTajhu4="
         }
       ]
     },
     {
-      "Route": "app.ya0pwsuk4q.css",
+      "Route": "app.j27pzfaj41.css",
       "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\app.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1347,7 +1368,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "8086"
+          "Value": "8090"
         },
         {
           "Name": "Content-Type",
@@ -1355,11 +1376,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"yr3skyg9JV5vxNWPlacFKtGoQQ/VDhvvh55NpD+OyVc=\""
+          "Value": "\"C+8fLnrIFkJWpk0OYv7ur14daCwPpcGLEkv0RTajhu4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 26 Mar 2025 07:41:47 GMT"
+          "Value": "Tue, 08 Apr 2025 16:29:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1369,7 +1390,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ya0pwsuk4q"
+          "Value": "j27pzfaj41"
         },
         {
           "Name": "label",
@@ -1377,7 +1398,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-yr3skyg9JV5vxNWPlacFKtGoQQ/VDhvvh55NpD+OyVc="
+          "Value": "sha256-C+8fLnrIFkJWpk0OYv7ur14daCwPpcGLEkv0RTajhu4="
         }
       ]
     },
@@ -4006,7 +4027,7 @@
       ]
     },
     {
-      "Route": "images/Legume/Ridichie.f2dbwmryca.jpg",
+      "Route": "images/Legume/Ridichie.hugddp7e3h.jpg",
       "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\Legume\\Ridichie.jpg",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4016,7 +4037,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15293"
+          "Value": "15173"
         },
         {
           "Name": "Content-Type",
@@ -4024,11 +4045,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GYHKxY6K7smmj3MOeCYmrYxPh7USIikRrHZRngFoKs0=\""
+          "Value": "\"d0jHe5fNUZ/JrgE+duPvdETF+RiR8X5TjTYNBcx4kc0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Mar 2025 17:29:48 GMT"
+          "Value": "Tue, 08 Apr 2025 16:35:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4038,7 +4059,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "f2dbwmryca"
+          "Value": "hugddp7e3h"
         },
         {
           "Name": "label",
@@ -4046,7 +4067,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-GYHKxY6K7smmj3MOeCYmrYxPh7USIikRrHZRngFoKs0="
+          "Value": "sha256-d0jHe5fNUZ/JrgE+duPvdETF+RiR8X5TjTYNBcx4kc0="
         }
       ]
     },
@@ -4061,7 +4082,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "15293"
+          "Value": "15173"
         },
         {
           "Name": "Content-Type",
@@ -4069,11 +4090,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"GYHKxY6K7smmj3MOeCYmrYxPh7USIikRrHZRngFoKs0=\""
+          "Value": "\"d0jHe5fNUZ/JrgE+duPvdETF+RiR8X5TjTYNBcx4kc0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Mar 2025 17:29:48 GMT"
+          "Value": "Tue, 08 Apr 2025 16:35:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -4083,7 +4104,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-GYHKxY6K7smmj3MOeCYmrYxPh7USIikRrHZRngFoKs0="
+          "Value": "sha256-d0jHe5fNUZ/JrgE+duPvdETF+RiR8X5TjTYNBcx4kc0="
         }
       ]
     },
@@ -5560,6 +5581,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-QgLnKP6cTvdpwST0JJ31hjHmH3nv9dmAUOoelVIrJxo="
+        }
+      ]
+    },
+    {
+      "Route": "images/PromotiePaste.d9r3d90w96.webp",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePaste.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "297466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wZ041Qn9NAsdwAKi6drL4TNHoyAZiIUV0RbuplYVdk0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 15:27:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "d9r3d90w96"
+        },
+        {
+          "Name": "label",
+          "Value": "images/PromotiePaste.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wZ041Qn9NAsdwAKi6drL4TNHoyAZiIUV0RbuplYVdk0="
+        }
+      ]
+    },
+    {
+      "Route": "images/PromotiePaste.webp",
+      "AssetFile": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnTW\\wwwroot\\images\\PromotiePaste.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "297466"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wZ041Qn9NAsdwAKi6drL4TNHoyAZiIUV0RbuplYVdk0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 08 Apr 2025 15:27:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wZ041Qn9NAsdwAKi6drL4TNHoyAZiIUV0RbuplYVdk0="
         }
       ]
     },
