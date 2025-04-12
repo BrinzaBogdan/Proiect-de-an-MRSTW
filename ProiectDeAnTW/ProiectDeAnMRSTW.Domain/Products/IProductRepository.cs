@@ -10,9 +10,8 @@ namespace ProiectDeAnMRSTW.Domain.Products
     public interface IProductRepository
     {
         Task<Aliment?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
-
         Task<List<Aliment>?> GetAllProductsByCategoryName(string name, CancellationToken cancellationToken = default);
-
+        Task<Guid> GetProductIdByName(string Name,CancellationToken cancellationToken = default);
         void Add(Aliment aliment);
     }
 }

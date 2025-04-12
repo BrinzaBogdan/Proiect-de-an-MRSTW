@@ -9,5 +9,5 @@ using System.Windows.Input;
 
 namespace ProiectDeAnMRSTW.Application.Reviews
 {
-    public record AddReviewCommand(Guid productId, Rating Rating, Comment Comment) : ICommand<int>;
+    public record AddReviewCommand(Guid ProductId, Rating Rating, Comment Comment) : Abstractions.Messaging.ICommand;
 }

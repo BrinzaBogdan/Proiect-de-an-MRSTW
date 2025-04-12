@@ -3,9 +3,7 @@
 namespace ProiectDeAnTW.Controllers.Reviews
 {
 public sealed record CreateReviewRequest(
-    Guid id,
-    Guid productId,
+    string ProductName,
     Rating rating, 
-    Comment comment, 
-    DateTime createdOnUtc);
+    Comment comment);
 }

@@ -49,24 +49,9 @@
         }
     </style>
 </head>
-<body>
-     <div class="container">
-        <div class="review-form">
-            <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@reviewModel" OnValidSubmit="SaveRole" FormName="123">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
-                <div class="form-group">
-                    <InputText id="comment" class="form-control" @bind-Value="@reviewModel.Comment" required />
-                    <label for="comment">Comentariu</label>
-                </div> 
 
-                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
-            </EditForm>
-        </div>
-    </div>
- 
-</body>
+
+@* 
 </html>
 
 @code {
@@ -98,6 +83,135 @@
         // }
     }
 }
+ *@
+@* <body>
+    <div class="container">
+        <div class="review-form">
+            <h2 class="text-center">Lasă o recenzie</h2>
+            <EditForm EditContext="@editContext" OnValidSubmit="PrintComment" FormName="somename">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="form-group">
+                    <input id="comment" class="form-control" @bind="@reviewModel.Comment"/>
+                    <label for="comment">Comentariu</label>
+                </div> 
+
+                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+            </EditForm>
+        </div>
+    </div>
+
+</body>
+
+
+@code {
+    // private Review NewReview { get; set; }
+    // public string comm { get; set; } = string.Empty;
+    public class ReviewModel
+    {
+        public string Comment { get; set; } = string.Empty;
+    }
+
+
+
+    [Inject]
+    private ILogger<RecenziiUser> Logger { get; set; }
+    private ReviewModel reviewModel = new();
+    private EditContext editContext;
+
+
+    protected override void OnInitialized()
+    {
+        // NewReview = new Review();
+        editContext = new(reviewModel);
+        base.OnInitialized();
+    }
+
+
+    public void PrintComment()
+    {
+        // Logger.LogInformation($"Comentariu: {reviewModel.Comment}");
+        Console.WriteLine($"comm = {reviewModel.Comment}");
+    }
+    public async Task SaveRole()
+    {
+        // var user = await UserManager.FindByEmailAsync("client@client.com");
+        // if (user != null)
+        // {
+        //     await UserManager.AddToRoleAsync(user, "Client");
+        // }
+    }
+}
+ *@
+
+
+ <body>
+     <div class="container">
+        <div class="review-form">
+            <h2 class="text-center">Lasă o recenzie</h2>
+                <form id="editForm">
+                    <div class="form-group">
+                        <label>Nume:</label>
+                        <input type="text" name="nume" id="nume" required />
+                    </div> 
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" name="email" id="email" required />
+                          @* <button type="submit">Salvează</button> *@
+                    </div> 
+                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+                </form>
+                <div id="status"></div>
+        </div>
+    </div>
+
+</body>
+ @* <form id="editForm">
+  <label>Nume:</label>
+  <input type="text" name="nume" id="nume" required />
+
+  <label>Email:</label>
+  <input type="email" name="email" id="email" required />
+
+  <button type="submit">Salvează</button>
+</form>
+
+<div id="status"></div> *@
+
+<script>
+  document.getElementById("editForm").addEventListener("submit", async function (e) {
+    e.preventDefault(); // Previne reload-ul paginii
+
+    const data = {
+      nume: document.getElementById("nume").value,
+      email: document.getElementById("email").value
+    };
+
+    const response = await fetch("/api/user/update", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.text(); // sau .json() dacă întorci JSON
+    document.getElementById("status").innerText = result;
+  });
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
 
 
  @*   <div class="container">
@@ -139,6 +253,9 @@
             </EditForm>
         </div>
     </div> *@
+
+
+
 
 
 

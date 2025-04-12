@@ -28,7 +28,12 @@ internal abstract class Repository<T>
         return await DbContext
             .Set<T>()
             .Where(product => product.Category == name)
-            .ToListAsync(cancellationToken);;
+            .ToListAsync(cancellationToken);
+    }
+    public async Task<Guid> GetProductIdByName(string Name,CancellationToken cancellationToken = default)
+    {
+        var Product = await DbContext.Set<T>().FirstOrDefaultAsync(product => product.Name == Name);
+        return Product.Id;
     }
 
     public virtual void Add(T entity)

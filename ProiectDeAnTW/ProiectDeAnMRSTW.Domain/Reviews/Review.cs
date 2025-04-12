@@ -10,19 +10,19 @@ namespace ProiectDeAnMRSTW.Domain.Reviews;
 
 public sealed class Review 
 {
-    private Review(int id, Guid productId, Rating rating, Comment comment, DateTime createdOnUtc)
+    private Review(Guid id, Guid productId, Rating rating, Comment comment, DateTime createdOnUtc)
     {
+        Id = id;
         ProductId = productId;
         Rating = rating;
         Comment = comment;
         CreatedOnUtc = createdOnUtc;
-        Id = id;
     }
 
     public Review()
     {
     }
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     public Guid ProductId { get; set; }
 
@@ -32,13 +32,11 @@ public sealed class Review
      
     public DateTime CreatedOnUtc { get; set; }
 
-    public static Result<Review> Create(Aliment aliment, Rating rating, Comment comment, DateTime createdOnUtc)
+    public static Result<Review> Create(Guid ProductId, Rating rating, Comment comment, DateTime createdOnUtc)
     {
-        Random random = new Random();
-        int nr = random.Next(1, 101);
         var review = new Review(
-            nr,
-            aliment.Id,
+            Guid.NewGuid(),
+            ProductId,
             rating,
             comment,
             createdOnUtc);

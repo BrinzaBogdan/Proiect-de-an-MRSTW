@@ -1,5 +1,6 @@
 ﻿using ProiectDeAnMRSTW.Application.Abstractions.Clock;
 using ProiectDeAnMRSTW.Application.Abstractions.Messaging;
+using ProiectDeAnMRSTW.Application.Services;
 using ProiectDeAnMRSTW.Domain.Abstractions;
 using ProiectDeAnMRSTW.Domain.Products;
 using ProiectDeAnMRSTW.Domain.Reviews;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ProiectDeAnMRSTW.Application.Reviews
 {
-    internal sealed class AddReviewCommandHandler : ICommandHandler<AddReviewCommand, int>
+    internal sealed class AddReviewCommandHandler : ICommandHandler<AddReviewCommand>
     {
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
@@ -30,34 +31,31 @@ namespace ProiectDeAnMRSTW.Application.Reviews
             _dateTimeProvider = dateTimeProvider;
         }
 
-        public async Task<Result<int>> Handle(AddReviewCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(AddReviewCommand request, CancellationToken cancellationToken)
         {
+            Result<Rating> rating = Rating.Create(request.Rating.Value);
 
-            var aliment = await _productRepository.GetByIdAsync(request.productId, cancellationToken);
-
-            if (aliment == null)
+            if (rating.IsFailure)
             {
-                return Result.Failure<int>(ProductErrors.NotFound);
+                return Result.Failure(rating.Error);
             }
 
-            var review = Review.Create(
-                aliment,
-                request.Rating,
+            Result<Review> review = Review.Create(
+                request.ProductId,
+                rating.Value,
                 request.Comment,
                 _dateTimeProvider.UtcNow);
 
-            if (review.IsSuccess)
+            if (review.IsFailure)
             {
-                _reviewRepository.Add(review.Value);
+                return Result.Failure(review.Error);
             }
-            else
-            {
-                Console.WriteLine($"Erorr: {review.Error}");
-            }
+
+            _reviewRepository.Add(review.Value);
 
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-            return review.Value.Id;
+            return Result.Success();
         }
     }
 }
