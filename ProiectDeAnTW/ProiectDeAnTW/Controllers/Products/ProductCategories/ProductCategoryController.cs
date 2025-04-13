@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProiectDeAnMRSTW.Application.Products;
+using ProiectDeAnMRSTW.Application.Products.GetAllCategories;
 
 namespace ProiectDeAnTW.Controllers.Products.ProductCategories
 {

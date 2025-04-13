@@ -113,17 +113,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ProiectDeAnTW.Controllers.Products.ProductsController",
-    "Method": "GetProductById",
-    "RelativePath": "api/products/by-id",
-    "HttpMethod": "GET",
+    "ContainingType": "ProiectDeAnTW.Controllers.Reviews.UserController",
+    "Method": "Update",
+    "RelativePath": "api/user/update",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": false
+        "Name": "user",
+        "Type": "ProiectDeAnTW.Controllers.Reviews.UserDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

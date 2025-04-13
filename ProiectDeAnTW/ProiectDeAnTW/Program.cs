@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProiectDeAnMRSTW.Application;
-using ProiectDeAnMRSTW.Application.Services;
 using ProiectDeAnMRSTW.Infrastructure;
 using ProiectDeAnMRSTW.Infrastructure.Data;
 using ProiectDeAnTW.Components;

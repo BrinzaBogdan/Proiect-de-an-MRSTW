@@ -16,9 +16,4 @@
     <ProjectReference Include="..\ProiectDeAnMRSTW.Domain\ProiectDeAnMRSTW.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Products\GetAllProducts\" />
-    <Folder Include="Products\GetAllCategories\" />
-  </ItemGroup>
-
 </Project>

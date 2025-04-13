@@ -1,0 +1,97 @@
+﻿@page "/Testing"
+@inject IJSRuntime JS
+@using Microsoft.AspNetCore.Components.Forms
+@using System.Text.Json
+@using System.ComponentModel.DataAnnotations
+@inject HttpClient Http
+
+<div class="container">
+    <div class="review-form">
+        <h2 class="text-center">Lasă o recenzie</h2>
+        <EditForm Model="@recenzie" OnSubmit="HandleSubmit" FormName="NoName">
+             <DataAnnotationsValidator />
+            <ValidationSummary />
+ 
+            <div class="form-group">
+                <label for="nume">Nume:</label>
+                <InputText id="nume" class="form-control" @bind-Value="@recenzie.Nume" required />
+            </div> 
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <InputText id="email" class="form-control" @bind-Value="@recenzie.Email" required />
+            </div> 
+
+            <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+        </EditForm>
+        <div id="status"></div>
+    </div>
+
+
+</div>
+@code {
+    private Recenzie recenzie = new Recenzie();
+
+
+    private bool hasRendered = false;
+    public void HandleSubmit()
+    {
+        // recenzie.Nume = "Cristian";
+        // recenzie.Email = "test@gmail.com";
+        Console.WriteLine($"Nume: {recenzie.Nume}, Email: {recenzie.Email}");
+        // var response = await Http.PostAsJsonAsync("http:localhost:5257/api/user/update", recenzie);
+        // if (response.IsSuccessStatusCode)
+        // {
+        //     var result = await response.Content.ReadAsStringAsync();
+        //     Console.WriteLine($"S      U        C       C     E        S");
+        //     Console.WriteLine($"Result = {result}");
+        // }
+        // else
+        // {
+        //     Console.WriteLine($"E      R     O      A     R       E");
+        //     Console.WriteLine($"Response = {response}");
+        // }
+    }
+
+
+    public class Recenzie
+    {
+        [Required]
+        public string Nume { get; set; } = string.Empty;
+        [Required]
+        public string Email { get; set; } = string.Empty;
+    }
+}
+
+@*  // private async Task HandleSubmit()
+    // {
+    //     Console.WriteLine($"Nume: {recenzie.Nume}, Email: {recenzie.Email}");
+
+    //     Trimite datele către un API (exemplu de POST)
+    //     var response = await Http.PostAsJsonAsync("http:localhost:5257/api/user/update", recenzie);
+    //     if (response.IsSuccessStatusCode)
+    //     {
+    //         var result = await response.Content.ReadAsStringAsync();
+    //         Console.WriteLine(result);
+    //         Afișează un mesaj de succes
+    //         await JS.InvokeVoidAsync("alert", "Recenzia a fost trimisă cu succes!");
+    //     }
+    //     else
+    //     {
+    //         Afișează un mesaj de eroare
+    //         await JS.InvokeVoidAsync("alert", "A apărut o eroare la trimiterea recenziei.");
+    //     }
+    // }
+    
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     if (firstRender)
+    //     {
+    //         Console.WriteLine("OnAfterRenderAsync a fost apelat.");
+    //         hasRendered = true;
+
+    //         // Apeluri JS se pot face doar după redarea completă pe client
+    //         // Dacă vrei să apelezi JS atunci când formularul este complet validat și trimis, de exemplu:
+    //         // await JS.InvokeVoidAsync("alert", "Componenta a fost redată pe client");
+    //     }
+    // }*@

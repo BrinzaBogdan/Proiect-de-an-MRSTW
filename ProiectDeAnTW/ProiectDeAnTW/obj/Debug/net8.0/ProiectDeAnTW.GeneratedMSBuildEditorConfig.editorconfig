@@ -17,6 +17,8 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Proiect de an MRSTW\ProiectDeAnTW\ProiectDeAnTW
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
 [C:/Proiect de an MRSTW/ProiectDeAnTW/ProiectDeAnTW/Components/Account/Pages/AccessDenied.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEFjY2Vzc0RlbmllZC5yYXpvcg==
@@ -344,6 +346,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Proiect de an MRSTW/ProiectDeAnTW/ProiectDeAnTW/Components/Pages/SpecificatiiProdus/SpecificatiiPeste/Somon.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTcGVjaWZpY2F0aWlQcm9kdXNcU3BlY2lmaWNhdGlpUGVzdGVcU29tb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Proiect de an MRSTW/ProiectDeAnTW/ProiectDeAnTW/Components/Pages/Testing.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUZXN0aW5nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Proiect de an MRSTW/ProiectDeAnTW/ProiectDeAnTW/Components/Routes.razor]

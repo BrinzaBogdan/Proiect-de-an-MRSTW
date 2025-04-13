@@ -1,5 +1,4 @@
 ﻿@page "/paste"
-@using ProiectDeAnMRSTW.Application.Services
 @using ProiectDeAnMRSTW.Domain.Abstractions
 @inject HttpClient Http
 <head>
@@ -57,6 +56,15 @@
         ToatePastele = await Http.GetFromJsonAsync<List<Aliment>>("http://localhost:5257/api/products/by-category?product_category=Paste");
 	}
 } 
+
+
+
+
+
+
+
+
+
 
 @* <div class="dropdown">
     <button class="btn btn-primary" @onclick="ToggleDropdown">

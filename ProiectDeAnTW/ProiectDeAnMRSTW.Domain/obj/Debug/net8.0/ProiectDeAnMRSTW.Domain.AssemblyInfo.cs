@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProiectDeAnMRSTW.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c416cfdc15a2529153c2b172b763ddfff9c6dd31")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+210591342620e67bfbc04b04128c54dba6bbe5bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProiectDeAnMRSTW.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProiectDeAnMRSTW.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
