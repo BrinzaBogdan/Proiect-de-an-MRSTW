@@ -4,257 +4,9 @@
 @using ProiectDeAnMRSTW.Domain.Reviews
 @using ProiectDeAnTW.Components.Layout
 @layout MainLayout
-@* @inject UserManager<ApplicationUser> UserManager *@
 @inject IJSRuntime JS
 @* @attribute [Authorize(Roles = "Client")] *@
-
-
 @using Microsoft.AspNetCore.Components.Forms
-@* 
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formular Recenzie</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-        }
-        .review-form {
-            max-width: 500px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
-        }
-        .rating input {
-            display: none;
-        }
-        .rating label {
-            font-size: 30px;
-            cursor: pointer;
-            color: #ccc;
-        }
-        .rating input:checked ~ label {
-            color: #f8d700;
-        }
-    </style>
-    @* <script src="~/js/recenzie.js"></script> 
-    <script src="_framework/blazor.server.js"></script>
-</head>
-
- *@
-@* Am incercat binding cu html + js interop, nu o mers *@
-@* 
- <body>
-     <div class="container">
-        <div class="review-form">
-            <h2 class="text-center">Lasă o recenzie</h2>
-                <form id="editForm">
-                    <div class="form-group">
-                        <label>Nume:</label>
-                        <input type="text" name="nume" id="nume" required />
-                    </div> 
-                    <div class="form-group">
-                        <label>Email:</label>
-                        <input type="email" name="email" id="email" required />
-                    </div> 
-                <button  type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
-                </form>
-                <div id="status" ></div>
-        </div>
-    </div>
-    
-</body>
-
-<script>
-  document.getElementById("editForm").addEventListener("submit", async function (e) {
-    e.preventDefault(); // Previne reload-ul paginii
-
-    const data = {
-        nume: document.getElementById("nume").value,
-        email: document.getElementById("email").value
-    };
-
-    const response = await fetch("/api/user/update", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
-
-    const result = await response.text(); // sau .json() dacă întorci JSON
-    document.getElementById("status").innerText = result;
-    console.log(data.nume, data.email);
-    
-});
-
-    window.initJSInterop = function(dotNetHelper) {
-        dotNetHelper.invokeMethodAsync("PrimesteDinJS", "Salut din JavaScript!");
-    }
-
-</script> 
-
-</html>
-
-
-@code{
-    DotNetObjectReference<RecenziiUser>? dotNetRef;
-
-    protected override async Task OnInitializedAsync()
-    {
-        dotNetRef = DotNetObjectReference.Create(this);
-        // await InregistreazaCallback();
-        // await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        Console.WriteLine("Ma aflu in OnInitialized");
-    }
-
-    public async Task InregistreazaCallback()
-    {
-        await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        Console.WriteLine("Ma aflu in InregistreazaCallback");
-    }
-    private bool hasRendered = false;
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        // if (firstRender)
-        // {
-        //     Console.WriteLine("Ma aflu in OnAfterRenderAsync");
-        //     Apelează JavaScript doar dacă componenta a fost redată pentru prima dată
-        //     await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        //     hasRendered = true;
-        // }
-        // if (firstRender)
-        // {
-        //     Console.WriteLine("Ma aflu in OnAfterRenderAsync");
-
-        //     Verifică dacă funcția JavaScript este disponibilă
-        //     var functionExists = await JS.InvokeAsync<bool>("eval", "typeof window.initJSInterop !== 'undefined'");
-
-        //     if (functionExists)
-        //     {
-        //         Apelează funcția JS doar dacă este disponibilă
-        //         await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("Funcția JavaScript 'initJSInterop' nu este disponibilă.");
-        //     }
-
-        //     hasRendered = true;
-        // }
-
-    }
-
-    [JSInvokable]
-    public void PrimesteDinJS(string mesaj)
-    {
-        Console.WriteLine("Am primit din JS: " + mesaj);
-    }
-}
- *@
-
-
-
-
-
-
-
-
-@* 
- <div class="container">
-        <div class="review-form">
-            <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@NewReview" OnValidSubmit="SalveazaRecenzia">
-                <DataAnnotationsValidator />
-                 <div class="form-group">
-                    <label>Nume</label>
-                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                </div> 
-                 <div class="form-group">
-                    <label>Prenume</label>
-                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                </div> 
-                  <div class="form-group">
-                    <label>Email</label>
-                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                </div>  
-                 <div class="form-group">
-                    <label>Rating</label>
-                    <div class="rating">
-                        @for (int i = 5; i >= 1; i--)
-                        {
-                                <input type="radio" id="star-@i" name="rating" value="@i" @onchange="@(() => NewReview.Rating = i)" />
-                            <label for="star-@i">★</label>
-                        }
-                    </div>
-                </div> 
-                 <div class="form-group">
-                    <label>Mesaj</label>
-                    <InputTextArea class="form-control" @bind-Value="NewReview.Mesaj" required />
-                </div> 
-                    <div class="form-check">
-                    <InputCheckbox class="form-check-input" @bind-Value="NewReview.Notificari" />
-                    <label class="form-check-label">Doresc să primesc notificări prin email</label>
-                </div> 
-                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
-            </EditForm>
-        </div>
-    </div> 
-
-
-@code {
-    public Review NewReview { get; set; } = new();
-
-    public class Review 
-    {
-        public string ProductId { get; set; }
-        public int Rating { get; set; }
-        public string Mesaj { get; set; }
-        public bool Notificari { get; set; }
-    }
-
-    public void SalveazaRecenzia()
-    {
-
-    }
-
-}
- *@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <html lang="ro">
 <head>
@@ -357,4 +109,235 @@
 </body>
 </html> 
  
+
+
+
+
+
+
+
+
+
+
+@* 
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular Recenzie</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .review-form {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            font-size: 30px;
+            cursor: pointer;
+            color: #ccc;
+        }
+        .rating input:checked ~ label {
+            color: #f8d700;
+        }
+    </style>
+    @* <script src="~/js/recenzie.js"></script> 
+    <script src="_framework/blazor.server.js"></script>
+</head>
+
+ *@
+@* Am incercat binding cu html + js interop, nu o mers *@
+@* 
+ <body>
+     <div class="container">
+        <div class="review-form">
+            <h2 class="text-center">Lasă o recenzie</h2>
+                <form id="editForm">
+                    <div class="form-group">
+                        <label>Nume:</label>
+                        <input type="text" name="nume" id="nume" required />
+                    </div> 
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" name="email" id="email" required />
+                    </div> 
+                <button  type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+                </form>
+                <div id="status" ></div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+  document.getElementById("editForm").addEventListener("submit", async function (e) {
+    e.preventDefault(); // Previne reload-ul paginii
+
+    const data = {
+        nume: document.getElementById("nume").value,
+        email: document.getElementById("email").value
+    };
+
+    const response = await fetch("/api/user/update", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.text(); // sau .json() dacă întorci JSON
+    document.getElementById("status").innerText = result;
+    console.log(data.nume, data.email);
+
+});
+
+    window.initJSInterop = function(dotNetHelper) {
+        dotNetHelper.invokeMethodAsync("PrimesteDinJS", "Salut din JavaScript!");
+    }
+
+</script> 
+
+</html>
+
+
+@code{
+    DotNetObjectReference<RecenziiUser>? dotNetRef;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dotNetRef = DotNetObjectReference.Create(this);
+        // await InregistreazaCallback();
+        // await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
+        Console.WriteLine("Ma aflu in OnInitialized");
+    }
+
+    public async Task InregistreazaCallback()
+    {
+        await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
+        Console.WriteLine("Ma aflu in InregistreazaCallback");
+    }
+    private bool hasRendered = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        // if (firstRender)
+        // {
+        //     Console.WriteLine("Ma aflu in OnAfterRenderAsync");
+        //     Apelează JavaScript doar dacă componenta a fost redată pentru prima dată
+        //     await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
+        //     hasRendered = true;
+        // }
+        // if (firstRender)
+        // {
+        //     Console.WriteLine("Ma aflu in OnAfterRenderAsync");
+
+        //     Verifică dacă funcția JavaScript este disponibilă
+        //     var functionExists = await JS.InvokeAsync<bool>("eval", "typeof window.initJSInterop !== 'undefined'");
+
+        //     if (functionExists)
+        //     {
+        //         Apelează funcția JS doar dacă este disponibilă
+        //         await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Funcția JavaScript 'initJSInterop' nu este disponibilă.");
+        //     }
+
+        //     hasRendered = true;
+        // }
+
+    }
+
+    [JSInvokable]
+    public void PrimesteDinJS(string mesaj)
+    {
+        Console.WriteLine("Am primit din JS: " + mesaj);
+    }
+}
+ *@
+
+
+
+@* 
+ <div class="container">
+        <div class="review-form">
+            <h2 class="text-center">Lasă o recenzie</h2>
+            <EditForm Model="@NewReview" OnValidSubmit="SalveazaRecenzia">
+                <DataAnnotationsValidator />
+                 <div class="form-group">
+                    <label>Nume</label>
+                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                </div> 
+                 <div class="form-group">
+                    <label>Prenume</label>
+                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                </div> 
+                  <div class="form-group">
+                    <label>Email</label>
+                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                </div>  
+                 <div class="form-group">
+                    <label>Rating</label>
+                    <div class="rating">
+                        @for (int i = 5; i >= 1; i--)
+                        {
+                                <input type="radio" id="star-@i" name="rating" value="@i" @onchange="@(() => NewReview.Rating = i)" />
+                            <label for="star-@i">★</label>
+                        }
+                    </div>
+                </div> 
+                 <div class="form-group">
+                    <label>Mesaj</label>
+                    <InputTextArea class="form-control" @bind-Value="NewReview.Mesaj" required />
+                </div> 
+                    <div class="form-check">
+                    <InputCheckbox class="form-check-input" @bind-Value="NewReview.Notificari" />
+                    <label class="form-check-label">Doresc să primesc notificări prin email</label>
+                </div> 
+                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+            </EditForm>
+        </div>
+    </div> 
+
+
+@code {
+    public Review NewReview { get; set; } = new();
+
+    public class Review 
+    {
+        public string ProductId { get; set; }
+        public int Rating { get; set; }
+        public string Mesaj { get; set; }
+        public bool Notificari { get; set; }
+    }
+
+    public void SalveazaRecenzia()
+    {
+
+    }
+
+}
+ *@
+
+
+
+
+
 

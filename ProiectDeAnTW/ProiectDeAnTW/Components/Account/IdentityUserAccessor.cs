@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Identity;
-using ProiectDeAnTW.Data;
+using ProiectDeAnMRSTW.Infrastructure.Data;
 
 namespace ProiectDeAnTW.Components.Account
 {

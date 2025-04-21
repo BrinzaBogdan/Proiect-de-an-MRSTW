@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProiectDeAnMRSTW.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+210591342620e67bfbc04b04128c54dba6bbe5bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4740031b790766a6fe33fc00939b665637197fce")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProiectDeAnMRSTW.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProiectDeAnMRSTW.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

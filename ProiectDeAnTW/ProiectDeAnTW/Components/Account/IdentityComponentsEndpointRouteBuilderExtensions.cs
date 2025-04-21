@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
+using ProiectDeAnMRSTW.Infrastructure.Data;
 using ProiectDeAnTW.Components.Account.Pages;
 using ProiectDeAnTW.Components.Account.Pages.Manage;
-using ProiectDeAnTW.Data;
 using System.Security.Claims;
 using System.Text.Json;
 

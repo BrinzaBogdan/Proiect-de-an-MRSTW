@@ -8,7 +8,7 @@ using ProiectDeAnMRSTW.Infrastructure.Data;
 
 #nullable disable
 
-namespace ProiectDeAnTW.Migrations
+namespace ProiectDeAnMRSTW.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -205,11 +205,9 @@ namespace ProiectDeAnTW.Migrations
 
             modelBuilder.Entity("ProiectDeAnMRSTW.Domain.Reviews.Review", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedOnUtc")
                         .ValueGeneratedOnAdd()
@@ -232,8 +230,14 @@ namespace ProiectDeAnTW.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Age")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -242,6 +246,9 @@ namespace ProiectDeAnTW.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -386,8 +393,8 @@ namespace ProiectDeAnTW.Migrations
                 {
                     b.OwnsOne("ProiectDeAnMRSTW.Domain.Reviews.Comment", "Comment", b1 =>
                         {
-                            b1.Property<int>("ReviewId")
-                                .HasColumnType("int");
+                            b1.Property<Guid>("ReviewId")
+                                .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Value")
                                 .IsRequired()
@@ -404,8 +411,8 @@ namespace ProiectDeAnTW.Migrations
 
                     b.OwnsOne("ProiectDeAnMRSTW.Domain.Reviews.Rating", "Rating", b1 =>
                         {
-                            b1.Property<int>("ReviewId")
-                                .HasColumnType("int");
+                            b1.Property<Guid>("ReviewId")
+                                .HasColumnType("uniqueidentifier");
 
                             b1.Property<int>("Value")
                                 .HasColumnType("int")

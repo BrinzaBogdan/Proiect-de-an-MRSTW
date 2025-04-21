@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
-using ProiectDeAnTW.Data;
+using ProiectDeAnMRSTW.Infrastructure.Data;
 
 namespace ProiectDeAnTW.Components.Account
 {

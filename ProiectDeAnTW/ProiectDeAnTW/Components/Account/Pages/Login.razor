@@ -1,9 +1,9 @@
 ﻿@page "/Account/Login"
 
-@using System.ComponentModel.DataAnnotations
-@using Microsoft.AspNetCore.Authentication
-@using Microsoft.AspNetCore.Identity
-@using ProiectDeAnTW.Data
+@    using System.ComponentModel.DataAnnotations
+@    using Microsoft.AspNetCore.Authentication
+@    using Microsoft.AspNetCore.Identity
+@    using ProiectDeAnTW.Data
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject ILogger<Login> Logger
@@ -127,7 +127,6 @@
 
     private sealed class InputModel
     {
-        // public string[] Roles { get; set; } = {"Admin","Client","African","Users18+","UserUnder18" };
         [Required]
         [EmailAddress]
         public string Email { get; set; } = "";

@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using ProiectDeAnMRSTW.Domain.Abstractions;
 using ProiectDeAnMRSTW.Domain.Products;
 using ProiectDeAnMRSTW.Domain.Reviews;
-using ProiectDeAnTW.Data;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProiectDeAnMRSTW.Infrastructure.Data

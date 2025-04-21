@@ -6,7 +6,6 @@ using ProiectDeAnMRSTW.Infrastructure;
 using ProiectDeAnMRSTW.Infrastructure.Data;
 using ProiectDeAnTW.Components;
 using ProiectDeAnTW.Components.Account;
-using ProiectDeAnTW.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
@@ -25,11 +24,11 @@ builder.Services.AddHttpClient();
 //        options.DefaultSignInScheme = IdentityConstants.ExternalScheme;
 //    })
 //    .AddIdentityCookies();
-    builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
-    {
-        options.SignIn.RequireConfirmedAccount = true; // Confirmarea contului este necesara
-    })  .AddEntityFrameworkStores<ApplicationDbContext>()
-        .AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true; // Confirmarea contului este necesara
+}).AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? 
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");

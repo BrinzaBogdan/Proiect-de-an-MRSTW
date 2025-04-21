@@ -1,9 +1,15 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 
-namespace ProiectDeAnTW.Data
+namespace ProiectDeAnMRSTW.Infrastructure.Data
 {
     public class ApplicationUser : IdentityUser
     {
+        [PersonalData]
+        public string ?Age { get; set; }
+        [PersonalData]
+        public string ?Gender{ get; set; }
+        [PersonalData]
+        public string ?Country { get; set; }
     }
 
 }

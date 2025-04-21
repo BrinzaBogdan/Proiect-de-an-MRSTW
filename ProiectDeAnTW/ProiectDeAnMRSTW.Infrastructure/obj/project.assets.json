@@ -4363,11 +4363,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj",
+      "projectUniqueName": "F:\\UTM!!!!!!!!!!!!!!\\Semestru 4 UTM FCIM\\An2SEM2UTM\\MRSTW\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj",
       "projectName": "ProiectDeAnMRSTW.Infrastructure",
-      "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj",
+      "projectPath": "F:\\UTM!!!!!!!!!!!!!!\\Semestru 4 UTM FCIM\\An2SEM2UTM\\MRSTW\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\ProiectDeAnMRSTW.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\chicu\\.nuget\\packages\\",
-      "outputPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\obj\\",
+      "outputPath": "F:\\UTM!!!!!!!!!!!!!!\\Semestru 4 UTM FCIM\\An2SEM2UTM\\MRSTW\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\chicu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4385,8 +4385,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj": {
-              "projectPath": "C:\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj"
+            "F:\\UTM!!!!!!!!!!!!!!\\Semestru 4 UTM FCIM\\An2SEM2UTM\\MRSTW\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj": {
+              "projectPath": "F:\\UTM!!!!!!!!!!!!!!\\Semestru 4 UTM FCIM\\An2SEM2UTM\\MRSTW\\Proiect de an MRSTW\\ProiectDeAnTW\\ProiectDeAnMRSTW.Application\\ProiectDeAnMRSTW.Application.csproj"
             }
           }
         }
@@ -4400,8 +4400,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4446,7 +4445,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
