@@ -1,15 +1,16 @@
 ﻿@page "/Account/Login"
 
-@    using System.ComponentModel.DataAnnotations
-@    using Microsoft.AspNetCore.Authentication
-@    using Microsoft.AspNetCore.Identity
-@    using ProiectDeAnTW.Data
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using ProiectDeAnMRSTW.Infrastructure.Data
+@using System.Security.Claims
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject ILogger<Login> Logger
 @inject NavigationManager NavigationManager
 @inject IdentityRedirectManager RedirectManager
-@* @inject UserManager<ApplicationUser> userManager *@
+@inject UserManager<ApplicationUser> userManager 
 
 <PageTitle>Log in</PageTitle>
 
@@ -89,7 +90,16 @@
     public async Task LoginUser()
     {
 
-        // var user = await userManager.FindByEmailAsync(Input.Email);
+        var user = await userManager.FindByEmailAsync(Input.Email);
+        if (user != null)
+        {
+            await userManager.AddClaimAsync(user, new Claim("Gender", user.Gender.ToString()));
+            await userManager.AddClaimAsync(user, new Claim("Country", "Moldova"));
+            await userManager.AddClaimAsync(user, new Claim("Age", user.Age.ToString()));
+        }
+        else
+        {
+        }
         // Console.WriteLine($"Emailul de logare este {Input.Email}");
 
         // if (user != null && await userManager.CheckPasswordAsync(user, Input.Password))
@@ -101,8 +111,7 @@
 
 
 
-
-        var result = await SignInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+        var result = await SignInManager.PasswordSignInAsync(Input.Email, Input.Password, isPersistent: false, lockoutOnFailure: false);//Input.RememberMe
         if (result.Succeeded)
         {
             Logger.LogInformation("User logged in.");

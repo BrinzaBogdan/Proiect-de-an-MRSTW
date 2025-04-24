@@ -4,3 +4,7 @@
 
 /ProiectDeAnTW/.vs/ProiectDeAnMRSTW/FileContentIndex
 /ProiectDeAnTW/.vs/ProiectDeAnMRSTW
+
+# Exclude bnd and obj folders
+bin/
+obj/

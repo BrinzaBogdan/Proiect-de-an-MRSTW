@@ -30,6 +30,12 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 }).AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+});
+
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? 
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
@@ -46,8 +52,6 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 //    .AddDefaultTokenProviders();
 
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-//builder.Services.AddScoped<LoadDataToPage>();   //am adaugat eu
-//builder.Services.AddScoped<ProductService>();    //am adaugat eu
 
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration,connectionString);

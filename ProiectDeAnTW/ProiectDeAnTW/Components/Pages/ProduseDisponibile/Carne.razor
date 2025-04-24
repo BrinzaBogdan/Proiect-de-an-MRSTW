@@ -1,8 +1,11 @@
 ﻿@page "/carne"
+@using Microsoft.AspNetCore.Authorization
 @using ProiectDeAnMRSTW.Domain.Abstractions
 @using ProiectDeAnTW.Components.Layout
 @inject HttpClient Http
 @layout MainLayout
+@* @attribute [Authorize(Policy = "AdminOnly")] *@
+@attribute [Authorize(Roles = "Admin")]
 <head>
     <link href="css/site.css" rel="stylesheet">
 </head>
