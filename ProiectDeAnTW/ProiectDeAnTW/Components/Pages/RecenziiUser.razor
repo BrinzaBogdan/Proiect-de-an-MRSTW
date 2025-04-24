@@ -6,8 +6,10 @@
 @layout MainLayout
 @inject IJSRuntime JS
 @* @attribute [Authorize(Roles = "Client")] *@
+@inject ILogger<RecenziiUser> Logger
 @using Microsoft.AspNetCore.Components.Forms
-
+@using System.ComponentModel.DataAnnotations
+@rendermode InteractiveServer
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -55,14 +57,14 @@
     </style>
 </head>
 <body>
-    <div class="review-container">
+   @* <div class="review-container">
         <h3 class="text-center">Lasă o Recenzie</h3>
         <form>
             <div class="form-group">
                 <label for="first-name">Prenume</label>
                 <input type="text" id="first-name" class="form-control" placeholder="Introdu prenumele" required>
             </div>
-            @* <div class="form-group">
+             <div class="form-group">
                 <label for="last-name">Nume</label>
                 <input type="text" id="last-name" class="form-control" placeholder="Introdu numele" required>
             </div>
@@ -87,12 +89,12 @@
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="notify">
                 <label class="form-check-label" for="notify">Vreau să primesc notificări despre răspunsurile mele</label>
-            </div> *@
+            </div> 
             <button type="submit" class="submit-btn mt-3">Trimite Recenzia</button>
         </form>
     </div>
 
-    <script>
+    <s cript>
         const stars = document.querySelectorAll('.star');
         stars.forEach(star => {
             star.addEventListener('click', function() {
@@ -105,7 +107,7 @@
                 }
             });
         });
-    </script>
+    </script> *@
 </body>
 </html> 
  
@@ -273,26 +275,29 @@
 }
  *@
 
-
-
-@* 
  <div class="container">
         <div class="review-form">
             <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@NewReview" OnValidSubmit="SalveazaRecenzia">
+            <EditForm Model="@NewReview" method="post" OnValidSubmit="SalveazaRecenzia" FormName="RecenzieUser" >
                 <DataAnnotationsValidator />
-                 <div class="form-group">
+                <ValidationSummary />
+                <div class="form-floating mb-3">
+                    <InputText id="productid"  @bind-Value="@NewReview.ProductId" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label for="productid">ProductId</label>
+                     <ValidationMessage For="() => NewReview.ProductId" class="text-danger" />
+                </div>
+                 @*<div c lass="form-group">
                     <label>Nume</label>
-                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                    <InputText @bind-Value="NewReview.ProductId" class="form-control" placeholder="product" />
                 </div> 
-                 <div class="form-group">
-                    <label>Prenume</label>
-                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                </div> 
-                  <div class="form-group">
-                    <label>Email</label>
-                    <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                </div>  
+                @*<div  class="form-group">
+                     <label>Prenume</label>
+                     <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                 </div> 
+                   <div class="form-group">
+                     <label>Email</label>
+                     <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
+                 </div>  
                  <div class="form-group">
                     <label>Rating</label>
                     <div class="rating">
@@ -310,7 +315,7 @@
                     <div class="form-check">
                     <InputCheckbox class="form-check-input" @bind-Value="NewReview.Notificari" />
                     <label class="form-check-label">Doresc să primesc notificări prin email</label>
-                </div> 
+                </div>  *@
                 <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
             </EditForm>
         </div>
@@ -318,23 +323,26 @@
 
 
 @code {
-    public Review NewReview { get; set; } = new();
+    public Review NewReview { get; set; } = new Review();
 
-    public class Review 
+    public class Review
     {
-        public string ProductId { get; set; }
+        [Required(ErrorMessage = "ProductId este obligatoriu")]
+        [Display(Name = "ProductId")]
+        public string ProductId { get; set; } = "";
         public int Rating { get; set; }
         public string Mesaj { get; set; }
         public bool Notificari { get; set; }
     }
 
-    public void SalveazaRecenzia()
+    public async Task SalveazaRecenzia(EditContext editContext)
     {
-
+        Logger.LogInformation($"ProductID1 = {NewReview.ProductId}");
+        NewReview = new Review();
+        StateHasChanged();
     }
-
 }
- *@
+ 
 
 
 
