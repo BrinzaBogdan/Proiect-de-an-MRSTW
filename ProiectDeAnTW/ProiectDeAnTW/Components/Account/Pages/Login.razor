@@ -97,19 +97,6 @@
             await userManager.AddClaimAsync(user, new Claim("Country", "Moldova"));
             await userManager.AddClaimAsync(user, new Claim("Age", user.Age.ToString()));
         }
-        else
-        {
-        }
-        // Console.WriteLine($"Emailul de logare este {Input.Email}");
-
-        // if (user != null && await userManager.CheckPasswordAsync(user, Input.Password))
-        // {
-        //     var roles = await userManager.GetRolesAsync(user);
-
-
-        // }
-
-
 
         var result = await SignInManager.PasswordSignInAsync(Input.Email, Input.Password, isPersistent: false, lockoutOnFailure: false);//Input.RememberMe
         if (result.Succeeded)

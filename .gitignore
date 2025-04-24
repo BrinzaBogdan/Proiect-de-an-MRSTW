@@ -6,5 +6,5 @@
 /ProiectDeAnTW/.vs/ProiectDeAnMRSTW
 
 # Exclude bnd and obj folders
-bin/
-obj/
+**/bin/
+**/obj/
