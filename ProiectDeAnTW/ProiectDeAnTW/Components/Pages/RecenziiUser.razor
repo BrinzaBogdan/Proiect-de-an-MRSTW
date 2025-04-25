@@ -9,13 +9,13 @@
 @inject ILogger<RecenziiUser> Logger
 @using Microsoft.AspNetCore.Components.Forms
 @using System.ComponentModel.DataAnnotations
-@rendermode InteractiveServer
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recenzie Produs</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         body {
             background-color: #f8f9fa;
@@ -29,315 +29,90 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
-        .rating {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-        }
-        .star {
-            font-size: 24px;
+        
+        .star-rating {
+            direction: rtl;
+            display: inline-block;
             cursor: pointer;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
             color: #ddd;
-        }
-        .star:hover, .star.active {
-            color: #f4b400;
-        }
-        .submit-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
+            font-size: 24px;
+            padding: 0 2px;
             cursor: pointer;
+            transition: all 0.2s ease;
         }
-        .submit-btn:hover {
-            background-color: #0056b3;
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #ffc107;
         }
+
     </style>
 </head>
 <body>
-   @* <div class="review-container">
-        <h3 class="text-center">Lasă o Recenzie</h3>
-        <form>
-            <div class="form-group">
-                <label for="first-name">Prenume</label>
-                <input type="text" id="first-name" class="form-control" placeholder="Introdu prenumele" required>
-            </div>
-             <div class="form-group">
-                <label for="last-name">Nume</label>
-                <input type="text" id="last-name" class="form-control" placeholder="Introdu numele" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Introdu emailul" required>
-            </div>
-            <div class="form-group">
-                <label>Rating</label>
-                <div class="rating">
-                    <span class="star" data-value="1">★</span>
-                    <span class="star" data-value="2">★</span>
-                    <span class="star" data-value="3">★</span>
-                    <span class="star" data-value="4">★</span>
-                    <span class="star" data-value="5">★</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="message">Mesaj</label>
-                <textarea id="message" class="form-control" rows="4" placeholder="Scrie recenzia ta aici..." required></textarea>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="notify">
-                <label class="form-check-label" for="notify">Vreau să primesc notificări despre răspunsurile mele</label>
-            </div> 
-            <button type="submit" class="submit-btn mt-3">Trimite Recenzia</button>
-        </form>
-    </div>
 
-    <s cript>
-        const stars = document.querySelectorAll('.star');
-        stars.forEach(star => {
-            star.addEventListener('click', function() {
-                stars.forEach(s => s.classList.remove('active'));
-                this.classList.add('active');
-                let prev = this.previousElementSibling;
-                while (prev) {
-                    prev.classList.add('active');
-                    prev = prev.previousElementSibling;
-                }
-            });
-        });
-    </script> *@
-</body>
-</html> 
- 
-
-
-
-
-
-
-
-
-
-
-@* 
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formular Recenzie</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-        }
-        .review-form {
-            max-width: 500px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .rating {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: center;
-        }
-        .rating input {
-            display: none;
-        }
-        .rating label {
-            font-size: 30px;
-            cursor: pointer;
-            color: #ccc;
-        }
-        .rating input:checked ~ label {
-            color: #f8d700;
-        }
-    </style>
-    @* <script src="~/js/recenzie.js"></script> 
-    <script src="_framework/blazor.server.js"></script>
-</head>
-
- *@
-@* Am incercat binding cu html + js interop, nu o mers *@
-@* 
- <body>
-     <div class="container">
-        <div class="review-form">
-            <h2 class="text-center">Lasă o recenzie</h2>
-                <form id="editForm">
-                    <div class="form-group">
-                        <label>Nume:</label>
-                        <input type="text" name="nume" id="nume" required />
-                    </div> 
-                    <div class="form-group">
-                        <label>Email:</label>
-                        <input type="email" name="email" id="email" required />
-                    </div> 
-                <button  type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
-                </form>
-                <div id="status" ></div>
-        </div>
-    </div>
-
-</body>
-
-<script>
-  document.getElementById("editForm").addEventListener("submit", async function (e) {
-    e.preventDefault(); // Previne reload-ul paginii
-
-    const data = {
-        nume: document.getElementById("nume").value,
-        email: document.getElementById("email").value
-    };
-
-    const response = await fetch("/api/user/update", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
-
-    const result = await response.text(); // sau .json() dacă întorci JSON
-    document.getElementById("status").innerText = result;
-    console.log(data.nume, data.email);
-
-});
-
-    window.initJSInterop = function(dotNetHelper) {
-        dotNetHelper.invokeMethodAsync("PrimesteDinJS", "Salut din JavaScript!");
-    }
-
-</script> 
-
-</html>
-
-
-@code{
-    DotNetObjectReference<RecenziiUser>? dotNetRef;
-
-    protected override async Task OnInitializedAsync()
-    {
-        dotNetRef = DotNetObjectReference.Create(this);
-        // await InregistreazaCallback();
-        // await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        Console.WriteLine("Ma aflu in OnInitialized");
-    }
-
-    public async Task InregistreazaCallback()
-    {
-        await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        Console.WriteLine("Ma aflu in InregistreazaCallback");
-    }
-    private bool hasRendered = false;
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        // if (firstRender)
-        // {
-        //     Console.WriteLine("Ma aflu in OnAfterRenderAsync");
-        //     Apelează JavaScript doar dacă componenta a fost redată pentru prima dată
-        //     await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        //     hasRendered = true;
-        // }
-        // if (firstRender)
-        // {
-        //     Console.WriteLine("Ma aflu in OnAfterRenderAsync");
-
-        //     Verifică dacă funcția JavaScript este disponibilă
-        //     var functionExists = await JS.InvokeAsync<bool>("eval", "typeof window.initJSInterop !== 'undefined'");
-
-        //     if (functionExists)
-        //     {
-        //         Apelează funcția JS doar dacă este disponibilă
-        //         await JS.InvokeVoidAsync("initJSInterop", dotNetRef);
-        //     }
-        //     else
-        //     {
-        //         Console.WriteLine("Funcția JavaScript 'initJSInterop' nu este disponibilă.");
-        //     }
-
-        //     hasRendered = true;
-        // }
-
-    }
-
-    [JSInvokable]
-    public void PrimesteDinJS(string mesaj)
-    {
-        Console.WriteLine("Am primit din JS: " + mesaj);
-    }
-}
- *@
-
+    
  <div class="container">
         <div class="review-form">
             <h2 class="text-center">Lasă o recenzie</h2>
             <EditForm Model="@NewReview" method="post" OnValidSubmit="SalveazaRecenzia" FormName="RecenzieUser" >
                 <DataAnnotationsValidator />
-                <ValidationSummary />
-                <div class="form-floating mb-3">
-                    <InputText id="productid"  @bind-Value="@NewReview.ProductId" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label for="productid">ProductId</label>
-                     <ValidationMessage For="() => NewReview.ProductId" class="text-danger" />
-                </div>
-                 @*<div c lass="form-group">
-                    <label>Nume</label>
-                    <InputText @bind-Value="NewReview.ProductId" class="form-control" placeholder="product" />
-                </div> 
-                @*<div  class="form-group">
-                     <label>Prenume</label>
-                     <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                 </div> 
-                   <div class="form-group">
-                     <label>Email</label>
-                     <InputText class="form-control" @bind-Value="NewReview.ProductId" required />
-                 </div>  
-                 <div class="form-group">
-                    <label>Rating</label>
-                    <div class="rating">
-                        @for (int i = 5; i >= 1; i--)
-                        {
-                                <input type="radio" id="star-@i" name="rating" value="@i" @onchange="@(() => NewReview.Rating = i)" />
-                            <label for="star-@i">★</label>
-                        }
-                    </div>
-                </div> 
-                 <div class="form-group">
+
+                <div class="form-group">
                     <label>Mesaj</label>
-                    <InputTextArea class="form-control" @bind-Value="NewReview.Mesaj" required />
+                    <InputTextArea class="form-control" @bind-Value="NewReview.Comment.Value" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <InputRadioGroup @bind-Value="NewReview.Rating.Value" class="star-rating animated-stars">
+                        <InputRadio id="star5" Value="5" />
+                        <label for="star5" class="bi bi-star-fill"></label>
+                        <InputRadio id="star4" Value="4" />
+                        <label for="star4" class="bi bi-star-fill"></label>
+                        <InputRadio id="star3" Value="3" />
+                        <label for="star3" class="bi bi-star-fill"></label>
+                        <InputRadio id="star2" Value="2" />
+                        <label for="star2" class="bi bi-star-fill"></label>
+                        <InputRadio id="star1" Value="1" />
+                        <label for="star1" class="bi bi-star-fill"></label>
+                    </InputRadioGroup>
                 </div> 
-                    <div class="form-check">
-                    <InputCheckbox class="form-check-input" @bind-Value="NewReview.Notificari" />
-                    <label class="form-check-label">Doresc să primesc notificări prin email</label>
-                </div>  *@
+                
+                   
                 <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
             </EditForm>
         </div>
-    </div> 
+    </div>
+    <script>
+        document.querySelectorAll('.star-rating:not(.readonly) label').forEach(star => {
+            star.addEventListener('click', function() {
+                this.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html> 
 
 
 @code {
     public Review NewReview { get; set; } = new Review();
 
-    public class Review
-    {
-        [Required(ErrorMessage = "ProductId este obligatoriu")]
-        [Display(Name = "ProductId")]
-        public string ProductId { get; set; } = "";
-        public int Rating { get; set; }
-        public string Mesaj { get; set; }
-        public bool Notificari { get; set; }
-    }
-
     public async Task SalveazaRecenzia(EditContext editContext)
     {
-        Logger.LogInformation($"ProductID1 = {NewReview.ProductId}");
+        Logger.LogInformation($"NewReview.Comment.Value = {NewReview.Comment.Value}");
+        Logger.LogInformation($"NewReview.Rating = {NewReview.Rating}");
+
         NewReview = new Review();
         StateHasChanged();
     }

@@ -8,3 +8,4 @@
 # Exclude bnd and obj folders
 **/bin/
 **/obj/
+.vs/

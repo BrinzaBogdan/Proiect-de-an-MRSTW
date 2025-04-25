@@ -12,8 +12,9 @@ public sealed record Rating
     public static readonly Error Invalid = new("Rating.Invalid", "The rating is invalid");
 
     private Rating(int value) => Value = value;
+    public Rating() { }
 
-    public int Value { get; init; }
+    public int Value { get; set; }
 
     public static Result<Rating> Create(int value)
     {

@@ -26,7 +26,7 @@ public sealed class Review
 
     public Guid ProductId { get; set; }
 
-    public Rating Rating { get; set; }
+    public Rating Rating { get; set; } = new();
 
     public Comment Comment { get; set; } = new Comment("");
      
