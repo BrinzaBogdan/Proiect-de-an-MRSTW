@@ -6,6 +6,8 @@ using ProiectDeAnMRSTW.Infrastructure;
 using ProiectDeAnMRSTW.Infrastructure.Data;
 using ProiectDeAnTW.Components;
 using ProiectDeAnTW.Components.Account;
+using ProiectDeAnTW.Interfaces;
+using ProiectDeAnTW.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
@@ -50,9 +52,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 //    .AddEntityFrameworkStores<ApplicationDbContext>()
 //    .AddSignInManager()
 //    .AddDefaultTokenProviders();
-
+builder.Services.AddScoped<HttpClient>();
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
-
+builder.Services.AddScoped<IReviewService,ReviewService>();
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration,connectionString);
 

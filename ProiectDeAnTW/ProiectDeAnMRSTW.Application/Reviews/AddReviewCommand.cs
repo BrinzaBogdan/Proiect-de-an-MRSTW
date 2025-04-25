@@ -1,4 +1,5 @@
 ﻿using ProiectDeAnMRSTW.Application.Abstractions.Messaging;
+using ProiectDeAnMRSTW.Domain.Abstractions;
 using ProiectDeAnMRSTW.Domain.Reviews;
 using System;
 using System.Collections.Generic;
@@ -9,5 +10,5 @@ using System.Windows.Input;
 
 namespace ProiectDeAnMRSTW.Application.Reviews
 {
-    public record AddReviewCommand(Guid ProductId, Rating Rating, Comment Comment) : Abstractions.Messaging.ICommand;
+    public record AddReviewCommand(string ProductName, Rating Rating, Comment Comment) : ICommand<Result>;
 }

@@ -3,12 +3,15 @@
 @using Microsoft.AspNetCore.Identity
 @using ProiectDeAnMRSTW.Domain.Reviews
 @using ProiectDeAnTW.Components.Layout
-@layout MainLayout
-@inject IJSRuntime JS
-@* @attribute [Authorize(Roles = "Client")] *@
-@inject ILogger<RecenziiUser> Logger
 @using Microsoft.AspNetCore.Components.Forms
 @using System.ComponentModel.DataAnnotations
+@using ProiectDeAnTW.Interfaces
+@using ProiectDeAnTW.Models
+@* @layout MainLayout *@
+@inject IJSRuntime JS
+@inject ILogger<RecenziiUser> Logger
+@inject IReviewService ReviewService
+
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
@@ -114,14 +117,14 @@
 
 
 @code {
-    public Review NewReview { get; set; } = new Review();
+    public ReviewModel NewReview { get; set; } = new ReviewModel();
 
     public async Task SalveazaRecenzia(EditContext editContext)
     {
         Logger.LogInformation($"NewReview.Comment.Value = {NewReview.Comment.Value}");
         Logger.LogInformation($"NewReview.Rating = {NewReview.Rating}");
-
-        NewReview = new Review();
+        await ReviewService.CreateReview(NewReview);
+        NewReview = new ReviewModel();
         StateHasChanged();
     }
 }

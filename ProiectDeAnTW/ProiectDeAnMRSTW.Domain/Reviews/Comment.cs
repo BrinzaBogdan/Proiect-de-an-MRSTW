@@ -15,4 +15,5 @@ public class Comment
     {
         Value = value;
     }
+    public Comment() { }
 }

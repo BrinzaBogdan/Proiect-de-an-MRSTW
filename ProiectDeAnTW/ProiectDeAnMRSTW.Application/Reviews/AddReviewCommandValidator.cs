@@ -11,7 +11,7 @@ namespace ProiectDeAnMRSTW.Application.Reviews
     {
         public AddReviewCommandValidator()
         {
-            RuleFor(c => c.ProductId).NotEmpty();
+            RuleFor(c => c.ProductName).NotEmpty();
             RuleFor(c => c.Comment).NotEmpty();
             RuleFor(c => c.Rating).NotEmpty();
         }

@@ -1,4 +1,5 @@
-﻿using ProiectDeAnMRSTW.Application.Abstractions.Clock;
+﻿using MediatR;
+using ProiectDeAnMRSTW.Application.Abstractions.Clock;
 using ProiectDeAnMRSTW.Application.Abstractions.Messaging;
 using ProiectDeAnMRSTW.Domain.Abstractions;
 using ProiectDeAnMRSTW.Domain.Products;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ProiectDeAnMRSTW.Application.Reviews
 {
-    internal sealed class AddReviewCommandHandler : ICommandHandler<AddReviewCommand>
+    internal sealed class AddReviewCommandHandler : IRequestHandler<AddReviewCommand, Result>
     {
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
@@ -30,6 +31,8 @@ namespace ProiectDeAnMRSTW.Application.Reviews
             _dateTimeProvider = dateTimeProvider;
         }
 
+        public Guid ProductId { get; private set; }
+
         public async Task<Result> Handle(AddReviewCommand request, CancellationToken cancellationToken)
         {
             Result<Rating> rating = Rating.Create(request.Rating.Value);
@@ -39,8 +42,15 @@ namespace ProiectDeAnMRSTW.Application.Reviews
                 return Result.Failure(rating.Error);
             }
 
+            ProductId = await _productRepository.GetProductIdByName(request.ProductName);
+
+            if (ProductId == null)
+            {
+                return Result.Failure(ProductErrors.NotFound);
+            }
+
             Result<Review> review = Review.Create(
-                request.ProductId,
+                ProductId,
                 rating.Value,
                 request.Comment,
                 _dateTimeProvider.UtcNow);
