@@ -151,7 +151,7 @@
     <div class="container">
         <div class="review-form">
             <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@NewReviewCreated" method="post" OnSubmit="SalveazaRecenzia" FormName="RecenzieUser">
+            <EditForm Model="@NewReviewCreated" method="post" OnValidSubmit="SalveazaRecenzia" FormName="RecenzieUser">
 
                 <div class="dropdown">
                     <InputText @bind-Value="NewReviewCreated.ProductName"
@@ -228,14 +228,6 @@
     public async Task SalveazaRecenzia(EditContext editContext)
     {
         NewReview = await ReviewService.CreateReview(NewReviewCreated);
-        if (NewReview is not null)
-        {
-            Logger.LogInformation($"NewReview for {NewReview.ProductName} was created succesfuly");
-        }
-        else
-        {
-            Logger.LogInformation($"NewReview for {NewReview.ProductName} failed");
-        }
         NewReview = new CreateReviewDto();
         NewReviewCreated = new CreateReviewDto();
         StateHasChanged();

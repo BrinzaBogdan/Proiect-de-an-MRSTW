@@ -12,20 +12,15 @@ namespace ProiectDeAnMRSTW.Infrastructure.Repositories
 {
     internal sealed class ReviewRepository : IReviewRepository
     {
+        protected readonly ApplicationDbContext _DbContext;
         public ReviewRepository(ApplicationDbContext dbContext)
-            //: base(dbContext)
         {
-
+            _DbContext = dbContext;
         }
 
         public void Add(Review review)
         {
-            //throw new NotImplementedException();
+            _DbContext.Add(review);
         }
-
-        //public Task<Review?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
-        //{
-        //    return Task.CompletedTask;
-        //}
     }
 }

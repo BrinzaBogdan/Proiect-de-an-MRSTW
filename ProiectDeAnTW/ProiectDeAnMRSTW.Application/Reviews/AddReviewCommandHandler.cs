@@ -47,9 +47,9 @@ namespace ProiectDeAnMRSTW.Application.Reviews
 
             ProductId = await _productRepository.GetProductIdByName(request.ProductName);
 
-            if (ProductId == null)
+            if (ProductId == Guid.Empty)
             {
-                _logger.LogWarning("Product is null in comand handler");
+                _logger.LogWarning($"Product does not exist in database {this.GetType().Name}");
                 return Result.Failure(ProductErrors.NullValue);
             }
 
@@ -61,12 +61,12 @@ namespace ProiectDeAnMRSTW.Application.Reviews
 
             if (review.IsFailure)
             {
-                _logger.LogWarning("Review is null in comand handler");
+                _logger.LogWarning($"Create Review is null in {this.GetType().Name} handler");
                 return Result.Failure(review.Error);
             }
 
             _reviewRepository.Add(review.Value);
-            _logger.LogWarning("Review created succesfuly");
+            _logger.LogWarning($"Review created succesfuly in {review.GetType()}");
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();
