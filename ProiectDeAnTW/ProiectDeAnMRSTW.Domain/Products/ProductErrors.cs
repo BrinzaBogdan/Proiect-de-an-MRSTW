@@ -12,6 +12,10 @@ namespace ProiectDeAnMRSTW.Domain.Products
         public static readonly Error NotFound = new(
             "Product.Found",
             "The Product with the specified identifier was not found");
+        
+        public static readonly Error NullValue = new(
+            "NullValue",
+            "The Return value is null");
 
         public static readonly Error Overlap = new(
             "Booking.Overlap",

@@ -10,7 +10,7 @@ namespace ProiectDeAnMRSTW.Application.DTOs
     public class CreateReviewDto
     {
         public string ProductName { get; set; }
-        public Rating Rating{ get; set; }
-        public Comment Comment{ get; set; }
+        public Rating Rating { get; set; } = new();
+        public Comment Comment { get; set; } = new();
     }
 }
