@@ -17,53 +17,37 @@ namespace ProiectDeAnTW.Controllers.Reviews
     public class ReviewsController : ControllerBase
     {
         private readonly ISender _sender;
-        //private readonly IProductRepository _productRepository;
 
         public ReviewsController(ISender sender)
         {
             _sender = sender;
-            //_productRepository = productRepository;
         }
         [HttpPost("create-review")]
         public async Task<IActionResult> CreateReview(
             [FromBody] CreateReviewDto request,
             CancellationToken cancellationToken)
         {
-            //var productID = await _productRepository.GetProductIdByName(request.ProductName, cancellationToken);
 
             var command = new AddReviewCommand(
-                ProductName :request.ProductName,
-                Rating : request.Rating,
-                Comment : request.Comment
+                ProductName: request.ProductName,
+                Rating: request.Rating,
+                Comment: request.Comment
                 );
-
             var result = await _sender.Send(command, cancellationToken);
-
-            return 
-                result.IsSuccess ? 
-                Ok(result) : 
+            
+            return result.IsSuccess ?
+                Ok(result) :
                 BadRequest(result);
+            /*
+                if (result.IsSuccess)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return BadRequest(result);
+                }
+            */
         }
-
     }
-
-    //[ApiController]
-    //[Route("api/user")]
-    //public class UserController : ControllerBase
-    //{
-    //    [HttpPost("update")]
-    //    public IActionResult Update([FromBody] UserDto user)
-    //    {
-    //        if (string.IsNullOrWhiteSpace(user.Nume) || string.IsNullOrWhiteSpace(user.Email))
-    //        {
-    //            return BadRequest("Datele sunt invalide.");
-    //        }
-
-    //        //Console.WriteLine($"{user.Nume},   {user.Email}");
-    //        // Logica ta de salvare (ex. în baza de date)
-    //        return Ok($"Name: {user.Nume},\n" +
-    //            $"Email: {user.Email}");
-    //    }
-    //}
-
 }

@@ -1,8 +1,7 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProiectDeAnMRSTW.Application.Products.GetAllProducts;
-using ProiectDeAnMRSTW.Application.Products.GetIdByProductName;
+using ProiectDeAnMRSTW.Domain.Products;
 
 namespace ProiectDeAnTW.Controllers.Products
 {
@@ -11,11 +10,13 @@ namespace ProiectDeAnTW.Controllers.Products
     public class ProductsController : ControllerBase
     {
         private readonly ISender _sender;
-        public ProductsController(ISender sender)
+        private readonly IProductRepository repo;
+        public ProductsController(ISender sender, IProductRepository repo)
         {
             _sender = sender;
+            this.repo = repo;
         }
-        
+
         [HttpGet("by-category")]//[HttpGet("{product_category}")]
         public async Task<IActionResult> GetAllProductsByCategory(
             [FromQuery] string product_category,
@@ -29,44 +30,14 @@ namespace ProiectDeAnTW.Controllers.Products
             }
             return Ok(result.Value);
         }
-    }
-}
 
-
-/*
-
- [HttpGet("by-id")]//[HttpGet("{id}")]
+        [HttpGet("by-id")]//[HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(
             [FromQuery] Guid id,
             CancellationToken cancellationToken = default)
         {
-            Console.WriteLine($"Controller Produse 1 cu id: {id}");
-            if (_sender == null)
-            {
-                Console.WriteLine("Eroare: _sender este null");
-                return BadRequest("Internal server error");
-            }
-            Console.WriteLine("Inceput de Controller Produse");
-            var query = new GetAProductQuerry(id);
-            if (query == null)
-            {
-                Console.WriteLine("Eroare: query este null");
-                return BadRequest("Internal server error");
-            }
-            var result = await _sender.Send(query, cancellationToken);
-            if (result == null)
-            {
-                Console.WriteLine("Eroare in Controller Produse: result este null");
-                return NotFound();
-            }
-            if (result.Value == null)
-            {
-                Console.WriteLine("Eroare in Controller Produse: result.Value este null");
-                return NotFound();
-            }
-            return Ok(result.Value);
-
+            var obj = await repo.GetByIdAsync(id);
+            return Ok(obj);
         }
-
-
- */
+    }
+}
