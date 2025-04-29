@@ -12,6 +12,7 @@ namespace ProiectDeAnMRSTW.Domain.Products
         Task<Aliment?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
         Task<List<Aliment>?> GetAllProductsByCategoryName(string name, CancellationToken cancellationToken = default);
         Task<Guid> GetProductIdByName(string Name,CancellationToken cancellationToken = default);
+        Task<List<Aliment>> GetAllProductsFromDB(CancellationToken cancellationToken = default);
         void Add(Aliment aliment);
     }
 }

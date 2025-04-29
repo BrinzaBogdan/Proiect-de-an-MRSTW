@@ -1,10 +1,10 @@
-﻿using ProiectDeAnMRSTW.Domain.Abstractions;
-using ProiectDeAnTW.Models;
+﻿using ProiectDeAnMRSTW.Application.DTOs;
+using ProiectDeAnMRSTW.Domain.Abstractions;
 
 namespace ProiectDeAnTW.Interfaces
 {
     public interface IReviewService
     {
-        Task<Result<ReviewModel?>> CreateReview(ReviewModel model);
+        Task<CreateReviewDto> CreateReview(CreateReviewDto model);
     }
 }

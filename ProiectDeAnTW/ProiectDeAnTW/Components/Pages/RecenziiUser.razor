@@ -1,29 +1,35 @@
 ﻿@page "/RecenziiUser"
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Identity
+@using ProiectDeAnMRSTW.Application.DTOs
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@using ProiectDeAnMRSTW.Domain.Products
 @using ProiectDeAnMRSTW.Domain.Reviews
 @using ProiectDeAnTW.Components.Layout
 @using Microsoft.AspNetCore.Components.Forms
 @using System.ComponentModel.DataAnnotations
 @using ProiectDeAnTW.Interfaces
-@using ProiectDeAnTW.Models
-@* @layout MainLayout *@
 @inject IJSRuntime JS
 @inject ILogger<RecenziiUser> Logger
 @inject IReviewService ReviewService
-
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recenzie Produs</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="_content/BlazorBootstrap/blazorbootstrap.css" rel="stylesheet" />
+
     <style>
         body {
             background-color: #f8f9fa;
             font-family: Arial, sans-serif;
         }
+
+        .spacing {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
         .review-container {
             max-width: 600px;
             margin: 50px auto;
@@ -41,49 +47,139 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+
         .star-rating {
             direction: rtl;
             display: inline-block;
             cursor: pointer;
         }
 
-        .star-rating input {
-            display: none;
+            .star-rating input {
+                display: none;
+            }
+
+            .star-rating label {
+                color: #ddd;
+                font-size: 24px;
+                padding: 0 2px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+                .star-rating label:hover,
+                .star-rating label:hover ~ label,
+                .star-rating input:checked ~ label {
+                    color: #ffc107;
+                }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
         }
 
-        .star-rating label {
-            color: #ddd;
-            font-size: 24px;
-            padding: 0 2px;
+        .dropdown-input {
+            width: 100%;
+        }
+
+        .dropdown-content-input {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #f1f1f1;
+            max-height: 150px;
+            overflow-y: auto;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 999;
+            margin-top: 4px;
+            border-radius: 4px;
+        }
+
+        .dropbtn {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
             cursor: pointer;
-            transition: all 0.2s ease;
+            width: 200px;
+            text-align: left;
         }
 
-        .star-rating label:hover,
-        .star-rating label:hover ~ label,
-        .star-rating input:checked ~ label {
-            color: #ffc107;
+        .dropdown-content {
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 200px;
+            max-height: 150px; /* SCROLL LIMIT */
+            overflow-y: auto; /* SCROLL ACTIVAT */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
         }
+
+            .dropdown-content a {
+                padding: 8px 12px;
+                display: block;
+                text-decoration: none;
+                color: black;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown-item-btn {
+            background-color: transparent;
+            border: none;
+            padding: 10px 16px;
+            text-align: left;
+            width: 100%;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+            .dropdown-item-btn:hover {
+                background-color: #f0f0f0;
+            }
 
     </style>
 </head>
 <body>
 
-    
- <div class="container">
+
+
+
+    <div class="container">
         <div class="review-form">
             <h2 class="text-center">Lasă o recenzie</h2>
-            <EditForm Model="@NewReview" method="post" OnValidSubmit="SalveazaRecenzia" FormName="RecenzieUser" >
-                <DataAnnotationsValidator />
+            <EditForm Model="@NewReviewCreated" method="post" OnSubmit="SalveazaRecenzia" FormName="RecenzieUser">
 
-                <div class="form-group">
+                <div class="dropdown">
+                    <InputText @bind-Value="NewReviewCreated.ProductName"
+                               class="form-control dropdown-input"
+                               placeholder="Selectează un produs..."
+                               @onfocus="ShowDropdown"
+                               @onblur="HideDropdownAfterDelay" />
+
+                    @if (showDropdown)
+                    {
+                        <div class="dropdown-content-input">
+                            @foreach (var item in AllProducts)
+                            {
+                                <button type="button" class="dropdown-item-btn" @onclick="() => SelectItem(item.Name)">
+                                    @item.Name
+                                </button>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="form-group spacing">
                     <label>Mesaj</label>
-                    <InputTextArea class="form-control" @bind-Value="NewReview.Comment.Value" required />
+                    <InputTextArea class="form-control" @bind-Value="NewReviewCreated.Comment.Value" required />
                 </div>
 
                 <div class="form-group">
                     <label>Rating</label>
-                    <InputRadioGroup @bind-Value="NewReview.Rating.Value" class="star-rating animated-stars">
+                    <InputRadioGroup @bind-Value="NewReviewCreated.Rating.Value" class="star-rating animated-stars">
                         <InputRadio id="star5" Value="5" />
                         <label for="star5" class="bi bi-star-fill"></label>
                         <InputRadio id="star4" Value="4" />
@@ -95,40 +191,73 @@
                         <InputRadio id="star1" Value="1" />
                         <label for="star1" class="bi bi-star-fill"></label>
                     </InputRadioGroup>
-                </div> 
-                
-                   
+                </div>
+
+
                 <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
             </EditForm>
         </div>
     </div>
     <script>
         document.querySelectorAll('.star-rating:not(.readonly) label').forEach(star => {
-            star.addEventListener('click', function() {
-                this.style.transform = 'scale(1.2)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 200);
-            });
+        star.addEventListener('click', function() {
+        this.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+        this.style.transform = 'scale(1)';
+        }, 200);
+        });
         });
     </script>
+    <script src="_content/BlazorBootstrap/blazor.bootstrap.bundle.min.js"></script>
+
 </body>
-</html> 
+</html>
 
 
 @code {
-    public ReviewModel NewReview { get; set; } = new ReviewModel();
+    public CreateReviewDto NewReviewCreated = new();
+    public CreateReviewDto NewReview { get; set; } = new CreateReviewDto();
+    [Inject] public IProductRepository _productRepository { get; set; }
+    private List<Aliment> AllProducts = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        AllProducts = await _productRepository.GetAllProductsFromDB();
+    }
 
     public async Task SalveazaRecenzia(EditContext editContext)
     {
-        Logger.LogInformation($"NewReview.Comment.Value = {NewReview.Comment.Value}");
-        Logger.LogInformation($"NewReview.Rating = {NewReview.Rating}");
-        await ReviewService.CreateReview(NewReview);
-        NewReview = new ReviewModel();
+        NewReview = await ReviewService.CreateReview(NewReviewCreated);
+        if (NewReview is not null)
+        {
+            Logger.LogInformation($"NewReview for {NewReview.ProductName} was created succesfuly");
+        }
+        else
+        {
+            Logger.LogInformation($"NewReview for {NewReview.ProductName} failed");
+        }
+        NewReview = new CreateReviewDto();
+        NewReviewCreated = new CreateReviewDto();
         StateHasChanged();
     }
+
+    private bool showDropdown = false;
+
+    private void ShowDropdown() => showDropdown = true;
+
+    private async Task HideDropdownAfterDelay()
+    {
+        await Task.Delay(200); // mic delay pentru a permite click pe item
+        showDropdown = false;
+    }
+
+    private void SelectItem(string value)
+    {
+        NewReviewCreated.ProductName = value;
+        showDropdown = false;
+    }
 }
- 
+
 
 
 
