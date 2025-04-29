@@ -10,5 +10,5 @@ using System.Windows.Input;
 
 namespace ProiectDeAnMRSTW.Application.Reviews
 {
-    public record AddReviewCommand(string ProductName, Rating Rating, Comment Comment) : ICommand<Result>;
+    public record AddReviewCommand(string ProductName, Rating Rating, Comment Comment) : Abstractions.Messaging.ICommand;
 }

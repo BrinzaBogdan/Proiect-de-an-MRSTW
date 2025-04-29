@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.Extensions.Logging;
 using ProiectDeAnMRSTW.Application.Abstractions.Clock;
 using ProiectDeAnMRSTW.Application.Abstractions.Messaging;
 using ProiectDeAnMRSTW.Domain.Abstractions;
@@ -12,23 +13,25 @@ using System.Threading.Tasks;
 
 namespace ProiectDeAnMRSTW.Application.Reviews
 {
-    internal sealed class AddReviewCommandHandler : IRequestHandler<AddReviewCommand, Result>
+    internal sealed class AddReviewCommandHandler : ICommandHandler<AddReviewCommand>
     {
         private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IReviewRepository _reviewRepository;
         private readonly IDateTimeProvider _dateTimeProvider;
-
+        private readonly ILogger<AddReviewCommandHandler> _logger;
         public AddReviewCommandHandler(
             IUnitOfWork unitOfWork,
             IProductRepository productRepository,
             IReviewRepository reviewRepository,
-            IDateTimeProvider dateTimeProvider)
+            IDateTimeProvider dateTimeProvider,
+            ILogger<AddReviewCommandHandler> logger)
         {
             _unitOfWork = unitOfWork;
             _productRepository = productRepository;
             _reviewRepository = reviewRepository;
             _dateTimeProvider = dateTimeProvider;
+            _logger = logger;
         }
 
         public Guid ProductId { get; private set; }
@@ -46,7 +49,8 @@ namespace ProiectDeAnMRSTW.Application.Reviews
 
             if (ProductId == null)
             {
-                return Result.Failure(ProductErrors.NotFound);
+                _logger.LogWarning("Product is null in comand handler");
+                return Result.Failure(ProductErrors.NullValue);
             }
 
             Result<Review> review = Review.Create(
@@ -57,11 +61,12 @@ namespace ProiectDeAnMRSTW.Application.Reviews
 
             if (review.IsFailure)
             {
+                _logger.LogWarning("Review is null in comand handler");
                 return Result.Failure(review.Error);
             }
 
             _reviewRepository.Add(review.Value);
-
+            _logger.LogWarning("Review created succesfuly");
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return Result.Success();
