@@ -48,7 +48,7 @@
                 <label for="gender">Gender reveal</label>
             </div>
             <div class="form-floating mb-3">
-                <InputText type="age" @bind-Value="Input.Age" class="form-control" aria-required="true" placeholder="are you old?" />
+                <InputNumber type="age" @bind-Value="Input.Age" class="form-control" aria-required="true" placeholder="are you old?" />
                 <label for="age">Are you old?</label>
             </div>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
@@ -159,10 +159,12 @@
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; } = "";
 
+        [Required(ErrorMessage = "Gender is mandatory.")]
         [Display(Name = "Gender")]
         public string Gender { get; set; } = "";
         
+        [Range(1, 120, ErrorMessage = "Age must be between {1} and {2}.")]
         [Display(Name = "Age")]
-        public string Age { get; set; } = "";
+        public int Age { get; set; }
 }
 }

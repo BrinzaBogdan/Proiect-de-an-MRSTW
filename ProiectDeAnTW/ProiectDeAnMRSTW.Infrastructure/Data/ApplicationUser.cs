@@ -5,7 +5,7 @@ namespace ProiectDeAnMRSTW.Infrastructure.Data
     public class ApplicationUser : IdentityUser
     {
         [PersonalData]
-        public string ?Age { get; set; }
+        public int ?Age { get; set; }
         [PersonalData]
         public string ?Gender{ get; set; }
         [PersonalData]
