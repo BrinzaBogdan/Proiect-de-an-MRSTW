@@ -1,11 +1,11 @@
-﻿@rendermode InteractiveServer
+﻿@* 
 @using ProiectDeAnTW.Components.Account.Shared
 
 <Router AppAssembly="@typeof(Program).Assembly">
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(Layout.MainLayout)">
             <NotAuthorized>
-                <RedirectToLogin />
+                You are not authorized to see this page.
             </NotAuthorized>
         </AuthorizeRouteView>
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
@@ -15,4 +15,19 @@
             <p>Page not found</p>
         </LayoutView>
     </NotFound>
+</Router>
+*@
+
+
+@rendermode InteractiveServer
+﻿@using ProiectDeAnTW.Components.Account.Shared
+<Router AppAssembly="typeof(Program).Assembly">
+    <Found Context="routeData">
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+            <NotAuthorized>
+                <RedirectToLogin />
+            </NotAuthorized>
+        </AuthorizeRouteView>
+        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+    </Found>
 </Router>

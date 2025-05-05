@@ -44,8 +44,12 @@
             </div>
 
             <div class="form-floating mb-3">
-                <InputText type="text" @bind-Value="Input.Gender" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label for="confirm-password">Confirm Password</label>
+                <InputText type="gender" @bind-Value="Input.Gender" class="form-control"aria-required="true" placeholder="gender reveal" />
+                <label for="gender">Gender reveal</label>
+            </div>
+            <div class="form-floating mb-3">
+                <InputText type="age" @bind-Value="Input.Age" class="form-control" aria-required="true" placeholder="are you old?" />
+                <label for="age">Are you old?</label>
             </div>
             <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </EditForm>
@@ -74,6 +78,10 @@
         var user = CreateUser();
 
         await UserManager.AddToRoleAsync(user, "Client");
+        user.Country = "Moldova";
+        user.Gender = Input.Gender;
+        user.Age = Input.Age;
+
 
 
         await UserStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
@@ -87,7 +95,6 @@
             return;
         }
 
-        user.Gender = Input.Gender;
         Logger.LogInformation("User created a new account with password.");
         Logger.LogInformation($"{Input.Gender}");
         var userId = await UserManager.GetUserIdAsync(user);
@@ -154,5 +161,8 @@
 
         [Display(Name = "Gender")]
         public string Gender { get; set; } = "";
-    }
+        
+        [Display(Name = "Age")]
+        public string Age { get; set; } = "";
+}
 }
