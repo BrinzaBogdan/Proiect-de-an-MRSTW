@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+
+ <div class="main-layout">
+    <div class="top-nav">
+        <NavMenu />
+    </div>
+
+    <main>
+         <article class="content px-4">
+             @Body
+        </article> 
+    </main>
+</div>  
+
+
+
+
+
+<footer style="background-color: #111111; color: white; padding: 20px; text-align: center; margin-top: 20px; border-radius: 5% 5% 0 0;">
+    <p>&copy; 2025 BogSanLu SRL. All rights reserved.</p>
+    <p><a href="#" style="color: #ffffff; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #ffffff; text-decoration: none;">Terms of Service</a></p>
+</footer>
+
+
+@*Pentru n inregistrare*@
+@* 
+<div class="top-row px-4">
+    <a href="/Account/Register">
+        <svg class="center__svg" style="margin-right: 0;width: 26px;height: 26px;" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <g opacity="0.5">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16 30.6663C7.89982 30.6663 1.33333 24.0998 1.33333 15.9997C1.33333 7.8995 7.89982 1.33301 16 1.33301C24.1002 1.33301 30.6667 7.8995 30.6667 15.9997C30.6667 24.0998 24.1002 30.6663 16 30.6663ZM25.866 22.8325C27.2115 20.8934 28 18.5386 28 15.9997C28 9.37226 22.6274 3.99967 16 3.99967C9.37258 3.99967 3.99999 9.37226 3.99999 15.9997C3.99999 18.5386 4.78851 20.8934 6.134 22.8325C7.6346 20.8504 11.1608 19.9997 16 19.9997C20.8392 19.9997 24.3654 20.8504 25.866 22.8325ZM23.9529 24.986C23.5627 23.5828 20.7592 22.6663 16 22.6663C11.2408 22.6663 8.43733 23.5828 8.04709 24.986C10.1644 26.8612 12.9492 27.9997 16 27.9997C19.0507 27.9997 21.8356 26.8612 23.9529 24.986ZM16 7.99967C12.7721 7.99967 10.6667 10.3407 10.6667 13.333C10.6667 17.9028 13.0145 19.9997 16 19.9997C18.9574 19.9997 21.3333 17.9725 21.3333 13.5997C21.3333 10.5618 19.2189 7.99967 16 7.99967ZM13.3333 13.333C13.3333 16.3587 14.4243 17.333 16 17.333C17.5703 17.333 18.6667 16.3975 18.6667 13.5997C18.6667 11.9336 17.6209 10.6663 16 10.6663C14.3116 10.6663 13.3333 11.7541 13.3333 13.333Z" fill="#64696C"></path>
+            </g>
+        </svg>
+    </a>
+</div> *@
+
+
+ <div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div> 

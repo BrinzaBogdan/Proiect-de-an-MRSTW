@@ -1,0 +1,252 @@
+﻿@page "/Promotii"
+@* 
+@layout MainLayout;
+@using ProiectDeAnTW.Components.Layout *@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin Online - Produse și Oferte</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            /*padding-top: 5 0px;
+            margin: 0;
+            padding: 0; */
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #007bff;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .product-img {
+            /* width : 200px; */
+            height: 200px;
+            border-radius: 8px;
+            margin: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #777;
+            text-align : center;
+        }
+        .product-name{
+            text-align : center;
+        }
+
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+<div class="antet">
+    <header style="background-color: #ffc107; ">
+        <h1 >Magazin Online - Produse și Oferte Speciale</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ffc107;">
+        <div class="container ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</div>
+
+<div class="container ">
+
+    <section id="products">
+        <h2 class="text-center mb-4">Produse Disponibile</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/Dulciuri/Acadele.jpg" alt="Șampon pentru păr" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Acadele</h5>
+                        <p class="product-description">Cele mai bune <br />acadele pentru dinti.</p>
+                        <p><strong>15.99 LEI</strong></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/Dulciuri/BiscuitiOvaz.jpg" alt="BBiscuiti cu ovaz" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Biscuiti cu ovaz</h5>
+                        <p class="product-description">Biscuiti ca la<br /> bunica acasa.</p>
+                        <p><strong>29.99 LEI</strong></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/Carne/Carnedeporc.jpg" alt="Carne de porc" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Carne de porc</h5>
+                        <p class="product-description">Carne proaspata <br />la gratar.</p>
+                        <p><strong>89.99 LEI</strong></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Noutăți -->
+    <section id="news" class="news-container">
+    <h2 class="text-center mb-4">Noutăți în Magazin</h2>
+    <div class="row">
+    <div class="row">
+    <div class="col-md-4 d-flex justify-content-end">
+        <img src="images/OpenForBussiness.jpg" alt="Noutăți" style="max-width: 100%; max-height: 100%;" class="img-fluid rounded mb-3">
+        </div>
+            <div class="col-md d-flex align-items-center">
+                <p style="padding: 20px; max-width: 500px;">Am adăugat o gamă variată de produse noi pentru toți clienții noștri. Vizitează magazinul nostru pentru a descoperi cele mai noi oferte și produse!</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <br />    <br />    <br />
+
+    <!-- Oferte Speciale -->
+    <section id="offers">
+        <h2 class="text-center mb-4">Oferte Speciale</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/Legume/Ridichie.jpg" alt="Oferte 1" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Ridichie proaspata</h5>
+                        <p><strong>120 LEI</strong> <span class="text-danger">99.99 LEI</span></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/Paste/Scialatielli.jpg" alt="Oferte 2" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Paste Scialatielli</h5>
+                        <p><strong>899.99 LEI</strong> <span class="text-danger">799.99 LEI</span></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="images/Peste/Dalmors.jpg" alt="Oferte 3" class="product-img mx-auto d-block">
+                    <div class="p-3">
+                        <h5 class="product-name">Peste Dalmors</h5>
+                        <p><strong>150 LEI</strong> <span class="text-danger">119.99 LEI</span></p>
+                        <button class="btn btn-primary btn-block">Adaugă în coș</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+@code {
+
+}
+
+
+
+
+
+
+
+@*
+    1. <meta charset="UTF-8">
+Această etichetă specifică setul de caractere folosit pe pagină. În acest caz, UTF-8 
+este unul dintre cele mai utilizate seturi de caractere, care include aproape toate 
+caracterele din toate limbile și simbolurile speciale.
+
+UTF-8 este folosit pentru a asigura că textul paginii este corect afişat, indiferent 
+de limba sau simbolurile utilizate (de exemplu, caractere speciale precum „ă”, „ș”, „€” etc.).
+Fără această etichetă, ar putea apărea erori de codificare în pagină, în special dacă 
+sunt folosite caractere care nu fac parte din setul de caractere implicit al browser-ului.
+*@
+@*
+    2. <meta name="viewport" content="width=device-width, initial-scale=1.0">
+Această etichetă controlează comportamentul paginii web pe dispozitive mobile, astfel încât 
+să fie responsive (adică să se adapteze corect la diferite dimensiuni de ecran).
+
+width=device-width: Setează lățimea paginii pentru a se potrivi lățimii ecranului dispozitivului 
+pe care este vizualizată pagina (indiferent că este un desktop, tabletă sau telefon).
+initial-scale=1.0: Aceasta setează scara inițială a paginii. Cu valoarea 1.0, pagina va fi
+la scală normală, fără zoom la încărcare.
+*@

@@ -1,0 +1,123 @@
+﻿@page "/peste"
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@inject HttpClient Http
+
+<head>
+	<link href="css/site.css" rel="stylesheet">
+    <style>
+         .back-to-menu {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #343a40; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease; 
+        }
+
+        .back-to-menu:hover {
+            background-color: #344a46;
+        }
+    </style>
+   
+</head>
+    <a href="/Produse" class="back-to-menu">Înapoi la meniu</a> 
+    @if (TotPestele == null)
+    {
+        <p>Se încarcă datele...</p>
+    }
+    else
+    {
+        <div class="container mt-4">
+	        <div class="row">
+                @foreach (var aliment in TotPestele)
+                {
+			        <div class="col-md-3 col-sm-6 col-12 mb-4">
+				        <div class="product-category">
+					        <a href="@aliment.ProductPageLink">
+						        <img src="@aliment.ImageUrl" alt="@aliment.Name" class="category-image">
+						        <h5 class="category-title">@aliment.Name</h5>
+					        </a>
+				        </div>
+			        </div>
+                }
+	        </div>
+        </div>
+    }
+
+
+@code {
+    public List<Aliment> TotPestele { get; set; } = new List<Aliment>();
+
+	protected override async Task OnInitializedAsync()
+	{
+        TotPestele = await Http.GetFromJsonAsync<List<Aliment>>("http://localhost:5257/api/products/by-category?product_category=Peste");
+	}
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* 
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head> 
+*@
+@* <div class="dropdown">
+    <button class="btn btn-primary" @onclick="ToggleDropdown">
+        Meniu
+    </button>
+
+    @if (isDropdownOpen)
+    {
+            <ul class="dropdown-menu show">
+                <li><a class="dropdown-item" href="#">Opțiunea 1</a></li>
+                <li><a class="dropdown-item" href="#">Opțiunea 2</a></li>
+                <li><a class="dropdown-item" href="#">Opțiunea 3</a></li>
+            </ul>
+    }
+</div>
+
+@code {
+    private bool isDropdownOpen = false;
+
+    private void ToggleDropdown()
+    {
+        isDropdownOpen = !isDropdownOpen;
+    }
+}
+ *@

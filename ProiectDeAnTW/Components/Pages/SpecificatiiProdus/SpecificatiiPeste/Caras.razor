@@ -1,0 +1,158 @@
+﻿@page "/peste/Caras"
+
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție - Pește Caras</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5; /* Un gri deschis */
+            text-align: center;
+        }
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: linear-gradient(135deg, #d1c4e9, #9575cd); /* Gradient cu nuanțe de violet */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        th, td {
+            border: 1px solid #b39ddb; /* Un violet deschis pentru borduri */
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: #4a148c; /* Un violet închis pentru text */
+        }
+        th {
+            background-color: #673ab7; /* Un violet închis pentru antet */
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #ede7f6; /* Un violet foarte deschis pentru rândurile pare */
+        }
+        .category {
+            font-weight: bold;
+            background-color: #ce93d8; /* Un violet mai intens pentru categorii */
+        }
+        h2 {
+            color: #4a148c; /* Un violet închis pentru titlu */
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .offer {
+            display: inline-block;
+            background-color: #8e24aa; /* Un violet mediu pentru oferta */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #673ab7;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Informații Nutriționale - Pește Caras</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>110 kcal</td>
+            <td>6%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>20g</td>
+            <td>40%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>3g</td>
+            <td>5%</td>
+        </tr>
+        <tr>
+            <td>- din care Omega-3</td>
+            <td>0.8g</td>
+            <td>-</td>
+        </tr>
+        <tr class="category">
+            <td>Colesterol</td>
+            <td>50mg</td>
+            <td>17%</td>
+        </tr>
+        <tr>
+            <td>Sodiu</td>
+            <td>60mg</td>
+            <td>2%</td>
+        </tr>
+        <tr class="category">
+            <td>Vitamina B12</td>
+            <td>3µg</td>
+            <td>50%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size: 16px; color: #555;">*DZR = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="offer">
+    Gust delicat și nutrienți esențiali!
+</div>
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/peste" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Peste
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/peste/Dalmors" class="navigation-button">Dalmors</a>
+    <a href="/peste/Somon" class="navigation-button">Somon</a>
+    <a href="/peste/Carp" class="navigation-button">Carp</a>
+    <a href="/peste/Biban" class="navigation-button">Biban</a>
+</div>
+</div>
+</body>
+</html>
+
+@code {
+
+}

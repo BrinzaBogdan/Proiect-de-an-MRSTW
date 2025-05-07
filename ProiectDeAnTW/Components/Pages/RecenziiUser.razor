@@ -1,0 +1,266 @@
+﻿@page "/RecenziiUser"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
+@using ProiectDeAnMRSTW.Application.DTOs
+@using ProiectDeAnMRSTW.Domain.Abstractions
+@using ProiectDeAnMRSTW.Domain.Products
+@using ProiectDeAnMRSTW.Domain.Reviews
+@using ProiectDeAnTW.Components.Layout
+@using Microsoft.AspNetCore.Components.Forms
+@using System.ComponentModel.DataAnnotations
+@using ProiectDeAnTW.Interfaces
+@inject IJSRuntime JS
+@inject ILogger<RecenziiUser> Logger
+@inject IReviewService ReviewService
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recenzie Produs</title>
+    <link href="_content/BlazorBootstrap/blazorbootstrap.css" rel="stylesheet" />
+
+    <style>
+        body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+        }
+
+        .spacing {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        }
+
+        .review-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-form {
+        max-width: 500px;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .star-rating {
+        direction: rtl;
+        display: inline-block;
+        cursor: pointer;
+        }
+
+        .star-rating input {
+        display: none;
+        }
+
+        .star-rating label {
+        color: #ddd;
+        font-size: 24px;
+        padding: 0 2px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+        color: #ffc107;
+        }
+
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        .dropdown-input {
+        width: 100%;
+        }
+
+        .dropdown-content-input {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f1f1f1;
+        max-height: 150px;
+        overflow-y: auto;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 999;
+        margin-top: 4px;
+        border-radius: 4px;
+        }
+
+        .dropbtn {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 200px;
+        text-align: left;
+        }
+
+        .dropdown-content {
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 200px;
+        max-height: 150px; /* SCROLL LIMIT */
+        overflow-y: auto; /* SCROLL ACTIVAT */
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        padding: 8px 12px;
+        display: block;
+        text-decoration: none;
+        color: black;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown-item-btn {
+        background-color: transparent;
+        border: none;
+        padding: 10px 16px;
+        text-align: left;
+        width: 100%;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        }
+
+        .dropdown-item-btn:hover {
+        background-color: #f0f0f0;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <div class="review-form">
+            <h2 class="text-center">Lasă o recenzie</h2>
+            <EditForm Model="@NewReviewCreated" method="post" OnSubmit="SalveazaRecenzia" FormName="RecenzieUser">
+
+                <div class="dropdown">
+                    <InputText @bind-Value="NewReviewCreated.ProductName"
+                    class="form-control dropdown-input"
+                    autocomplete="off"
+                    placeholder="Selectează un produs..."
+                    @onfocus="ShowDropdown"
+                    @onblur="HideDropdownAfterDelay" />
+
+                    @if (showDropdown)
+                    {
+                        <div class="dropdown-content-input">
+                            @foreach (var item in AllProducts)
+                            {
+                                <button type="button" class="dropdown-item-btn" @onclick="() => SelectItem(item.Name)">
+                                    @item.Name
+                                </button>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="form-group spacing">
+                    <label>Mesaj</label>
+                    <InputTextArea class="form-control" @bind-Value="NewReviewCreated.Comment.Value" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Rating</label>
+                    <InputRadioGroup @bind-Value="NewReviewCreated.Rating.Value" class="star-rating animated-stars">
+                        <InputRadio id="star5" Value="5" />
+                        <label for="star5" class="bi bi-star-fill"></label>
+                        <InputRadio id="star4" Value="4" />
+                        <label for="star4" class="bi bi-star-fill"></label>
+                        <InputRadio id="star3" Value="3" />
+                        <label for="star3" class="bi bi-star-fill"></label>
+                        <InputRadio id="star2" Value="2" />
+                        <label for="star2" class="bi bi-star-fill"></label>
+                        <InputRadio id="star1" Value="1" />
+                        <label for="star1" class="bi bi-star-fill"></label>
+                    </InputRadioGroup>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mt-3">Trimite Recenzia</button>
+            </EditForm>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.star-rating:not(.readonly) label').forEach(star => {
+        star.addEventListener('click', function() {
+        this.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+        this.style.transform = 'scale(1)';
+        }, 200);
+        });
+        });
+    </script>
+    <script src="_content/BlazorBootstrap/blazor.bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+
+@code {
+    public CreateReviewDto NewReviewCreated = new();
+    public CreateReviewDto NewReview { get; set; } = new CreateReviewDto();
+    [Inject] public IProductRepository _productRepository { get; set; }
+    private List<Aliment> AllProducts = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        AllProducts = await _productRepository.GetAllProductsFromDB();
+    }
+
+    public async Task SalveazaRecenzia(EditContext editContext)
+    {
+        Console.WriteLine($"NewReviewCreated.ProductName = {NewReviewCreated.ProductName}");
+        Console.WriteLine($"NewReviewCreated.Comment = {NewReviewCreated.Comment.Value}");
+        Console.WriteLine($"NewReviewCreated.Rating = {NewReviewCreated.Rating.Value}");
+        NewReview = await ReviewService.CreateReview(NewReviewCreated);
+        NewReview = new CreateReviewDto();
+        NewReviewCreated = new CreateReviewDto();
+        StateHasChanged();
+    }
+
+    private bool showDropdown = false;
+
+    private void ShowDropdown()
+    {
+        showDropdown = true;
+        StateHasChanged();
+    } 
+
+    private async Task HideDropdownAfterDelay()
+    {
+        await Task.Delay(200); // mic delay pentru a permite click pe item
+        showDropdown = false;
+    }
+
+    private void SelectItem(string value)
+    {
+        NewReviewCreated.ProductName = value;
+        showDropdown = false;
+    }
+}
+
+
+
+
+
+
+

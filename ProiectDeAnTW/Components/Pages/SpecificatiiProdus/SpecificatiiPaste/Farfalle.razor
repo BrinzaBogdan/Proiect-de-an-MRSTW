@@ -1,0 +1,148 @@
+﻿@layout MenuProduseLayout
+@page "/paste/Farfalle"
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție și Alergeni - Farfalle</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: rgb(124,105,104);
+        } 
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(139, 212, 200);
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(139, 154, 200);
+        }
+
+        .category {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .navigation-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #8fbc8f;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Informații Nutriționale și Alergeni - Farfalle</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Categorie</th>
+                <th>Valoare per porție (100g)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="category">
+                <td>Valori nutriționale</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Calorii</td>
+                <td>370 kcal</td>
+            </tr>
+            <tr>
+                <td>Proteine</td>
+                <td>12 g</td>
+            </tr>
+            <tr>
+                <td>Carbohidrați</td>
+                <td>75 g</td>
+            </tr>
+            <tr>
+                <td>Grăsimi</td>
+                <td>1.8 g</td>
+            </tr>
+            <tr>
+                <td>Fibre</td>
+                <td>2.8 g</td>
+            </tr>
+
+            <tr class="category">
+                <td>Alergeni</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Gluten</td>
+                <td>✔ Conține</td>
+            </tr>
+            <tr>
+                <td>Lactoză</td>
+                <td>❌ Nu conține</td>
+            </tr>
+            <tr>
+                <td>Ouă</td>
+                <td>❌ Nu conține</td>
+            </tr>
+            <tr>
+                <td>Alune</td>
+                <td>❌ Nu conține</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/paste" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Paste
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/paste/SedaniRigati" class="navigation-button">Sedani rigati</a>
+    <a href="/paste/Scialatielli" class="navigation-button">Scialatielli</a>
+    <a href="/paste/PastaPenne" class="navigation-button">PastaPenne</a>
+    <a href="/paste/Conchiglie" class="navigation-button">Conchiglie</a>
+</div> 
+</div>
+</body>
+</html>
+@code {
+
+}

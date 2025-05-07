@@ -1,0 +1,164 @@
+﻿@page "/dulciuri/Fursecuri"
+
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informații Nutriționale - Fursecuri Cookie</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3e5ab;
+            text-align: center;
+        }
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: linear-gradient(135deg, #ffdd94, #ffb347);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        th, td {
+            border: 1px solid #e0a800;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: #5a3d0c;
+        }
+        th {
+            background-color: #e0a800;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #fff3cd;
+        }
+        .category {
+            font-weight: bold;
+            background-color: #ffd966;
+        }
+        h2 {
+            color: #b36b00;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .offer {
+            display: inline-block;
+            background-color: #d48806;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #f8e8d0;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #e6a756;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Informații Nutriționale - Fursecuri Cookie</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>502 kcal</td>
+            <td>25.1%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>6.5g</td>
+            <td>13%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>24g</td>
+            <td>37%</td>
+        </tr>
+        <tr>
+            <td>- din care saturate</td>
+            <td>10g</td>
+            <td>50%</td>
+        </tr>
+        <tr class="category">
+            <td>Carbohidrați</td>
+            <td>65g</td>
+            <td>23%</td>
+        </tr>
+        <tr>
+            <td>- din care zaharuri</td>
+            <td>30g</td>
+            <td>33%</td>
+        </tr>
+        <tr class="category">
+            <td>Fibre</td>
+            <td>3g</td>
+            <td>12%</td>
+        </tr>
+        <tr class="category">
+            <td>Sodiu</td>
+            <td class="highlight">320mg</td>
+            <td class="highlight">14%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>*DZR</strong> = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="offer">
+    Promoție specială: 30 lei/pachet
+</div>
+
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/dulciuri" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Dulciuri
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/dulciuri/BiscuitiOvaz"  class="navigation-button">Biscuiti ovaz</a>
+    <a href="/dulciuri/Acadele"  class="navigation-button">Acadele</a>
+    <a href="/dulciuri/TurteDulci"  class="navigation-button">Turte dulci</a>
+    <a href="/dulciuri/FerreroRocher"  class="navigation-button">Ferrero rocher</a>
+</div>
+</div>
+</body>
+</html>
+
+@code {
+
+}

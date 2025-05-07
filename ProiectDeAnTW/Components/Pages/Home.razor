@@ -1,0 +1,121 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principală</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .banner {
+            background: url('images/MarketPlace.jpg') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Brandul Meu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">Despre Noi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#partners">Colaboratori</a></li>
+                <li class="nav-item"><a class="nav-link" href="#studies">Studii</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BANNER -->
+    <div class="banner">Bine ați venit pe pagina noastră!</div>
+
+    <!-- DESPRE NOI -->
+    <section id="about" class="container my-5">
+        <h2 class="text-center mb-4">Despre Noi</h2>
+        <p style="text-align:center;">Ne ocupăm cu furnizarea de servicii cat mai inovative pentru a satisface nevoile clientilor.</p>
+    </section>
+
+    <!-- COLABORATORI -->
+    <section id="partners" class="container my-5">
+        <h2 class="text-center mb-4">Colaboratori</h2>
+        <div class="row">
+            <div class="col-md-4"><img src="images/partener1.jpg" class="img-fluid"></div>
+            <div class="col-md-4"><img src="images/partener1.jpg" class="img-fluid"></div>
+            <div class="col-md-4"><img src="images/partener1.jpg" class="img-fluid"></div>
+        </div>
+    </section>
+
+    <!-- STUDII -->
+    <section id="studies" class="container my-5">
+        <h2 class="text-center mb-4">Studii și Certificări</h2>
+        <p style=" font-weight: bold; text-align:center; font-size: 2rem;">Acesta este primul nostru proiect si e mai bun ca Kaufland</p>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="gallery" class="container my-5">
+        <h2 class="text-center mb-4">Galerie</h2>
+        <div class="row">
+            <div class="col-md-4"><img src="images/BodyBuilding.jpg" class="img-fluid"></div>
+            <div class="col-md-4"><img src="images/WeakPerson.jpg" class="img-fluid"></div>
+            <div class="col-md-4"><img src="images/Himalaya.jpg" class="img-fluid"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">Contact</h2>
+        <div class="row">
+            <div class="col-md-4"><img src="images/DonaldTrump.jpg" class="img-fluid"></div>
+            <div class="col-md-4"><img src="images/VladimirPutin.jpg" class="img-fluid"></div>
+            <div class="col-md-4"><img src="images/BrasilPresident.jpg" class="img-fluid"></div>
+        </div>
+    </section>
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* asta e bara de cautare*@
+
+@*
+    <form action="/ro/cautare" class="header__search search_ajax" method="get">
+    <input placeholder="Căutare" name="search" type="text" id="search_input" autocomplete="off">
+        <button class="btn__search" title="search" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19.7142 19.7147L15.9857 15.9861M18 11.1433C18 14.9304 14.9299 18.0004 11.1428 18.0004C7.35572 18.0004 4.28568 14.9304 4.28568 11.1433C4.28568 7.35618 7.35572 4.28613 11.1428 4.28613C14.9299 4.28613 18 7.35618 18 11.1433Z" stroke="#ED1C24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+    <div class="sf_ddown sf_ddown_head" style="display: none;"></div>
+</form> *@
+

@@ -1,0 +1,128 @@
+﻿@using ProiectDeAnMRSTW.Domain.Products
+@implements IDisposable
+@inject NavigationManager NavigationManager
+@* @inject LoadDataToPage LoadDataService; *@
+<head> 
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+</head>
+
+
+<div class="nav-container">
+    <nav class="nav-menu" style="display: flex; align-items: center; ">
+        <div class="navbar navbar-dark" style="justify-content: flex-start; background-color: #343a40; border-radius: 5%; display: flex;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">BogSanLu SRL</a>
+            </div>
+        </div>
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <span class="bi bi-house-door-fill-nav-menu"></span> Home
+        </NavLink>
+            <div class="dropdown">
+                <NavLink class="nav-link" href="Produse" Match="NavLinkMatch.All"> Produse
+                        @* <div style="display: flex;justify-content: center; gap:10px; align-items: center;">
+
+                        </div> *@
+
+                        @if (CategoriiDeAlimente == null)
+                        {
+                            <p>Se încarcă datele...</p>
+                        }
+                        else
+                        {
+                            <div class="dropdown-menu">
+                            @foreach (var categorie in CategoriiDeAlimente)
+                            {
+                                        <a href="@categorie.PageLink">@categorie.Category</a>
+                            }
+                            </div>
+                        }
+                </NavLink>
+            </div>
+             <div class="dropdown">
+                <NavLink class="nav-link" href="promotii" Match="NavLinkMatch.All">
+                    <div style="display:flex; margin-right:0; align-items:center; gap:10px;">
+                        <div class="gift-icon" ></div> Promotii
+                    </div>
+                    @if (CategoriiDeAlimente == null)
+                    {
+                        <p>Se încarcă datele...</p>
+                    }
+                    else
+                    {
+                        <div class="dropdown-menu">
+                              <a href="/Oferte">Oferte</a>
+                        </div>
+                    }
+                </NavLink>
+            </div>
+            <NavLink class="nav-link" href="RecenziiUser">
+                Recenzii
+            </NavLink>
+        <NavLink class="nav-link" href="auth">
+            <span class="bi bi-lock-nav-menu"></span> Auth Required
+        </NavLink>
+
+        <AuthorizeView>
+            <Authorized>
+                <NavLink class="nav-link" href="Account/Manage">
+                    <span class="bi bi-person-fill-nav-menu"></span> @context.User.Identity?.Name
+                </NavLink>
+                @* <form action="Account/Logout" method="post" class="logout-form">
+                    <AntiforgeryToken />
+                    <input type="hidden" name="ReturnUrl" value="@currentUrl" />
+                    <button type="submit" class="nav-link">
+                        <span class="bi bi-arrow-bar-left-nav-menu"></span> Logout
+                    </button>
+                </form> *@
+                <form action="Account/Logout" method="post" class="d-inline"  >
+                    <AntiforgeryToken />
+                    <input type="hidden" name="ReturnUrl" value="" />
+                    <a href="#" class="nav-link" onclick="this.closest('form').submit();" style="display: flex; align-items: center;">
+                        <span class="bi bi-arrow-bar-left-nav-menu"></span> Logout
+                    </a>
+                </form>
+            </Authorized>
+            <NotAuthorized>
+                <NavLink class="nav-link" href="Account/Register">
+                    <span class="bi bi-person-nav-menu"></span> Register
+                </NavLink>
+                <NavLink class="nav-link" href="Account/Login">
+                    <span class="bi bi-person-badge-nav-menu"></span> Login
+                </NavLink>
+            </NotAuthorized>
+        </AuthorizeView>
+    </nav>
+</div>
+
+
+@code {
+    public List<CategorieAliment> CategoriiDeAlimente { get; set; } = new();
+    protected override async Task OnInitializedAsync()
+    {
+        CategoriiDeAlimente.Add(new CategorieAliment{Category = "Carne",ImageUrl = "images/Carne/CarneSiMezeluri.jpg",PageLink = "/carne"});
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Dulciuri", ImageUrl = "images/Dulciuri/Dulciuri.jpg", PageLink = "/dulciuri" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Fructe", ImageUrl = "images/Fructe/Fructe.jpg", PageLink = "/fructe" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Legume", ImageUrl = "images/Legume/Legume.jpg", PageLink = "/legume" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Paste", ImageUrl = "images/Paste/CategoriiPaste.jpg", PageLink = "/paste" });
+        CategoriiDeAlimente.Add(new CategorieAliment { Category = "Peste", ImageUrl = "images/Peste/Dalmors.jpg", PageLink = "/peste" });
+    }
+    private string? currentUrl;
+
+    protected override void OnInitialized()
+    {
+        currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    private void OnLocationChanged(object? sender, LocationChangedEventArgs e)
+    {
+        currentUrl = NavigationManager.ToBaseRelativePath(e.Location);
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}
+

@@ -1,0 +1,206 @@
+﻿@page "/fructe/Capsuni"
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informații Nutriționale - Căpșuni</title>
+    <style>
+        /* body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3e5ab;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+        th {
+            background-color: #d2691e;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f7d9c4;
+        }
+        .category {
+            font-weight: bold;
+            background-color: #f4a460;
+        }
+        h2 {
+            color: #8b4513;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }*/
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebf0;
+            text-align: center;
+            margin: 0;
+        }
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #ff4d79;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #ffe6ea;
+        }
+        .category {
+            font-weight: bold;
+            background-color: #ff99ac;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d90047;
+        }
+        .offer {
+            display: inline-block;
+            background-color: #8b4513;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #ffe6ea; /* Un roșu foarte deschis, similar cu interiorul căpșunilor */
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation-button {
+            background-color: #e57373; /* Un roșu mai intens, similar cu exteriorul căpșunilor */
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Informații Nutriționale - Căpșuni</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>32 kcal</td>
+            <td>1.6%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>0.7g</td>
+            <td>1.4%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>0.3g</td>
+            <td>0.5%</td>
+        </tr>
+        <tr>
+            <td>- din care saturate</td>
+            <td>0.02g</td>
+            <td>0.1%</td>
+        </tr>
+        <tr class="category">
+            <td>Carbohidrați</td>
+            <td>7.7g</td>
+            <td>2.9%</td>
+        </tr>
+        <tr>
+            <td>- din care zaharuri</td>
+            <td>4.9g</td>
+            <td>5.4%</td>
+        </tr>
+        <tr class="category">
+            <td>Fibre</td>
+            <td>2g</td>
+            <td>8%</td>
+        </tr>
+        <tr class="category">
+            <td>Vitamina C</td>
+            <td class="highlight">59mg</td>
+            <td class="highlight">65%</td>
+        </tr>
+        <tr>
+            <td>Potasium</td>
+            <td>153mg</td>
+            <td>4.3%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>*DZR</strong> = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="offer">
+    Promoție specială: 20 lei/pachet
+</div>
+
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/fructe" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Fructe
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/fructe/Mere"  class="navigation-button">Mere</a>
+    <a href="/fructe/Pere"  class="navigation-button">Pere</a>
+    <a href="/fructe/PepeneRosu"  class="navigation-button">Pepene rosu</a>
+    <a href="/fructe/Cirese"  class="navigation-button">Cirese</a>
+</div>
+    </div>
+</body>
+</html>
+
+@code {
+
+}

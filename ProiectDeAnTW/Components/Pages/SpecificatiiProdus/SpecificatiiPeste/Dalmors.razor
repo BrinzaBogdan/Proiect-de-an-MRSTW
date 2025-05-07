@@ -1,0 +1,159 @@
+﻿@page "/peste/Dalmors"
+
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabel Nutriție - Pește Dalmors</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f2f7; /* Un albastru deschis */
+            text-align: center;
+        }
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: linear-gradient(135deg, #b3e5fc, #03a9f4); /* Gradient cu nuanțe de albastru */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        th, td {
+            border: 1px solid #4fc3f7; /* Un albastru mai deschis pentru borduri */
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: #01579b; /* Un albastru închis pentru text */
+        }
+        th {
+            background-color: #0277bd; /* Un albastru închis pentru antet */
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #ccebff; /* Un albastru foarte deschis pentru rândurile pare */
+        }
+        .category {
+            font-weight: bold;
+            background-color: #81d4fa; /* Un albastru mai intens pentru categorii */
+        }
+        h2 {
+            color: #01579b; /* Un albastru închis pentru titlu */
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .offer {
+            display: inline-block;
+            background-color: #039be5; /* Un albastru mediu pentru oferta */
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navigation-container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .navigation-button {
+            background-color: #0277bd;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Informații Nutriționale - Pește Dalmors</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Categoria</th>
+            <th>Valoare per 100g</th>
+            <th>% DZR*</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category">
+            <td>Calorii</td>
+            <td>180 kcal</td>
+            <td>9%</td>
+        </tr>
+        <tr>
+            <td>Proteine</td>
+            <td>20g</td>
+            <td>40%</td>
+        </tr>
+        <tr class="category">
+            <td>Grăsimi totale</td>
+            <td>10g</td>
+            <td>15%</td>
+        </tr>
+        <tr>
+            <td>- din care Omega-3</td>
+            <td>2g</td>
+            <td>-</td>
+        </tr>
+        <tr class="category">
+            <td>Colesterol</td>
+            <td>70mg</td>
+            <td>23%</td>
+        </tr>
+        <tr>
+            <td>Sodiu</td>
+            <td>80mg</td>
+            <td>3%</td>
+        </tr>
+        <tr class="category">
+            <td>Vitamina D</td>
+            <td>10µg</td>
+            <td>50%</td>
+        </tr>
+    </tbody>
+</table>
+
+<p style="font-size: 16px; color: #555;">*DZR = Doza Zilnică Recomandată, bazată pe o dietă de 2000 kcal.</p>
+
+<div class="offer">
+    Sursă excelentă de Omega-3!
+</div>
+
+
+<div style="position: relative; width: 100%;">
+    <div style="position: absolute; top: 0; left: 0; padding: 15px 0px;">
+        <a href="/peste" class="navigation-button" style="display: flex; align-items: center; ">
+            <img src="images\SvgImages\arrow-return-left.svg" style="margin-right: 5px;">
+            Peste
+        </a>
+    </div>
+<div class="navigation-container">
+    <a href="/peste/Somon" class="navigation-button">Somon</a>
+    <a href="/peste/Carp" class="navigation-button">Carp</a>
+    <a href="/peste/Caras" class="navigation-button">Caras</a>
+    <a href="/peste/Biban" class="navigation-button">Biban</a>
+</div>
+  </div>
+</body>
+</html>
+
+@code {
+
+}
