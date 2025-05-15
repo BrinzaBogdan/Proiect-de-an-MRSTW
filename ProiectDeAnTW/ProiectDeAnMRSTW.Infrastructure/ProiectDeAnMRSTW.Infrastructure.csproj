@@ -21,8 +21,4 @@
     <ProjectReference Include="..\ProiectDeAnMRSTW.Application\ProiectDeAnMRSTW.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Identity\" />
-  </ItemGroup>
-
 </Project>

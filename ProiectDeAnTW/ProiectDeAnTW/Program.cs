@@ -43,7 +43,7 @@ builder.Services.AddAuthorization(options =>
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
-    options.CheckConsentNeeded = context => true; // activeaz? consim??m?ntul
+    options.CheckConsentNeeded = context => true;
     options.MinimumSameSitePolicy = SameSiteMode.Lax;
 });
 
