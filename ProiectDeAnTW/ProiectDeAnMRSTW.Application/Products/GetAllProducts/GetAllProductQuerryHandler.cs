@@ -20,13 +20,13 @@ namespace ProiectDeAnMRSTW.Application.Products.GetAllProducts
 
         public async Task<Result<List<Aliment>>> Handle(GetAllProductQuerry request, CancellationToken cancellationToken)
         {
-            var products = await _productRepository.GetAllProductsByCategoryName(request.product_name, cancellationToken);
+            var products = await _productRepository.GetAllProductsByCategoryName(request.product_category, cancellationToken);
             if (products == null || !products.Any())
             {
                 return Result.Failure<List<Aliment>>(ProductErrors.NotFound);
             }
 
-            return Result.Success(products);
+            return Result.Success(products);    
         }
     }
 }

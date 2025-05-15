@@ -29,7 +29,7 @@ namespace ProiectDeAnMRSTW.Infrastructure.Migrations
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
-                columns: table => new
+                columns: table => new     
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),

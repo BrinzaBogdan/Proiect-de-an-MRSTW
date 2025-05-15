@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace ProiectDeAnMRSTW.Application.Products.GetAllProducts
 {
-    public sealed record GetAllProductQuerry(string product_name) : IQuerry<List<Aliment>>;
+    public sealed record GetAllProductQuerry(string product_category) : IQuerry<List<Aliment>>;
 }
