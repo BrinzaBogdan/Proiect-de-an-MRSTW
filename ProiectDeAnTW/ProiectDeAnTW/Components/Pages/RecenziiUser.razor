@@ -12,6 +12,8 @@
 @inject IJSRuntime JS
 @inject ILogger<RecenziiUser> Logger
 @inject IReviewService ReviewService
+@* @attribute [Authorize(Roles = "Client")] *@
+@attribute [Authorize(Policy = "Over30")]
 
 @*
 @rendermode InteractiveServer

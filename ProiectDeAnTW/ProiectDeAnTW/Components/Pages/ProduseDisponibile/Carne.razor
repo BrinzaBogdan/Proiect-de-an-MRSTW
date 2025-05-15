@@ -4,8 +4,7 @@
 @using ProiectDeAnTW.Components.Layout
 @inject HttpClient Http
 @layout MainLayout
-@* @attribute [Authorize(Policy = "AdminOnly")] *@
-@attribute [Authorize(Roles = "Admin")]
+@attribute [Authorize(Policy = "SexInstructor")]
 <head>
     <link href="css/site.css" rel="stylesheet">
 </head>

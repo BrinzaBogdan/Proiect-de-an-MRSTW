@@ -36,8 +36,16 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+    options.AddPolicy("SexInstructor", policy => policy.RequireRole("SexInstructor"));
+    options.AddPolicy("Over30", policy => policy.RequireAssertion(context =>
+    Int32.Parse(context.User.Claims.First(x => x.Type == "Age").Value) > 30));
 });
 
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    options.CheckConsentNeeded = context => true; // activeaz? consim??m?ntul
+    options.MinimumSameSitePolicy = SameSiteMode.Lax;
+});
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? 
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
@@ -64,6 +72,23 @@ else
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     app.UseHsts();
 }
+
+app.Use(async (context, next) =>
+{
+    if (!context.Request.Cookies.ContainsKey("TestCookie"))
+    {
+        context.Response.Cookies.Append("TestCookie", "Cookie_30_sec", new CookieOptions
+        {
+            Expires = DateTimeOffset.UtcNow.AddSeconds(30),
+            IsEssential = true,
+            SameSite = SameSiteMode.Lax,
+            MaxAge = TimeSpan.FromDays(1234)
+        });
+    }
+
+    await next.Invoke();
+});
+
 
 app.UseHttpsRedirection();
 
