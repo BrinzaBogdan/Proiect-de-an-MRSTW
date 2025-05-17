@@ -1,9 +1,97 @@
-﻿@page "/auth"
-
+﻿@page "/manageusers"
 @using Microsoft.AspNetCore.Authorization
+@inject HttpClient Http
 
 @attribute [Authorize(Policy = "AdminOnly")]
 
+@using Microsoft.EntityFrameworkCore
+@using ProiectDeAnMRSTW.Infrastructure.Data
+@inject ApplicationDbContext Db
+@rendermode InteractiveServer
+
+<h3>Users</h3>
+
+<input class="form-control mb-2" placeholder="Search..." @bind="searchTerm" @oninput="async _ => await LoadUsers()" />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in users)
+        {
+                <tr>
+                    <td>Email  - @user.Email</td>
+                    <td>Age - @user.Age</td>
+                <td>
+                    <button class="btn btn-sm btn-danger" @onclick="() => DeleteUser(user.Email)">Delete</button>
+                </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@code {
+    private List<ApplicationUser> users = new();
+    private string searchTerm = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadUsers();
+    }
+
+    // private async Task LoadUsers()
+    // {
+    //     users = await Db.Users
+    //         .Where(u => string.IsNullOrEmpty(searchTerm) || u.Email.Contains(searchTerm))
+    //         .ToListAsync();
+    // }
+    private async Task LoadUsers()
+    {
+        var query = Db.Users.AsQueryable();
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            query = query.Where(u => EF.Functions.Like(u.Email, $"%{searchTerm}%"));
+        }
+
+        users = await query.ToListAsync();
+    }
+
+    private async Task DeleteUser(string email)
+    {
+        var response = await Http.DeleteAsync($"https://localhost:7000/api/users/delete-user-by-email/{email}");
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine("Student deleted successfully.");
+        }
+        else
+        {
+            Console.WriteLine($"Error: {response.StatusCode}");
+        }
+
+        await LoadUsers();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@* 
 <PageTitle>Auth</PageTitle>
 
 <h1>Here only admins</h1>
@@ -11,3 +99,4 @@
 <AuthorizeView>
     Hello @context.User.Identity?.Name!
 </AuthorizeView>
+ *@
