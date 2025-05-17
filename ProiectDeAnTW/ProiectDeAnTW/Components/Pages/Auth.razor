@@ -1,17 +1,17 @@
 ﻿@page "/manageusers"
 @using Microsoft.AspNetCore.Authorization
 @inject HttpClient Http
-
+@inject UserManager<ApplicationUser> _userManager
 @attribute [Authorize(Policy = "AdminOnly")]
 
+@using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
 @using ProiectDeAnMRSTW.Infrastructure.Data
 @inject ApplicationDbContext Db
-@rendermode InteractiveServer
 
 <h3>Users</h3>
 
-<input class="form-control mb-2" placeholder="Search..." @bind="searchTerm" @oninput="async _ => await LoadUsers()" />
+<input class="form-control mb-2" placeholder="Search..." @bind="SearchTerm" @bind:event="oninput" />
 
 <table class="table table-striped">
     <thead>
@@ -19,29 +19,43 @@
             <th>Name</th>
             <th>Email</th>
             <th>Status</th>
-            <th>Actions</th>
+            <th>Role</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var user in users)
+        @foreach (var user in users_roles)
         {
                 <tr>
-                    <td>Email  - @user.Email</td>
-                    <td>Age - @user.Age</td>
+                    <td>Email  - @user.User.Email</td>
+                <td>Age - @user.User.Age</td>
                 <td>
-                    <button class="btn btn-sm btn-danger" @onclick="() => DeleteUser(user.Email)">Delete</button>
+                    <button class="btn btn-sm btn-danger" @onclick="() => DeleteUser(user.User.Email)">Delete</button>
                 </td>
+                <td>@string.Join(", ", user.Roles)</td>
                 </tr>
         }
     </tbody>
 </table>
 
-
-
 @code {
-    private List<ApplicationUser> users = new();
+
+
+    private List<UserWithRoles> users_roles = new();
+    private List<ApplicationUser> users= new();
     private string searchTerm = "";
 
+    private string SearchTerm
+    {
+        get => searchTerm;
+        set
+        {
+            if (searchTerm != value)
+            {
+                searchTerm = value;
+                _ = LoadUsers(); // nu așteptăm, dar o pornim
+            }
+        }
+    }
     protected override async Task OnInitializedAsync()
     {
         await LoadUsers();
@@ -55,19 +69,31 @@
     // }
     private async Task LoadUsers()
     {
+        users_roles = new();    
+        users = new();
         var query = Db.Users.AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(searchTerm))
         {
-            query = query.Where(u => EF.Functions.Like(u.Email, $"%{searchTerm}%"));
+            users_roles = users_roles.Where(u => u.User.Email.Contains(searchTerm)).ToList();
+            query = query.Where(u => u.Email.Contains(searchTerm));
+            // query = query.Where(u => EF.Functions.Like(u.Email, $"%{searchTerm}%"));
+        }
+        users = await query.ToListAsync();
+
+        foreach (var user in users)
+        {
+            var roles = await _userManager.GetRolesAsync(user);
+            users_roles.Add(new UserWithRoles { User = user, Roles = roles });
         }
 
-        users = await query.ToListAsync();
+
+        StateHasChanged();
     }
 
     private async Task DeleteUser(string email)
     {
-        var response = await Http.DeleteAsync($"https://localhost:7000/api/users/delete-user-by-email/{email}");
+        var response = await Http.DeleteAsync($"https://localhost:7000/api/users/delete-user-by-email?email={email}");
         if (response.IsSuccessStatusCode)
         {
             Console.WriteLine("Student deleted successfully.");
@@ -78,6 +104,18 @@
         }
 
         await LoadUsers();
+    }
+
+    private async Task<IList<string>> GetRoles(ApplicationUser user)
+    {
+        var roles = await _userManager.GetRolesAsync(user);
+        return roles;
+    }
+
+    private class UserWithRoles
+    {
+        public ApplicationUser User { get; set; } = new();
+        public IList<string> Roles { get; set; } = new List<string>();
     }
 }
 

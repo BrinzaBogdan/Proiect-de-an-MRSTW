@@ -99,6 +99,5 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.MapAdditionalIdentityEndpoints();
-
 app.MapControllers();
 app.Run();
