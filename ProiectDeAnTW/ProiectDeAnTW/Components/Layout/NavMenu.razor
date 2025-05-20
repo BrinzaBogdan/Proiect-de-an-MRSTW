@@ -1,7 +1,6 @@
 ﻿@using ProiectDeAnMRSTW.Domain.Products
 @implements IDisposable
 @inject NavigationManager NavigationManager
-@* @inject LoadDataToPage LoadDataService; *@
 <head> 
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
@@ -19,10 +18,6 @@
         </NavLink>
             <div class="dropdown">
                 <NavLink class="nav-link" href="Produse" Match="NavLinkMatch.All"> Produse
-                        @* <div style="display: flex;justify-content: center; gap:10px; align-items: center;">
-
-                        </div> *@
-
                         @if (CategoriiDeAlimente == null)
                         {
                             <p>Se încarcă datele...</p>

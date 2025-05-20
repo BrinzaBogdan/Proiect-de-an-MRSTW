@@ -12,12 +12,9 @@
 @inject IJSRuntime JS
 @inject ILogger<RecenziiUser> Logger
 @inject IReviewService ReviewService
-@* @attribute [Authorize(Roles = "Client")] *@
-@attribute [Authorize(Policy = "Over30")]
+@attribute [Authorize(Roles = "Client,Admin")]
 
-@*
-@rendermode InteractiveServer
-*@
+
 <html lang="ro">
 <head>
     <meta charset="UTF-8">

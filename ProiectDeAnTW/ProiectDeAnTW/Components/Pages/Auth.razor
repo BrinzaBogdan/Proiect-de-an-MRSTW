@@ -25,21 +25,19 @@
     <tbody>
         @foreach (var user in users_roles)
         {
-                <tr>
-                    <td>Email  - @user.User.Email</td>
-                <td>Age - @user.User.Age</td>
-                <td>
-                    <button class="btn btn-sm btn-danger" @onclick="() => DeleteUser(user.User.Email)">Delete</button>
-                </td>
-                <td>@string.Join(", ", user.Roles)</td>
-                </tr>
+            <tr>
+                <td>Email  - @user.User.Email</td>
+            <td>Age - @user.User.Age</td>
+            <td>
+                <button class="btn btn-sm btn-danger" @onclick="() => DeleteUser(user.User.Email)">Delete</button>
+            </td>
+            <td>@string.Join(", ", user.Roles)</td>
+            </tr>
         }
     </tbody>
 </table>
 
 @code {
-
-
     private List<UserWithRoles> users_roles = new();
     private List<ApplicationUser> users= new();
     private string searchTerm = "";
@@ -76,11 +74,10 @@
         if (!string.IsNullOrWhiteSpace(searchTerm))
         {
             users_roles = users_roles.Where(u => u.User.Email.Contains(searchTerm)).ToList();
-            query = query.Where(u => u.Email.Contains(searchTerm));
-            // query = query.Where(u => EF.Functions.Like(u.Email, $"%{searchTerm}%"));
+            query = query.Where(u => EF.Functions.Like(u.Email, $"%{searchTerm}%"));
         }
         users = await query.ToListAsync();
-
+        
         foreach (var user in users)
         {
             var roles = await _userManager.GetRolesAsync(user);
@@ -106,11 +103,6 @@
         await LoadUsers();
     }
 
-    private async Task<IList<string>> GetRoles(ApplicationUser user)
-    {
-        var roles = await _userManager.GetRolesAsync(user);
-        return roles;
-    }
 
     private class UserWithRoles
     {
